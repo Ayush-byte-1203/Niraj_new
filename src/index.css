@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Color System - Light Theme (WCAG AA Compliant) */
+  --bg-primary: #F8F6F2; 
+  --bg-secondary: #F2ECE4; 
+  --bg-card: #FFFFFF;
+  --bg-overlay: rgba(248, 246, 242, 0.9);
+  --text-primary: #1F1F1F; 
+  --text-muted: #575757; 
+  --accent-gold: #B9985A; 
+  --accent-gold-hover: #A7864D;
+  --border-light: rgba(31, 31, 31, 0.08); 
+  
+  --color-success: #2e7d32;
+  --color-error: #c62828;
+  
+  /* Typography Families */
+  --font-serif: 'Canela', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Spacing Scale */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 2rem;     /* 32px */
+  --space-lg: 4rem;     /* 64px */
+  --space-xl: 8rem;     /* 128px */
+  
+  /* Border Radius System */
+  --border-radius-none: 0px;
+  --border-radius-sm: 4px;
+  
+  /* Motion & Speed */
+  --transition-curve-prestige: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-duration-fast: 200ms;
+  --transition-smooth: var(--transition-curve-prestige);
+  
+  /* Z-index Matrix */
+  --z-index-header: 1000;
+  --z-index-modal: 2000;
+  --z-index-overlay: 5000;
+  
+  /* Header Height */
+  --header-height: 80px;
+}
+
+[data-theme="dark"] {
+  /* Color System - Dark Theme */
+  --bg-primary: #0C0D0E; 
+  --bg-secondary: #141517; 
+  --bg-card: #1B1C1E;
+  --bg-overlay: rgba(12, 13, 14, 0.85);
+  --text-primary: #F3F1ED; 
+  --text-muted: #A3A19D; 
+  --accent-gold: #D4B57D; 
+  --accent-gold-hover: #C5A46C;
+  --border-light: rgba(243, 241, 237, 0.08); 
+  
+  --color-success: #81c784;
+  --color-error: #e57373;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-duration-fast) ease;
+}
+
+button {
+  font-family: var(--font-sans);
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Forms styling */
+label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.error-message {
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+/* Custom Focus States - WCAG AA Alignment */
+input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent-gold) !important;
+  outline-offset: 2px;
+}
+
+/* Typography Classes */
+.serif-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.serif-display.italic {
+  font-style: italic;
+}
+
+/* Typography Scales */
+.title-display {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.title-hero {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.title-medium {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.title-small {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.body-large {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.body-medium {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+.section-padding {
+  padding: var(--space-xl) 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* Editorial Hairline Dividers */
+.hairline-border {
+  border: 1px solid var(--border-light);
+}
+
+.hairline-bottom {
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Premium Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--text-primary);
+  transition: var(--transition-curve-prestige);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--border-light);
+  transition: var(--transition-curve-prestige);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+}
+
+.gold-link {
+  color: var(--accent-gold);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  transition: var(--transition-duration-fast) ease;
+}
+
+.gold-link:hover {
+  color: var(--accent-gold-hover);
+  padding-left: var(--space-xs);
+}
+
+/* Global Card Hover Micro-Interactions */
+.editorial-card {
+  border: 1px solid var(--border-light);
+  padding: var(--space-md);
+  transition: var(--transition-curve-prestige);
+}
+
+.editorial-card:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-4px);
+}
+
+/* Page Animations */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skeleton Loaders Shimmer */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--border-light) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================================================
+   Boutique Law Firm Global Design System Overrides
+   ========================================================================== */
+
+/* 1. Global Section Backgrounds & Spacing */
+section.section-padding {
+  padding: 6.5rem 0 !important; /* Generous vertical spacing */
+}
+
+/* Alternating Section Backgrounds */
+section:nth-of-type(odd) {
+  background-color: var(--bg-primary) !important;
+}
+section:nth-of-type(even) {
+  background-color: #FFFFFF !important;
+}
+[data-theme="dark"] section:nth-of-type(even) {
+  background-color: var(--bg-primary) !important;
+}
+[data-theme="dark"] section:nth-of-type(odd) {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Exceptions: hero, footer, and CTA banners handle their own backgrounds */
+.hero-section, 
+.cta-banner-section, 
+.footer-container, 
+.services-cta-banner {
+  background-color: transparent !important;
+}
+
+.cta-banner-section {
+  background-color: var(--text-primary) !important; /* Dark charcoal */
+  color: var(--bg-primary) !important;
+}
+.cta-banner-section .cta-banner-headline {
+  color: var(--accent-gold) !important;
+}
+
+.services-cta-banner {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* 2. Global Card Style Overrides */
+.card, 
+.editorial-card, 
+.service-landing-card, 
+.person-card, 
+.leader-card, 
+.office-location-card, 
+.other-office-card, 
+.challenge-card, 
+.insight-mini-card, 
+.profile-contact-card, 
+.analytic-card,
+.sidebar-group,
+.contact-form-box,
+.authored-card {
+  background-color: var(--bg-card) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 24px rgba(31, 31, 31, 0.02) !important;
+  border: 1px solid var(--border-light) !important;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.editorial-card:hover, 
+.service-landing-card:hover, 
+.person-card:hover, 
+.leader-card:hover, 
+.office-location-card:hover, 
+.other-office-card:hover,
+.insight-mini-card:hover,
+.authored-card:hover,
+.award-row-card:hover {
+  border-color: var(--accent-gold) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(31, 31, 31, 0.06) !important;
+}
+
+/* 3. Global Form Inputs Overrides */
+input, select, textarea, .custom-form-input, .custom-form-select, .custom-form-textarea {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 8px !important;
+  padding: 0.9rem 1.25rem !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+input:focus, select:focus, textarea:focus, 
+.custom-form-input:focus, .custom-form-select:focus, .custom-form-textarea:focus {
+  border-color: var(--accent-gold) !important;
+  background-color: var(--bg-card) !important;
+  box-shadow: 0 0 0 3px rgba(185, 152, 90, 0.12) !important;
+  outline: none !important;
+}
+
+/* 4. Global Button Transitions & Lift on Hover */
+.btn-primary {
+  border-radius: 12px !important;
+  background-color: var(--text-primary) !important;
+  color: #FFFFFF !important;
+  border: 1px solid var(--text-primary) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary:hover {
+  background-color: #333333 !important;
+  border-color: #333333 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(31, 31, 31, 0.1) !important;
+}
+
+.btn-secondary {
+  border-radius: 12px !important;
+  border: 1px solid var(--border-light) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-secondary:hover {
+  color: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 5. Premium Gold Recoloring for SVG Icons */
+.gold-icon, 
+.icon-gold, 
+.check-icon, 
+.pin-icon,
+.gold-icon svg,
+svg.lucide-shield-check,
+svg.lucide-compass,
+svg.lucide-bar-chart,
+svg.lucide-award,
+svg.lucide-map-pin,
+svg.lucide-check-circle {
+  color: var(--accent-gold) !important;
+  stroke: var(--accent-gold) !important;
+}
+
+/* 6. Warm Image Filter (Limestone tone / Editorial grade) */
+img.person-image, 
+.leader-image-frame img, 
+.profile-image-container img, 
+.partner-avatar img {
+  filter: sepia(0.08) contrast(1.02) brightness(1.02) saturate(0.95) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease !important;
+}
+
+img.person-image:hover, 
+.leader-image-frame img:hover, 
+.profile-image-container img:hover, 
+.partner-avatar img:hover {
+  filter: sepia(0.02) contrast(1.05) brightness(1.04) saturate(1) !important;
+}
+
+/* 7. Premium Navigation Navbar */
+.navbar-header {
+  border-bottom: 1px solid var(--border-light) !important;
+  background-color: rgba(248, 246, 242, 0.65) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-theme="dark"] .navbar-header {
+  background-color: rgba(12, 13, 14, 0.65) !important;
+}
+
+.navbar-header.scrolled {
+  background-color: rgba(248, 246, 242, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+[data-theme="dark"] .navbar-header.scrolled {
+  background-color: rgba(12, 13, 14, 0.85) !important;
+}
+

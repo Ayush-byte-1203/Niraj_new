@@ -1,0 +1,1103 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ChevronLeft, ChevronRight, Award, MapPin } from "lucide-react";
+import heroBg from "../assets/hero-bg.jpg";
+import { practices, people, offices, achievements } from "../data/mockDb";
+
+export default function Home() {
+  // Testimonials state
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const testimonials = [
+    {
+      quote: "The firm demonstrates a profound understanding of corporate law. Their meticulous approach to secretarial audits and governance frameworks has been instrumental in maintaining our compliance health.",
+      author: "Board of Directors",
+      role: "Client Enterprise"
+    }
+  ];
+
+  // Statistics state counters
+  const [stats, setStats] = useState({ years: 0, experts: 0, officesCount: 0, volume: 0 });
+
+  useEffect(() => {
+    const duration = 1200; // ms
+    const steps = 60;
+    const stepTime = duration / steps;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      setStats({
+        years: Math.min(Math.floor((30 / steps) * step), 30),
+        experts: Math.min(Math.floor((5 / steps) * step), 5),
+        officesCount: Math.min(Math.floor((3 / steps) * step), 3),
+        volume: Math.min(Math.floor((40 / steps) * step), 40)
+      });
+
+      if (step >= steps) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  return (
+    <div className="home-container fade-in-up">
+      {/* 1. HERO SECTION */}
+      <section 
+        className="hero-section"
+        style={{ 
+          backgroundImage: `linear-gradient(var(--bg-overlay), var(--bg-overlay)), url(${heroBg})`
+        }}
+      >
+        <div className="container">
+          <div className="hero-content">
+            <span className="hero-tagline title-small">Strategic Advisors</span>
+            <h1 className="hero-title title-display">
+              Navigating <span className="serif-display italic">Complexity</span> with absolute compliance precision.
+            </h1>
+            <p className="hero-description body-large">
+              Niraj Trivedi Company Secretaries guides enterprise corporations, investment funds, and NPOs through high-stakes mergers, compliance restructuring, and regulatory alignments.
+            </p>
+            <div className="hero-actions">
+              <Link to="/services" className="btn-primary">Explore Services</Link>
+              <Link to="/contact" className="btn-secondary">Global Presence</Link>
+            </div>
+          </div>
+        </div>
+        <div className="scroll-indicator">
+          <div className="scroll-line"></div>
+          <span className="scroll-text">Scroll to explore</span>
+        </div>
+      </section>
+
+      {/* 2. COMPANY INTRODUCTION */}
+      <section className="intro-section section-padding">
+        <div className="container intro-grid">
+          <div className="intro-title-col">
+            <span className="title-small accent-gold">Company Overview</span>
+            <h2 className="title-medium intro-headline">We deliver clarity where corporate ambition meets regulatory reality.</h2>
+            <Link to="/about" className="gold-link mt-space">Learn Our History →</Link>
+          </div>
+          <div className="intro-text-col">
+            <p className="body-large">
+              At Niraj Trivedi Company Secretaries, we help organizations resolve their most challenging regulatory hurdles and transactional milestones. Our qualified professionals bring compliance foresight to every engagement.
+            </p>
+            <p className="body-medium text-muted">
+              By mapping compliance goals directly against local statutory frameworks, we empower capital allocators and enterprise leaders to operate confidently.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. DYNAMIC STATISTICS */}
+      <section className="stats-section">
+        <div className="container stats-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="stat-card">
+            <span className="stat-num serif-display">{stats.years}+</span>
+            <span className="stat-label">Years of Experience</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-num serif-display">Dedicated</span>
+            <span className="stat-label">Compliance Focus</span>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. FEATURED SERVICES */}
+      <section className="featured-services-section section-padding">
+        <div className="container">
+          <div className="section-header">
+            <div className="header-meta">
+              <span className="title-small accent-gold">Our Services</span>
+              <h2 className="title-medium">Core Capabilities</h2>
+            </div>
+            <Link to="/services" className="gold-link">View All Capabilities →</Link>
+          </div>
+          
+          <div className="services-showcase-grid">
+            {practices.map((practice, index) => (
+              <div key={practice.id} className="service-showcase-card editorial-card">
+                <div className="service-number serif-display">0{index + 1}</div>
+                <h3 className="service-title">{practice.name}</h3>
+                <p className="service-desc text-muted">{practice.shortDescription}</p>
+                <div className="service-expanded-drawer">
+                  <div className="drawer-divider"></div>
+                  <Link key={practice.id} to={`/services/${practice.id}`} className="drawer-link">
+                    Explore practice scope <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. WHY CHOOSE US (VALUES) */}
+      <section className="why-us-section section-padding">
+        <div className="container why-us-grid">
+          <div className="why-us-info-col">
+            <span className="title-small accent-gold">Our Values</span>
+            <h2 className="title-medium">Core Guiding Principles</h2>
+            <p className="body-large text-muted mt-space">
+              We operate under a strict code of ethics, delivering meticulous accuracy, absolute confidentiality, and timely compliance execution.
+            </p>
+          </div>
+          <div className="why-us-list-col">
+            <div className="value-differentiator-item">
+              <div className="diff-index serif-display">01</div>
+              <div className="diff-content">
+                <h4>Professional Ethics</h4>
+                <p className="text-muted">Unwavering commitment to ICSI code of conduct and professional integrity.</p>
+              </div>
+            </div>
+            <div className="value-differentiator-item">
+              <div className="diff-index serif-display">02</div>
+              <div className="diff-content">
+                <h4>Strict Confidentiality</h4>
+                <p className="text-muted">Absolute discretion and security regarding all corporate data and strategies.</p>
+              </div>
+            </div>
+            <div className="value-differentiator-item">
+              <div className="diff-index serif-display">03</div>
+              <div className="diff-content">
+                <h4>Meticulous Accuracy</h4>
+                <p className="text-muted">Precision in drafting, filing, and representing clients before regulatory bodies.</p>
+              </div>
+            </div>
+            <div className="value-differentiator-item">
+              <div className="diff-index serif-display">04</div>
+              <div className="diff-content">
+                <h4>Timely Execution</h4>
+                <p className="text-muted">Proactive compliance management to avoid penalties and ensure smooth operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LEADERSHIP PREVIEW */}
+      <section className="leadership-section section-padding">
+        <div className="container">
+          <div className="section-header">
+            <div className="header-meta">
+              <span className="title-small accent-gold">Leadership</span>
+              <h2 className="title-medium">Managing Partners</h2>
+            </div>
+            <Link to="/people" className="gold-link">Our Directory →</Link>
+          </div>
+
+          <div className="leadership-cards-grid">
+            {people.slice(0, 2).map((leader) => (
+              <Link key={leader.id} to={`/people/${leader.id}`} className="leader-card">
+                <div className="leader-image-frame">
+                  <img src={leader.image} alt={leader.name} />
+                </div>
+                <div className="leader-info-block">
+                  <h4>{leader.name}</h4>
+                  <span className="leader-title-tag text-muted">{leader.title}</span>
+                  <span className="view-profile-hover">View Strategic Bio →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. GLOBAL HUB LOCATIONS */}
+      <section className="global-presence-section section-padding">
+        <div className="container">
+          <div className="section-header">
+            <div className="header-meta">
+              <span className="title-small accent-gold">Global Presence</span>
+              <h2 className="title-medium">Our Hub Locations</h2>
+            </div>
+          </div>
+          
+          <div className="offices-grid-layout">
+            {offices.map((office) => (
+              <div key={office.id} className="office-location-card editorial-card">
+                <div className="office-card-header">
+                  <MapPin size={18} className="pin-icon" />
+                  <span className="office-card-tag title-small">Office Hub</span>
+                </div>
+                <h3 className="serif-display">{office.city}</h3>
+                <p className="office-card-address text-muted">{office.address}</p>
+                <div className="office-card-meta">
+                  <span className="office-meta-item">T: {office.phone}</span>
+                  <span className="office-meta-item">E: {office.email}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. ACHIEVEMENTS & AWARDS */}
+      <section className="awards-timeline-section section-padding">
+        <div className="container">
+          <h2 className="title-medium text-center section-title-border">Achievements</h2>
+          
+          <div className="awards-table-list">
+            {achievements.map((ach, i) => (
+              <div key={i} className="award-table-row">
+                <span className="award-row-year serif-display">0{i + 1}</span>
+                <div className="award-row-main">
+                  <p className="body-large text-muted">{ach}</p>
+                </div>
+                <div className="award-row-decoration">
+                  <Award size={20} className="gold-icon" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. CLIENT TESTIMONIALS */}
+      <section className="testimonials-section section-padding">
+        <div className="container testimonials-inner-box">
+          <span className="title-small accent-gold text-center block">Client Perspectives</span>
+          
+          <div className="testimonial-carousel-window">
+            <blockquote className="carousel-quote-text serif-display italic">
+              "{testimonials[currentTestimonial].quote}"
+            </blockquote>
+            <div className="carousel-author-info">
+              <strong>{testimonials[currentTestimonial].author}</strong>
+              <span className="text-muted">{testimonials[currentTestimonial].role}</span>
+            </div>
+          </div>
+
+          <div className="carousel-navigation-buttons">
+            <button className="carousel-nav-btn" onClick={handlePrevTestimonial} aria-label="Previous testimonial">
+              <ChevronLeft size={20} />
+            </button>
+            <span className="carousel-index-counter">0{currentTestimonial + 1} / 0{testimonials.length}</span>
+            <button className="carousel-nav-btn" onClick={handleNextTestimonial} aria-label="Next testimonial">
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. CALL TO ACTION (CTA) */}
+      <section className="cta-banner-section">
+        <div className="container cta-inner-grid">
+          <div className="cta-heading-col">
+            <span className="title-small text-muted">Consultation Gateway</span>
+            <h2 className="title-medium cta-banner-headline">Ready to discuss your corporate secretarial strategy?</h2>
+          </div>
+          <div className="cta-action-col">
+            <Link to="/contact" className="btn-primary">Connect with Partners</Link>
+          </div>
+        </div>
+      </section>
+
+      <style>{`
+        .home-container {
+          overflow: hidden;
+        }
+        
+        /* 1. Hero Styles */
+        .hero-section {
+          padding-top: calc(var(--header-height) + 6rem);
+          padding-bottom: 9rem;
+          border-bottom: 1px solid var(--border-light);
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--space-sm);
+          text-align: left;
+          max-width: 900px;
+        }
+        .hero-tagline {
+          color: var(--accent-gold);
+        }
+        .hero-title {
+          font-weight: 300;
+        }
+        .hero-description {
+          color: var(--text-secondary);
+          max-width: 720px;
+        }
+        .hero-actions {
+          display: flex;
+          gap: var(--space-md);
+          margin-top: var(--space-sm);
+        }
+        @media (max-width: 480px) {
+          .hero-actions {
+            flex-direction: column;
+            width: 100%;
+          }
+          .hero-actions a {
+            justify-content: center;
+          }
+        }
+        .scroll-indicator {
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+          color: var(--text-muted);
+          pointer-events: none;
+        }
+        @media (max-width: 991px) {
+          .scroll-indicator {
+            display: none;
+          }
+        }
+        .scroll-line {
+          width: 1px;
+          height: 50px;
+          background-color: var(--border-light);
+          position: relative;
+          overflow: hidden;
+        }
+        .scroll-line::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 15px;
+          background-color: var(--accent-gold);
+          animation: scrollDownAnimation 2s infinite ease-in-out;
+        }
+        @keyframes scrollDownAnimation {
+          0% { top: -15px; }
+          100% { top: 50px; }
+        }
+        .scroll-text {
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.25em;
+        }
+
+        /* 2. Company Intro Styles */
+        .intro-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: var(--space-lg);
+        }
+        @media (max-width: 991px) {
+          .intro-grid {
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+          }
+        }
+        .intro-title-col {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .intro-headline {
+          font-weight: 300;
+          margin-top: var(--space-sm);
+        }
+        .mt-space {
+          margin-top: var(--space-md);
+        }
+        .intro-text-col {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-md);
+          text-align: left;
+        }
+
+        /* 3. Statistics Section */
+        .stats-section {
+          background-color: var(--bg-secondary);
+          padding: var(--space-lg) 0;
+          border-top: 1px solid var(--border-light);
+          border-bottom: 1px solid var(--border-light);
+        }
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: var(--space-lg);
+        }
+        @media (max-width: 991px) {
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 576px) {
+          .stats-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+        .stat-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: var(--space-xs);
+        }
+        .stat-num {
+          font-size: 4rem;
+          line-height: 1;
+          color: var(--text-primary);
+        }
+        .stat-label {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--text-muted);
+        }
+
+        /* 4. Featured Services */
+        .section-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: var(--space-lg);
+          border-bottom: 1px solid var(--border-light);
+          padding-bottom: var(--space-sm);
+        }
+        .header-meta {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .services-showcase-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: var(--space-md);
+        }
+        .service-showcase-card {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          background-color: var(--bg-primary);
+          min-height: 420px;
+          height: 100%;
+          padding: 2.5rem;
+        }
+        .service-number {
+          font-size: 2.5rem;
+          color: var(--accent-gold);
+          margin-bottom: var(--space-md);
+        }
+        .service-title {
+          font-size: 1.35rem;
+          font-family: var(--font-sans);
+          font-weight: 600;
+          line-height: 1.3;
+          margin-bottom: 1rem;
+          min-height: 3.6rem;
+        }
+        .service-desc {
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: var(--space-md);
+          flex-grow: 1;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .service-expanded-drawer {
+          width: 100%;
+          margin-top: auto;
+        }
+        .drawer-divider {
+          width: 100%;
+          height: 1px;
+          background-color: var(--border-light);
+          margin-bottom: var(--space-sm);
+        }
+        .drawer-link {
+          font-size: 0.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--accent-gold);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        /* 5. Industries Rows */
+        .industries-rows-list {
+          display: flex;
+          flex-direction: column;
+        }
+        .industry-row-item {
+          display: grid;
+          grid-template-columns: 0.5fr 3fr 1fr;
+          gap: var(--space-md);
+          padding: var(--space-md) 0;
+          border-bottom: 1px solid var(--border-light);
+          align-items: center;
+          text-align: left;
+          transition: var(--transition-duration-fast) ease;
+        }
+        @media (max-width: 768px) {
+          .industry-row-item {
+            grid-template-columns: 1fr;
+            gap: var(--space-xs);
+          }
+        }
+        .industry-row-item:hover {
+          padding-left: var(--space-sm);
+          border-color: var(--text-primary);
+        }
+        .industry-row-num {
+          font-size: 2rem;
+          color: var(--accent-gold);
+        }
+        .industry-row-main h3 {
+          font-size: 1.4rem;
+          font-family: var(--font-sans);
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+        .industry-row-main p {
+          font-size: 0.95rem;
+        }
+        .industry-row-action {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 0.75rem;
+        }
+        @media (max-width: 768px) {
+          .industry-row-action {
+            justify-content: flex-start;
+            margin-top: var(--space-xs);
+          }
+        }
+        .row-link-text {
+          font-size: 0.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: var(--transition-duration-fast) ease;
+        }
+        .industry-row-item:hover .row-link-text {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        .row-arrow {
+          transition: transform 0.3s ease;
+        }
+        .industry-row-item:hover .row-arrow {
+          transform: translateX(5px);
+        }
+
+        /* 6. Why Choose Us */
+        .why-us-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: 4rem;
+          align-items: start;
+        }
+        @media (max-width: 991px) {
+          .why-us-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+        }
+        .why-us-info-col {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .why-us-list-col {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .value-differentiator-item {
+          display: grid;
+          grid-template-columns: 50px 1fr;
+          gap: 1.5rem;
+          text-align: left;
+          border-bottom: 1px solid var(--border-light);
+          padding-bottom: 1.5rem;
+        }
+        .diff-index {
+          font-size: 2rem;
+          color: var(--accent-gold);
+          line-height: 1;
+          font-family: var(--font-serif);
+          font-weight: 500;
+        }
+        .diff-content h4 {
+          font-size: 1.25rem;
+          font-weight: 500;
+          margin: 0 0 0.5rem 0;
+        }
+        .diff-content p {
+          font-size: 0.95rem;
+          margin: 0;
+        }
+
+        /* 7. Featured Insights */
+        .insights-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: var(--space-md);
+        }
+        .insight-card {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          height: 380px;
+          background-color: var(--bg-primary);
+        }
+        .insight-card-meta {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          margin-bottom: var(--space-md);
+        }
+        .pub-badge {
+          color: var(--accent-gold);
+          font-weight: 600;
+          letter-spacing: 0.1em;
+        }
+        .pub-reading-time {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+        .insight-title {
+          font-size: 1.35rem;
+          font-family: var(--font-sans);
+          font-weight: 600;
+          line-height: 1.4;
+          margin-bottom: var(--space-xs);
+        }
+        .insight-excerpt {
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: var(--space-md);
+          flex-grow: 1;
+        }
+        .insight-card-action {
+          font-size: 0.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: var(--accent-gold);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        /* 8. Leadership Preview */
+        .leadership-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--space-lg);
+        }
+        @media (max-width: 768px) {
+          .leadership-cards-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+        .leader-card {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid var(--border-light);
+          position: relative;
+          overflow: hidden;
+          transition: var(--transition-curve-prestige);
+        }
+        .leader-card:hover {
+          border-color: var(--text-primary);
+        }
+        .leader-image-frame {
+          position: relative;
+          width: 100%;
+          padding-top: 125%; /* 4:5 Aspect Ratio matching People directory */
+          overflow: hidden;
+          background-color: var(--bg-secondary);
+        }
+        .leader-image-frame img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: var(--transition-curve-prestige);
+        }
+        .leader-card:hover .leader-image-frame img {
+          transform: scale(1.05);
+        }
+        .leader-info-block {
+          padding: var(--space-md);
+          text-align: left;
+          background-color: var(--bg-primary);
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+        .leader-info-block h4 {
+          font-size: 1.2rem;
+          font-family: var(--font-sans);
+          font-weight: 600;
+        }
+        .leader-title-tag {
+          font-size: 0.85rem;
+        }
+        .view-profile-hover {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: var(--accent-gold);
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-top: var(--space-xs);
+          opacity: 0;
+          transform: translateY(5px);
+          transition: var(--transition-duration-fast) ease;
+        }
+        .leader-card:hover .view-profile-hover {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* 9. Global Hub Locations */
+        .offices-grid-layout {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
+          margin-top: 3rem;
+        }
+        @media (max-width: 991px) {
+          .offices-grid-layout {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+        }
+        .office-location-card {
+          padding: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          background-color: var(--bg-secondary);
+        }
+        .office-card-header {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: var(--accent-gold);
+          margin-bottom: 1.25rem;
+        }
+        .office-card-tag {
+          margin: 0;
+        }
+        .office-location-card h3 {
+          font-size: 1.4rem;
+          margin: 0 0 1rem 0;
+          font-family: var(--font-sans);
+          font-weight: 600;
+        }
+        .office-card-address {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          margin: 0 0 2rem 0;
+          flex-grow: 1;
+        }
+        .office-card-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+          width: 100%;
+          border-top: 1px solid var(--border-light);
+          padding-top: 1.25rem;
+        }
+        .office-meta-item {
+          display: block;
+        }
+
+        /* 10. Achievements Table */
+        .section-title-border {
+          border-bottom: 1px solid var(--border-light);
+          padding-bottom: var(--space-md);
+          margin-bottom: var(--space-lg);
+        }
+        .awards-table-list {
+          display: flex;
+          flex-direction: column;
+        }
+        .award-table-row {
+          display: grid;
+          grid-template-columns: 0.5fr 3fr 0.5fr;
+          gap: var(--space-md);
+          padding: var(--space-md) 0;
+          border-bottom: 1px solid var(--border-light);
+          align-items: center;
+          text-align: left;
+          transition: var(--transition-duration-fast) ease;
+        }
+        @media (max-width: 768px) {
+          .award-table-row {
+            grid-template-columns: 1fr;
+            gap: var(--space-xs);
+          }
+        }
+        .award-table-row:hover {
+          border-color: var(--text-primary);
+          background-color: var(--bg-secondary);
+          padding-left: var(--space-sm);
+        }
+        .award-row-year {
+          font-size: 2.2rem;
+          color: var(--accent-gold);
+          line-height: 1;
+        }
+        .award-row-main h4 {
+          font-size: 1.25rem;
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+        }
+        .award-row-main p {
+          font-size: 0.9rem;
+        }
+        .award-row-decoration {
+          display: flex;
+          justify-content: flex-end;
+        }
+        @media (max-width: 768px) {
+          .award-row-decoration {
+            justify-content: flex-start;
+          }
+        }
+        .gold-icon {
+          color: var(--accent-gold);
+        }
+
+        /* 11. Testimonials */
+        .testimonials-inner-box {
+          max-width: 900px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: var(--space-md);
+          border: 1px solid var(--border-light);
+          padding: var(--space-xl) var(--space-lg);
+          background-color: var(--bg-secondary);
+        }
+        .block {
+          display: block;
+        }
+        .testimonial-carousel-window {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: var(--space-md);
+          text-align: center;
+        }
+        .carousel-quote-text {
+          font-size: 1.8rem;
+          line-height: 1.5;
+          color: var(--text-primary);
+        }
+        .carousel-author-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+        .carousel-author-info strong {
+          font-size: 1.05rem;
+        }
+        .carousel-author-info span {
+          font-size: 0.85rem;
+        }
+        .carousel-navigation-buttons {
+          display: flex;
+          align-items: center;
+          gap: var(--space-md);
+          margin-top: var(--space-sm);
+        }
+        .carousel-nav-btn {
+          width: 40px;
+          height: 40px;
+          border: 1px solid var(--border-light);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--text-primary);
+          transition: var(--transition-duration-fast) ease;
+        }
+        .carousel-nav-btn:hover {
+          border-color: var(--text-primary);
+          background-color: var(--bg-primary);
+        }
+        .carousel-index-counter {
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: var(--text-muted);
+        }
+
+        /* 12. Latest Updates */
+        .updates-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: var(--space-md);
+        }
+        .update-card-item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          height: 300px;
+          background-color: var(--bg-primary);
+        }
+        .update-date {
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          margin-bottom: var(--space-md);
+        }
+        .update-card-item h4 {
+          font-size: 1.25rem;
+          font-family: var(--font-sans);
+          font-weight: 600;
+          line-height: 1.4;
+          margin-bottom: var(--space-xs);
+          flex-grow: 1;
+        }
+        .update-card-item p {
+          font-size: 0.90rem;
+          line-height: 1.6;
+          margin-bottom: var(--space-md);
+        }
+        .read-news-link {
+          font-size: 0.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: var(--accent-gold);
+        }
+
+        /* 13. CTA Banner */
+        .cta-banner-section {
+          background-color: var(--text-primary);
+          color: var(--bg-primary);
+          padding: 6rem 0;
+        }
+        [data-theme="dark"] .cta-banner-section {
+          background-color: var(--bg-secondary);
+          color: var(--text-primary);
+          border-top: 1px solid var(--border-light);
+          border-bottom: 1px solid var(--border-light);
+        }
+        .cta-inner-grid {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-align: left;
+        }
+        @media (max-width: 768px) {
+          .cta-inner-grid {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--space-md);
+          }
+        }
+        .cta-heading-col {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .cta-banner-headline {
+          font-weight: 300;
+          color: var(--accent-gold);
+        }
+
+        /* 14. Newsletter Area */
+        .newsletter-box-inner {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: var(--space-lg);
+          align-items: center;
+          border-top: 1px solid var(--border-light);
+          padding-top: var(--space-lg);
+        }
+        @media (max-width: 991px) {
+          .newsletter-box-inner {
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+          }
+        }
+        .newsletter-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          gap: 0.5rem;
+        }
+        .newsletter-info h3 {
+          font-size: 1.8rem;
+          font-family: var(--font-serif);
+          font-weight: 400;
+        }
+        .newsletter-submission-form {
+          display: flex;
+          border-bottom: 2px solid var(--text-primary);
+          padding-bottom: 0.5rem;
+          align-items: center;
+        }
+        .newsletter-input-field {
+          background: none;
+          border: none;
+          outline: none;
+          font-size: 1.15rem;
+          font-family: var(--font-sans);
+          font-weight: 400;
+          color: var(--text-primary);
+          width: 100%;
+        }
+        .newsletter-submit-btn {
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--accent-gold);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          flex-shrink: 0;
+        }
+      `}</style>
+    </div>
+  );
+}
