@@ -22,8 +22,8 @@ export default function People() {
       const officeMatch = selectedOffice === "all" || person.officeId === selectedOffice;
       const practiceMatch = selectedPractice === "all" || person.practices.includes(selectedPractice);
       const levelMatch = selectedLevel === "all" || person.roleType === selectedLevel;
-      
-      const searchMatch = searchQuery === "" || 
+
+      const searchMatch = searchQuery === "" ||
         person.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         person.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         person.bio.toLowerCase().includes(searchQuery.toLowerCase());
@@ -59,9 +59,9 @@ export default function People() {
       <div className="advanced-filter-panel">
         <div className="search-box">
           <Search size={18} className="search-icon" />
-          <input 
-            type="text" 
-            placeholder="Search by name, biography keywords..." 
+          <input
+            type="text"
+            placeholder="Search by name, biography keywords..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="filter-input-text"

@@ -6,7 +6,7 @@ import { people, offices, practices } from "../data/mockDb";
 export default function PeopleDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   const personIndex = people.findIndex((p) => p.id === id);
   const person = people[personIndex];
 
@@ -24,7 +24,7 @@ export default function PeopleDetail() {
   const nextPerson = people[(personIndex + 1) % people.length];
 
   const office = offices.find((o) => o.id === person.officeId);
-  
+
   // Resolve relational maps
   const matchedPractices = practices.filter(p => person.practices.includes(p.id));
 
@@ -76,7 +76,7 @@ export default function PeopleDetail() {
         <div className="profile-main">
           <span className="title-small accent-gold">{person.title}</span>
           <h1 className="profile-name serif-display">{person.name}</h1>
-          
+
           <div className="profile-bio-section">
             <h2 className="section-title">Biography</h2>
             <div className="bio-text" style={{ whiteSpace: "pre-line", fontSize: "1.05rem", lineHeight: "1.8", color: "var(--text-secondary)" }}>

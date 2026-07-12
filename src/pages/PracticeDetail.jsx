@@ -39,7 +39,7 @@ export default function PracticeDetail() {
         <div className="practice-main-content">
           {/* 2. Overview & Solution */}
           <p className="lead-text">{practice.description}</p>
-          
+
           <div className="detailed-body">
             <h3>Capability Overview</h3>
             <p>{practice.details}</p>

@@ -4,7 +4,7 @@
 export const offices = [
   {
     id: "vadodara",
-    city: "Vadodara",
+    city: "Head Office Vadodara",
     address: "Prominent Commercial Area, Vadodara, Gujarat 390001, India",
     phone: "+91 982 424 8079",
     email: "info@nirajtrivedi-cs.com",
@@ -22,7 +22,7 @@ export const offices = [
   },
   {
     id: "delhi",
-    city: "New Delhi",
+    city: "Delhi",
     address: "Connaught Place, New Delhi, India",
     phone: "+91 982 424 8079",
     email: "info@nirajtrivedi-cs.com",

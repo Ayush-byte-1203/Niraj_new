@@ -55,65 +55,9 @@ export default function Navbar({ onSearchOpen }) {
           </Link>
 
           <nav className="nav-desktop">
-            <div
-              className="nav-item-wrapper"
-              onMouseEnter={() => setActiveMegaMenu("about")}
-              onMouseLeave={() => setActiveMegaMenu(null)}
-            >
-              <button
-                className="nav-link-btn"
-                onClick={(e) => { e.stopPropagation(); handleToggleMegaMenu("about"); }}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleToggleMegaMenu("about"); } }}
-                aria-expanded={activeMegaMenu === "about"}
-                aria-haspopup="true"
-              >
-                About Us <ChevronDown size={14} className="chevron" />
-              </button>
-              {activeMegaMenu === "about" && (
-                <div className="dropdown-menu fade-in-up">
-                  <Link to="/about" className="dropdown-item">Company Overview</Link>
-                  <Link to="/about" className="dropdown-item">Vision & Values</Link>
-                  <Link to="/about" className="dropdown-item">Our Journey</Link>
-                </div>
-              )}
-            </div>
-
-            <div
-              className="nav-item-wrapper"
-              onMouseEnter={() => setActiveMegaMenu("practices")}
-              onMouseLeave={() => setActiveMegaMenu(null)}
-            >
-              <button
-                className="nav-link-btn"
-                onClick={(e) => { e.stopPropagation(); handleToggleMegaMenu("practices"); }}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleToggleMegaMenu("practices"); } }}
-                aria-expanded={activeMegaMenu === "practices"}
-                aria-haspopup="true"
-              >
-                Services <ChevronDown size={14} className="chevron" />
-              </button>
-              {activeMegaMenu === "practices" && (
-                <div className="mega-menu fade-in-up">
-                  <div className="mega-menu-content">
-                    <div className="mega-info">
-                      <h3 className="serif-display">Our Services</h3>
-                      <p>Tailored strategic advisory and enterprise restructuring solutions designed for market leadership.</p>
-                      <Link to="/services" className="gold-link">View All Services →</Link>
-                    </div>
-                    <div className="mega-grid">
-                      {practices.map((p) => (
-                        <Link key={p.id} to={`/services/${p.id}`} className="mega-card">
-                          <h4>{p.name}</h4>
-                          <p>{p.shortDescription}</p>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
+            <Link to="/about" className="nav-link">About Us</Link>
             <Link to="/people" className="nav-link">Our People</Link>
+            <Link to="/services" className="nav-link">Services</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
           </nav>
 
@@ -132,8 +76,8 @@ export default function Navbar({ onSearchOpen }) {
           <div className="mobile-drawer">
             <div className="mobile-drawer-links">
               <Link to="/about">About Us</Link>
-              <Link to="/services">Services</Link>
               <Link to="/people">Our People</Link>
+              <Link to="/services">Services</Link>
               <Link to="/contact">Contact</Link>
             </div>
           </div>
@@ -311,7 +255,7 @@ export default function Navbar({ onSearchOpen }) {
         .mega-card h4 {
           font-size: 1.1rem;
           margin-bottom: 0.5rem;
-          font-family: var(--font-sans);
+          font-family: var(Times New Roman);
           font-weight: 600;
         }
         .mega-card p {
@@ -362,7 +306,7 @@ export default function Navbar({ onSearchOpen }) {
         }
         .mobile-drawer-links a {
           font-size: 1.6rem;
-          font-family: var(--font-sans);
+          font-family: var(Times New Roman);
           font-weight: 500;
           letter-spacing: 0.05em;
           text-transform: uppercase;

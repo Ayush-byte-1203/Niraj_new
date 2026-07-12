@@ -52,9 +52,9 @@ export default function Home() {
   return (
     <div className="home-container fade-in-up">
       {/* 1. HERO SECTION */}
-      <section 
+      <section
         className="hero-section"
-        style={{ 
+        style={{
           backgroundImage: `linear-gradient(var(--bg-overlay), var(--bg-overlay)), url(${heroBg})`
         }}
       >
@@ -69,14 +69,14 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <Link to="/services" className="btn-primary">Explore Services</Link>
-              <Link to="/contact" className="btn-secondary">Global Presence</Link>
+              <Link to="/contact" className="btn-primary">Global Presence</Link>
             </div>
           </div>
         </div>
-        <div className="scroll-indicator">
+        {/* <div className="scroll-indicator">
           <div className="scroll-line"></div>
           <span className="scroll-text">Scroll to explore</span>
-        </div>
+        </div> */}
       </section>
 
       {/* 2. COMPANY INTRODUCTION */}
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* 3. DYNAMIC STATISTICS */}
-      <section className="stats-section">
+      {/* <section className="stats-section">
         <div className="container stats-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
           <div className="stat-card">
             <span className="stat-num serif-display">{stats.years}+</span>
@@ -110,7 +110,7 @@ export default function Home() {
             <span className="stat-label">Compliance Focus</span>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 4. FEATURED SERVICES */}
       <section className="featured-services-section section-padding">
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
             <Link to="/services" className="gold-link">View All Capabilities →</Link>
           </div>
-          
+
           <div className="services-showcase-grid">
             {practices.map((practice, index) => (
               <div key={practice.id} className="service-showcase-card editorial-card">
@@ -221,7 +221,7 @@ export default function Home() {
               <h2 className="title-medium">Our Hub Locations</h2>
             </div>
           </div>
-          
+
           <div className="offices-grid-layout">
             {offices.map((office) => (
               <div key={office.id} className="office-location-card editorial-card">
@@ -245,7 +245,7 @@ export default function Home() {
       <section className="awards-timeline-section section-padding">
         <div className="container">
           <h2 className="title-medium text-center section-title-border">Achievements</h2>
-          
+
           <div className="awards-table-list">
             {achievements.map((ach, i) => (
               <div key={i} className="award-table-row">
@@ -266,7 +266,7 @@ export default function Home() {
       <section className="testimonials-section section-padding">
         <div className="container testimonials-inner-box">
           <span className="title-small accent-gold text-center block">Client Perspectives</span>
-          
+
           <div className="testimonial-carousel-window">
             <blockquote className="carousel-quote-text serif-display italic">
               "{testimonials[currentTestimonial].quote}"

@@ -31,7 +31,7 @@ export default function Contact() {
             <span className="title-small accent-color">Headquarters</span>
             <h2 className="serif-display hq-title">{hqOffice.city} Office</h2>
             <p className="office-address">{hqOffice.address}</p>
-            
+
             <div className="office-meta-rows">
               <a href={`tel:${hqOffice.phone}`} className="meta-row">
                 <div className="meta-icon-wrapper"><Phone size={16} /></div>
@@ -64,31 +64,31 @@ export default function Contact() {
                   <h3>Submit an Inquiry</h3>
                   <p className="form-helper">Complete the fields below and our team will route your inquiry to the appropriate lead.</p>
                 </div>
-                
+
                 <div className="form-fields">
                   <div className="form-row-2col">
                     <div className="input-group">
                       <label htmlFor="fullName">Full Name</label>
-                      <input 
+                      <input
                         id="fullName"
-                        type="text" 
-                        required 
+                        type="text"
+                        required
                         placeholder="e.g. John Doe"
-                        value={formData.name} 
-                        onChange={(e) => setFormData({...formData, name: e.target.value})} 
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="custom-form-input"
                       />
                     </div>
 
                     <div className="input-group">
                       <label htmlFor="emailAddress">Email Address</label>
-                      <input 
+                      <input
                         id="emailAddress"
-                        type="email" 
-                        required 
+                        type="email"
+                        required
                         placeholder="e.g. john@company.com"
-                        value={formData.email} 
-                        onChange={(e) => setFormData({...formData, email: e.target.value})} 
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="custom-form-input"
                       />
                     </div>
@@ -96,10 +96,10 @@ export default function Contact() {
 
                   <div className="input-group">
                     <label htmlFor="areaOfInterest">Area of Interest</label>
-                    <select 
+                    <select
                       id="areaOfInterest"
-                      value={formData.topic} 
-                      onChange={(e) => setFormData({...formData, topic: e.target.value})} 
+                      value={formData.topic}
+                      onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                       className="custom-form-select"
                     >
                       <option value="general">General Corporate Inquiry</option>
@@ -111,13 +111,13 @@ export default function Contact() {
 
                   <div className="input-group">
                     <label htmlFor="inquiryDetails">Inquiry Details</label>
-                    <textarea 
+                    <textarea
                       id="inquiryDetails"
                       rows={5}
-                      required 
+                      required
                       placeholder="Please describe your requirements..."
-                      value={formData.message} 
-                      onChange={(e) => setFormData({...formData, message: e.target.value})} 
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="custom-form-textarea"
                     />
                   </div>

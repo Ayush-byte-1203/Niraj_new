@@ -2,60 +2,65 @@
 
 :root {
   /* Color System - Light Theme (WCAG AA Compliant) */
-  --bg-primary: #F8F6F2; 
-  --bg-secondary: #F2ECE4; 
+  --bg-primary: #F8F6F2;
+  --bg-secondary: #F2ECE4;
   --bg-card: #FFFFFF;
   --bg-overlay: rgba(248, 246, 242, 0.9);
-  --text-primary: #1F1F1F; 
-  --text-muted: #575757; 
-  --accent-gold: #B9985A; 
+  --text-primary: #1F1F1F;
+  --text-muted: #575757;
+  --accent-gold: #B9985A;
   --accent-gold-hover: #A7864D;
-  --border-light: rgba(31, 31, 31, 0.08); 
-  
+  --border-light: rgba(31, 31, 31, 0.08);
+
   --color-success: #2e7d32;
   --color-error: #c62828;
-  
+
   /* Typography Families */
   --font-serif: 'Canela', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+
   /* Spacing Scale */
-  --space-xs: 0.5rem;   /* 8px */
-  --space-sm: 1rem;     /* 16px */
-  --space-md: 2rem;     /* 32px */
-  --space-lg: 4rem;     /* 64px */
-  --space-xl: 8rem;     /* 128px */
-  
+  --space-xs: 0.5rem;
+  /* 8px */
+  --space-sm: 1rem;
+  /* 16px */
+  --space-md: 2rem;
+  /* 32px */
+  --space-lg: 4rem;
+  /* 64px */
+  --space-xl: 8rem;
+  /* 128px */
+
   /* Border Radius System */
   --border-radius-none: 0px;
   --border-radius-sm: 4px;
-  
+
   /* Motion & Speed */
   --transition-curve-prestige: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-duration-fast: 200ms;
   --transition-smooth: var(--transition-curve-prestige);
-  
+
   /* Z-index Matrix */
   --z-index-header: 1000;
   --z-index-modal: 2000;
   --z-index-overlay: 5000;
-  
+
   /* Header Height */
   --header-height: 80px;
 }
 
 [data-theme="dark"] {
   /* Color System - Dark Theme */
-  --bg-primary: #0C0D0E; 
-  --bg-secondary: #141517; 
+  --bg-primary: #0C0D0E;
+  --bg-secondary: #141517;
   --bg-card: #1B1C1E;
   --bg-overlay: rgba(12, 13, 14, 0.85);
-  --text-primary: #F3F1ED; 
-  --text-muted: #A3A19D; 
-  --accent-gold: #D4B57D; 
+  --text-primary: #F3F1ED;
+  --text-muted: #A3A19D;
+  --accent-gold: #D4B57D;
   --accent-gold-hover: #C5A46C;
-  --border-light: rgba(243, 241, 237, 0.08); 
-  
+  --border-light: rgba(243, 241, 237, 0.08);
+
   --color-success: #81c784;
   --color-error: #e57373;
 }
@@ -97,7 +102,9 @@ label {
   font-weight: 500;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: var(--font-sans);
   font-weight: 400;
 }
@@ -108,7 +115,11 @@ input, select, textarea {
 }
 
 /* Custom Focus States - WCAG AA Alignment */
-input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible,
+a:focus-visible {
   outline: 2px solid var(--accent-gold) !important;
   outline-offset: 2px;
 }
@@ -239,6 +250,7 @@ input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible
 
 .btn-secondary:hover {
   border-color: var(--text-primary);
+  
 }
 
 .gold-link {
@@ -279,6 +291,7 @@ input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -293,8 +306,13 @@ input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible
 }
 
 @keyframes loadingShimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* ==========================================================================
@@ -303,35 +321,41 @@ input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible
 
 /* 1. Global Section Backgrounds & Spacing */
 section.section-padding {
-  padding: 6.5rem 0 !important; /* Generous vertical spacing */
+  padding: 6.5rem 0 !important;
+  /* Generous vertical spacing */
 }
 
 /* Alternating Section Backgrounds */
 section:nth-of-type(odd) {
   background-color: var(--bg-primary) !important;
 }
+
 section:nth-of-type(even) {
   background-color: #FFFFFF !important;
 }
+
 [data-theme="dark"] section:nth-of-type(even) {
   background-color: var(--bg-primary) !important;
 }
+
 [data-theme="dark"] section:nth-of-type(odd) {
   background-color: var(--bg-secondary) !important;
 }
 
 /* Exceptions: hero, footer, and CTA banners handle their own backgrounds */
-.hero-section, 
-.cta-banner-section, 
-.footer-container, 
+.hero-section,
+.cta-banner-section,
+.footer-container,
 .services-cta-banner {
   background-color: transparent !important;
 }
 
 .cta-banner-section {
-  background-color: var(--text-primary) !important; /* Dark charcoal */
+  background-color: var(--text-primary) !important;
+  /* Dark charcoal */
   color: var(--bg-primary) !important;
 }
+
 .cta-banner-section .cta-banner-headline {
   color: var(--accent-gold) !important;
 }
@@ -341,16 +365,16 @@ section:nth-of-type(even) {
 }
 
 /* 2. Global Card Style Overrides */
-.card, 
-.editorial-card, 
-.service-landing-card, 
-.person-card, 
-.leader-card, 
-.office-location-card, 
-.other-office-card, 
-.challenge-card, 
-.insight-mini-card, 
-.profile-contact-card, 
+.card,
+.editorial-card,
+.service-landing-card,
+.person-card,
+.leader-card,
+.office-location-card,
+.other-office-card,
+.challenge-card,
+.insight-mini-card,
+.profile-contact-card,
 .analytic-card,
 .sidebar-group,
 .contact-form-box,
@@ -362,11 +386,11 @@ section:nth-of-type(even) {
   transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.editorial-card:hover, 
-.service-landing-card:hover, 
-.person-card:hover, 
-.leader-card:hover, 
-.office-location-card:hover, 
+.editorial-card:hover,
+.service-landing-card:hover,
+.person-card:hover,
+.leader-card:hover,
+.office-location-card:hover,
 .other-office-card:hover,
 .insight-mini-card:hover,
 .authored-card:hover,
@@ -377,7 +401,12 @@ section:nth-of-type(even) {
 }
 
 /* 3. Global Form Inputs Overrides */
-input, select, textarea, .custom-form-input, .custom-form-select, .custom-form-textarea {
+input,
+select,
+textarea,
+.custom-form-input,
+.custom-form-select,
+.custom-form-textarea {
   background-color: var(--bg-secondary) !important;
   border: 1px solid var(--border-light) !important;
   border-radius: 8px !important;
@@ -386,8 +415,12 @@ input, select, textarea, .custom-form-input, .custom-form-select, .custom-form-t
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-input:focus, select:focus, textarea:focus, 
-.custom-form-input:focus, .custom-form-select:focus, .custom-form-textarea:focus {
+input:focus,
+select:focus,
+textarea:focus,
+.custom-form-input:focus,
+.custom-form-select:focus,
+.custom-form-textarea:focus {
   border-color: var(--accent-gold) !important;
   background-color: var(--bg-card) !important;
   box-shadow: 0 0 0 3px rgba(185, 152, 90, 0.12) !important;
@@ -425,9 +458,9 @@ input:focus, select:focus, textarea:focus,
 }
 
 /* 5. Premium Gold Recoloring for SVG Icons */
-.gold-icon, 
-.icon-gold, 
-.check-icon, 
+.gold-icon,
+.icon-gold,
+.check-icon,
 .pin-icon,
 .gold-icon svg,
 svg.lucide-shield-check,
@@ -441,17 +474,17 @@ svg.lucide-check-circle {
 }
 
 /* 6. Warm Image Filter (Limestone tone / Editorial grade) */
-img.person-image, 
-.leader-image-frame img, 
-.profile-image-container img, 
+img.person-image,
+.leader-image-frame img,
+.profile-image-container img,
 .partner-avatar img {
   filter: sepia(0.08) contrast(1.02) brightness(1.02) saturate(0.95) !important;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease !important;
 }
 
-img.person-image:hover, 
-.leader-image-frame img:hover, 
-.profile-image-container img:hover, 
+img.person-image:hover,
+.leader-image-frame img:hover,
+.profile-image-container img:hover,
 .partner-avatar img:hover {
   filter: sepia(0.02) contrast(1.05) brightness(1.04) saturate(1) !important;
 }
@@ -479,4 +512,3 @@ img.person-image:hover,
 [data-theme="dark"] .navbar-header.scrolled {
   background-color: rgba(12, 13, 14, 0.85) !important;
 }
-

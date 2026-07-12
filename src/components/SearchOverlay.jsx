@@ -31,14 +31,14 @@ export default function SearchOverlay({ isOpen, onClose }) {
 
     const cleanQuery = query.toLowerCase();
 
-    const matchedPractices = practices.filter(p => 
-      p.name.toLowerCase().includes(cleanQuery) || 
+    const matchedPractices = practices.filter(p =>
+      p.name.toLowerCase().includes(cleanQuery) ||
       p.shortDescription.toLowerCase().includes(cleanQuery) ||
       (p.details && p.details.toLowerCase().includes(cleanQuery))
     );
 
-    const matchedPeople = people.filter(p => 
-      p.name.toLowerCase().includes(cleanQuery) || 
+    const matchedPeople = people.filter(p =>
+      p.name.toLowerCase().includes(cleanQuery) ||
       p.title.toLowerCase().includes(cleanQuery) ||
       p.bio.toLowerCase().includes(cleanQuery)
     );
@@ -67,10 +67,10 @@ export default function SearchOverlay({ isOpen, onClose }) {
       <div className="search-body-container container">
         <div className="search-input-wrapper">
           <Search size={32} className="search-indicator-icon" />
-          <input 
+          <input
             ref={inputRef}
-            type="text" 
-            placeholder="Search practices, team members..." 
+            type="text"
+            placeholder="Search practices, team members..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="search-field"

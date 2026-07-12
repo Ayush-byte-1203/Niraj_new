@@ -21,10 +21,10 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="footer-offices-section">
-          <h4 className="footer-title">Our Offices</h4>
-          <div className="offices-grid">
-            {offices.map((office) => (
+        <div className="footer-offices-section offices-split-layout">
+          <div className="office-group">
+            <h4 className="footer-title">Our Offices</h4>
+            {offices.filter(o => o.id === "vadodara").map((office) => (
               <div key={office.id} className="office-card">
                 <h5>{office.city}</h5>
                 <p>{office.address}</p>
@@ -32,6 +32,20 @@ export default function Footer() {
                 <p className="office-contact">E: {office.email}</p>
               </div>
             ))}
+          </div>
+
+          <div className="office-group">
+            <h4 className="footer-title">Other Branches</h4>
+            <div className="offices-grid-2">
+              {offices.filter(o => o.id !== "vadodara").map((office) => (
+                <div key={office.id} className="office-card">
+                  <h5>{office.city}</h5>
+                  <p>{office.address}</p>
+                  <p className="office-contact">T: {office.phone}</p>
+                  <p className="office-contact">E: {office.email}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -58,9 +72,9 @@ export default function Footer() {
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Use</Link>
           </div>
-          <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
+          {/* <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
             Back to Top <ArrowUp size={14} />
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -123,8 +137,18 @@ export default function Footer() {
           grid-template-columns: repeat(3, 1fr);
           gap: 2.5rem;
         }
+        .offices-split-layout {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: 2.5rem;
+        }
+        .offices-grid-2 {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+        }
         @media (max-width: 768px) {
-          .offices-grid {
+          .offices-grid, .offices-grid-2, .offices-split-layout {
             grid-template-columns: 1fr;
           }
         }

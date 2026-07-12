@@ -12,78 +12,58 @@ export default function About() {
         <h1 className="title-medium page-main-title">A legacy of trust, built on strategic integrity.</h1>
       </div>
 
-      {/* Tabs */}
-      <div className="about-tabs">
-        <button 
-          className={`about-tab-btn ${activeSection === "overview" ? "active" : ""}`}
-          onClick={() => setActiveSection("overview")}
-        >
-          Company Overview
-        </button>
-        <button 
-          className={`about-tab-btn ${activeSection === "values" ? "active" : ""}`}
-          onClick={() => setActiveSection("values")}
-        >
-          Vision & Values
-        </button>
-      </div>
-
       {/* Dynamic Content Panel */}
       <div className="about-content-panel">
-        
-        {/* Overview Tab */}
-        {activeSection === "overview" && (
-          <div className="tab-pane fade-in-up">
-            <div className="overview-grid">
-              <div className="overview-text">
-                <h2 className="serif-display panel-headline">{aboutOverview.headline}</h2>
-                <p className="about-body-para">{aboutOverview.body1}</p>
-                <p className="about-body-para">{aboutOverview.body2}</p>
-              </div>
-              <div className="leadership-message-box">
-                <Quote className="quote-mark" size={32} />
-                <blockquote className="message-quote">
-                  "{leadershipMessage.quote}"
-                </blockquote>
-                <div className="quote-author-details">
-                  <strong>{leadershipMessage.author}</strong>
-                  <span>{leadershipMessage.designation}</span>
-                </div>
-                <p className="message-body">{leadershipMessage.body}</p>
-              </div>
-            </div>
-          </div>
-        )}
 
-        {/* Values Tab */}
-        {activeSection === "values" && (
-          <div className="tab-pane fade-in-up">
-            <div className="values-grid">
-              <div className="vision-mission-card">
-                <div className="card-item">
-                  <h3><Target size={20} className="icon-gold" /> Our Vision</h3>
-                  <p>{visionMission.vision}</p>
-                </div>
-                <div className="card-item">
-                  <h3><Shield size={20} className="icon-gold" /> Our Mission</h3>
-                  <p>{visionMission.mission}</p>
-                </div>
+        {/* Overview Section */}
+        <div className="tab-pane fade-in-up">
+          <div className="overview-grid">
+            <div className="overview-text">
+              <h2 className="serif-display panel-headline">{aboutOverview.headline}</h2>
+              <p className="about-body-para">{aboutOverview.body1}</p>
+              <p className="about-body-para">{aboutOverview.body2}</p>
+            </div>
+            <div className="leadership-message-box">
+              <Quote className="quote-mark" size={32} />
+              <blockquote className="message-quote">
+                "{leadershipMessage.quote}"
+              </blockquote>
+              <div className="quote-author-details">
+                <strong>{leadershipMessage.author}</strong>
+                <span>{leadershipMessage.designation}</span>
               </div>
-              <div className="values-list-col">
-                <h3 className="section-subtitle">Core Guiding Principles</h3>
-                <div className="principles-grid">
-                  {corporateValues.map((val, idx) => (
-                    <div key={idx} className="principle-card">
-                      <span className="principle-number serif-display">0{idx + 1}</span>
-                      <h4>{val.title}</h4>
-                      <p>{val.body}</p>
-                    </div>
-                  ))}
-                </div>
+              <p className="message-body">{leadershipMessage.body}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Values Section */}
+        <div className="tab-pane fade-in-up" style={{ marginTop: '6rem' }}>
+          <div className="values-section-wrapper">
+            <div className="vision-mission-row">
+              <div className="card-item">
+                <h3><Target size={20} className="icon-gold" /> Our Vision</h3>
+                <p>{visionMission.vision}</p>
+              </div>
+              <div className="card-item">
+                <h3><Shield size={20} className="icon-gold" /> Our Mission</h3>
+                <p>{visionMission.mission}</p>
+              </div>
+            </div>
+            <div className="values-list-col" style={{ marginTop: '4rem' }}>
+              <h3 className="section-subtitle">Core Guiding Principles</h3>
+              <div className="principles-grid">
+                {corporateValues.map((val, idx) => (
+                  <div key={idx} className="principle-card">
+                    <span className="principle-number serif-display">0{idx + 1}</span>
+                    <h4>{val.title}</h4>
+                    <p>{val.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        )}
+        </div>
 
 
 
@@ -186,21 +166,15 @@ export default function About() {
           color: var(--text-secondary);
           line-height: 1.7;
         }
-        .values-grid {
+        .vision-mission-row {
           display: grid;
-          grid-template-columns: 0.8fr 1.2fr;
-          gap: 5rem;
-        }
-        @media (max-width: 991px) {
-          .values-grid {
-            grid-template-columns: 1fr;
-            gap: 4rem;
-          }
-        }
-        .vision-mission-card {
-          display: flex;
-          flex-direction: column;
+          grid-template-columns: 1fr 1fr;
           gap: 2.5rem;
+        }
+        @media (max-width: 768px) {
+          .vision-mission-row {
+            grid-template-columns: 1fr;
+          }
         }
         .card-item {
           border: 1px solid var(--border-light);
