@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Phone, Mail, CheckCircle, Clock } from "lucide-react";
+import LinkedinIcon from "../components/LinkedinIcon";
 import { offices, practices } from "../data/mockDb";
+import logoImg from "../assets/TNT.png";
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -28,6 +30,7 @@ export default function Contact() {
         {/* Left Side: Office Information */}
         <div className="contact-left-col">
           <div className="active-office-details">
+            <img src={logoImg} alt="TNT & Associates Logo" className="contact-hq-logo" />
             <span className="title-small accent-color">Headquarters</span>
             <h2 className="serif-display hq-title">{hqOffice.city} Office</h2>
             <p className="office-address">{hqOffice.address}</p>
@@ -40,6 +43,14 @@ export default function Contact() {
               <a href={`mailto:${hqOffice.email}`} className="meta-row">
                 <div className="meta-icon-wrapper"><Mail size={16} /></div>
                 <span>{hqOffice.email}</span>
+              </a>
+              <a href="mailto:niraj@nirajtrivedi-cs.com" className="meta-row">
+                <div className="meta-icon-wrapper"><Mail size={16} /></div>
+                <span>niraj@nirajtrivedi-cs.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/niraj-trivedi-5458a117" target="_blank" rel="noopener noreferrer" className="meta-row">
+                <div className="meta-icon-wrapper"><LinkedinIcon size={16} /></div>
+                <span>LinkedIn: CS Niraj Trivedi ↗</span>
               </a>
               <div className="meta-row hours-row">
                 <div className="meta-icon-wrapper"><Clock size={16} /></div>
@@ -146,14 +157,7 @@ export default function Contact() {
               <div key={office.id} className="other-office-card" style={{ border: "1px solid var(--border-light)", padding: "2.5rem", backgroundColor: "var(--bg-secondary)" }}>
                 <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "1.35rem", marginBottom: "1rem" }}>{office.city} Office</h3>
                 <p className="office-address" style={{ marginBottom: "1.5rem" }}>{office.address}</p>
-                <div className="office-meta-rows" style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <a href={`tel:${office.phone}`} className="meta-row" style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "0.9rem", color: "var(--text-secondary)" }}>
-                    <Phone size={14} /> <span>{office.phone}</span>
-                  </a>
-                  <a href={`mailto:${office.email}`} className="meta-row" style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "0.9rem", color: "var(--text-secondary)" }}>
-                    <Mail size={14} /> <span>{office.email}</span>
-                  </a>
-                </div>
+                  {/* Email and Phone removed as per request */}
               </div>
             ))}
           </div>
@@ -189,6 +193,13 @@ export default function Contact() {
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
+        }
+        .contact-hq-logo {
+          height: 120px;
+          width: auto;
+          object-fit: contain;
+          align-self: flex-start;
+          margin-bottom: -0.5rem;
         }
         .hq-title {
           font-size: 3rem;

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { X, Search, User, ShieldCheck, ArrowRight } from "lucide-react";
 import { people, practices } from "../data/mockDb";
+import logoImg from "../assets/TNT.png";
 
 export default function SearchOverlay({ isOpen, onClose }) {
   const [query, setQuery] = useState("");
@@ -57,7 +58,8 @@ export default function SearchOverlay({ isOpen, onClose }) {
     <div className="search-overlay-fullscreen">
       <div className="search-header-container container">
         <div className="search-logo">
-          <span className="logo-brand">NIRAJ TRIVEDI</span>
+          <img src={logoImg} alt="TNT & Associates Logo" className="search-logo-img" />
+          <span className="logo-brand">TNT &amp; ASSOCIATES</span>
         </div>
         <button className="search-close-btn" onClick={onClose} aria-label="Close search">
           <X size={28} />
@@ -161,8 +163,16 @@ export default function SearchOverlay({ isOpen, onClose }) {
           flex-shrink: 0;
         }
         .search-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
           font-weight: 700;
           letter-spacing: 0.25em;
+        }
+        .search-logo-img {
+          height: 95px;
+          width: auto;
+          object-fit: contain;
         }
         .search-close-btn {
           color: var(--text-primary);

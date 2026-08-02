@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, Menu, X, ChevronDown } from "lucide-react";
 import { practices } from "../data/mockDb";
+import logoImg from "../assets/TNT.png";
 
 export default function Navbar({ onSearchOpen }) {
   const [scrolled, setScrolled] = useState(false);
@@ -47,9 +48,10 @@ export default function Navbar({ onSearchOpen }) {
     <>
       <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
-          <Link to="/" className="logo-area">
+          <Link to="/" className="logo-area" aria-label="Home">
+            <img src={logoImg} alt="TNT & Associates Logo" className="navbar-logo-img" />
             <div className="logo-text">
-              <span className="logo-brand">NIRAJ TRIVEDI</span>
+              <span className="logo-brand">TNT &amp; ASSOCIATES</span>
               <span className="logo-sub">COMPANY SECRETARIES</span>
             </div>
           </Link>
@@ -118,7 +120,23 @@ export default function Navbar({ onSearchOpen }) {
         .logo-area {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
+          gap: 0.85rem;
+          text-decoration: none;
+        }
+        .navbar-logo-img {
+          height: 88px;
+          width: auto;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+          flex-shrink: 0;
+        }
+        .logo-area:hover .navbar-logo-img {
+          transform: scale(1.04);
+        }
+        @media (max-width: 768px) {
+          .navbar-logo-img {
+            height: 65px;
+          }
         }
         .logo-v {
           font-family: var(--font-serif);
@@ -132,14 +150,14 @@ export default function Navbar({ onSearchOpen }) {
           flex-direction: column;
         }
         .logo-brand {
-          font-size: 1.15rem;
+          font-size: 1.35rem;
           font-weight: 700;
           letter-spacing: 0.25em;
           line-height: 1.1;
         }
         .logo-sub {
-          font-size: 0.55rem;
-          font-weight: 500;
+          font-size: 0.65rem;
+          font-weight: 600;
           letter-spacing: 0.4em;
           color: var(--text-muted);
         }

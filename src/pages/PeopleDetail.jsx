@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { MapPin, Mail, Phone, ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
+import LinkedinIcon from "../components/LinkedinIcon";
 import { people, offices, practices } from "../data/mockDb";
 
 export default function PeopleDetail() {
@@ -63,12 +64,20 @@ export default function PeopleDetail() {
             )}
             <div className="contact-row">
               <Mail size={16} />
-              <span>info@nirajtrivedi-cs.com</span>
+              <span>{office ? office.email : "csneerajtrivedi@gmail.com"}</span>
             </div>
             <div className="contact-row">
               <Phone size={16} />
-              <span>{office ? office.phone : "+91 982 424 8079"}</span>
+              <span>{office ? office.phone : "0265-2784388"}</span>
             </div>
+            {person.linkedin && (
+              <div className="contact-row">
+                <LinkedinIcon size={16} />
+                <a href={person.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-gold)", textDecoration: "none" }}>
+                  LinkedIn Profile ↗
+                </a>
+              </div>
+            )}
           </div>
         </div>
 
@@ -76,6 +85,30 @@ export default function PeopleDetail() {
         <div className="profile-main">
           <span className="title-small accent-gold">{person.title}</span>
           <h1 className="profile-name serif-display">{person.name}</h1>
+          {person.linkedin && (
+            <div style={{ marginTop: "-1rem" }}>
+              <a
+                href={person.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.5rem 1rem",
+                  border: "1px solid var(--accent-gold)",
+                  color: "var(--accent-gold)",
+                  borderRadius: "2px",
+                  fontSize: "0.85rem",
+                  fontWeight: "600",
+                  textDecoration: "none"
+                }}
+              >
+                <LinkedinIcon size={15} />
+                <span>Connect on LinkedIn ↗</span>
+              </a>
+            </div>
+          )}
 
           <div className="profile-bio-section">
             <h2 className="section-title">Biography</h2>

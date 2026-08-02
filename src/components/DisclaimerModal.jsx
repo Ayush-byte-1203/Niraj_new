@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logoImg from "../assets/TNT.png";
 
 export default function DisclaimerModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +21,14 @@ export default function DisclaimerModal() {
   return (
     <div className="disclaimer-overlay">
       <div className="disclaimer-box">
+        <img src={logoImg} alt="TNT & Associates Logo" className="disclaimer-logo" />
         <h2 className="serif-display font-large">Regulatory Information</h2>
         <div className="disclaimer-divider"></div>
         <p className="disclaimer-text">
           As per regulatory standards governing professional services:
           <br /><br />
-          The user wishes to gain more information about <strong>Niraj Trivedi Company Secretaries</strong> for their own information and use. 
-          The information about Niraj Trivedi Company Secretaries is provided to the user only on their specific request, and any information 
+          The user wishes to gain more information about <strong>TNT &amp; Associates</strong> for their own information and use. 
+          The information about TNT &amp; Associates is provided to the user only on their specific request, and any information 
           obtained or materials downloaded from this website is completely at the user's volition. 
           Any transmission, receipt or use of this site would not create any professional relationship.
         </p>
@@ -62,6 +64,13 @@ export default function DisclaimerModal() {
           flex-direction: column;
           gap: 2rem;
           box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+        .disclaimer-logo {
+          height: 110px;
+          width: auto;
+          object-fit: contain;
+          align-self: flex-start;
+          margin-bottom: -0.5rem;
         }
         .disclaimer-box h2 {
           font-size: 2.2rem;

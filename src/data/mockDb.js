@@ -5,27 +5,27 @@ export const offices = [
   {
     id: "vadodara",
     city: "Head Office Vadodara",
-    address: "Prominent Commercial Area, Vadodara, Gujarat 390001, India",
-    phone: "+91 982 424 8079",
-    email: "info@nirajtrivedi-cs.com",
-    coordinates: "22.3072, 73.1812",
+    address: "218 – 220 Saffron Complex, Fatehgunj, Vadodara, 390002, Gujarat",
+    phone: "0265-2784388",
+    email: "csneerajtrivedi@gmail.com",
+    coordinates: "22.3197, 73.1895",
     type: "Headquarters"
   },
   {
     id: "ahmedabad",
     city: "Ahmedabad",
-    address: "Navrangpura, Ahmedabad, Gujarat, India",
-    phone: "+91 982 424 8079",
-    email: "info@nirajtrivedi-cs.com",
-    coordinates: "23.0225, 72.5714",
+    address: "B-2/304, Vishwas Flats, Behind J.G. International School, Gulab Tower Road, Thaltej, Ahmedabad - 380061",
+    phone: "0265-2784388",
+    email: "csneerajtrivedi@gmail.com",
+    coordinates: "23.0500, 72.5186",
     type: "Branch Office"
   },
   {
     id: "delhi",
     city: "Delhi",
     address: "Connaught Place, New Delhi, India",
-    phone: "+91 982 424 8079",
-    email: "info@nirajtrivedi-cs.com",
+    phone: "0265-2784388",
+    email: "csneerajtrivedi@gmail.com",
     coordinates: "28.6139, 77.2090",
     type: "Associate Office"
   }
@@ -33,169 +33,148 @@ export const offices = [
 
 export const practices = [
   {
-    id: "llp",
-    name: "LIMITED LIABILITY PARTNERSHIP ACT",
-    shortDescription: "Formation of LLP, conversion of Company into LLP or otherwise, deed reconstitution, and filings.",
-    description: "We provide comprehensive secretarial services for LLPs, from initial formation to conversion, restructuring, and compliance filings.",
-    details: "Services include: Formation of LLP, conversion of Company into LLP or otherwise. Reconstitution of Partnership Deed including change in the capital, partners etc. Change of Name, place of business, partners, capital of the partners etc. Winding and striking off of LLP. Guidance on timely submission of forms with the office of Registrar of Companies including Statutory and Event Based submission.",
+    id: "ipo",
+    name: "Initial Public Offerings (IPO)",
+    shortDescription: "We provide comprehensive advisory services for companies planning to raise capital through an Initial Public Offering (IPO). Our team assists in due diligence, regulatory compliance, documentation and coordination with various intermediaries to ensure a smooth and successful listing process.",
+    description: "We provide comprehensive advisory services for companies planning to raise capital through an Initial Public Offering (IPO). Our team assists in due diligence, regulatory compliance, documentation and coordination with various intermediaries to ensure a smooth and successful listing process.",
+    details: "Our team provides end-to-end guidance for companies aspiring to list on the Main Board or SME Platform. We work closely with merchant bankers, legal advisors, underwriters, and stock exchanges to facilitate a seamless transition to a public company.",
     includes: [
-      "Formation of LLP, conversion of Company into LLP or otherwise.",
-      "Reconstitution of Partnership Deed including change in the capital, partners etc.",
-      "Change of Name, place of business, partners, capital of the partners etc",
-      "Winding and striking off of LLP",
-      "Guidance on timely submission of forms with the office of Registrar of Companies including Statutory and Event Based submission."
+      "Due diligence for IPOs and capital raising transactions",
+      "Regulatory compliance under SEBI ICDR and Listing Regulations",
+      "Documentation and drafting of offer documents and statutory filings",
+      "Coordination with merchant bankers, stock exchanges, and intermediaries",
+      "Main Board and SME Platform listing advisory"
     ],
     leadPartnerId: "niraj-trivedi",
-    icon: "Folder"
-  },
-  {
-    id: "sebi",
-    name: "SECURITIES AND EXCHANGE BOARD OF INDIA ACT AND ITS REGULATION",
-    shortDescription: "Listing / revocation of securities, SME / Main Board compliance, IPOs, and Takeover Code.",
-    description: "Expert guidance on SEBI regulations, stock exchange listing rules, IPO/FPO processing, and Corporate Governance codes.",
-    details: "Services include: Providing guidance for Listing / Revocation of securities with stock exchanges. Providing guidance as required under the Listing Regulations and action to be taken by the company there under such as periodically compliance including compliances under Corporate Governance and Listing Regulation etc. Issue of shares/ securities as Bonus / Right Issue /Public Issue (IPO/FPO), Private Placement, ESOP, QIBs, FIIs etc. Delisting of securities in compliance with the SEBI regulation.",
-    includes: [
-      "Providing guidance for Listing / Revocation of securities with stock exchanges.",
-      "Providing guidance as required under the Listing Regulationsand action to be taken by the company there under such as periodically compliance including compliances under Corporate Governance and Listing Regulation etc.",
-      "Issue of shares/ securities as Bonus / Right Issue /Public Issue (IPO/FPO), Private Placement, ESOP, QIBs, FIIs etc. including drafting of related documents and papers.",
-      "Providing guidance in drafting of Prospectus/ Letter of Offer or other related documents and obtaining various approvals and getting the security listed with the stock exchanges etc. in association with Merchant Bankers.",
-      "This includes providing guidance in respect of compliance under Listing Regulation and communication with SEBI/ Stock Exchanges for SME / Main Board.",
-      "Providing proper guidance to the companies under SEBI Takeover code, Buy Back of securities, Insider Trading Regulation and drafting of various communication with the SEBI / Stock Exchanges / Shareholders in this connection. This includes drafting of application to be submitted to SEBI for seeking exemption under SAST, ICDR etc.",
-      "Delisting of securities in compliance with the SEBI regulation."
-    ],
-    leadPartnerId: "ashish-tripathi",
     icon: "TrendingUp"
   },
   {
-    id: "ipr",
-    name: "INTELLECTUAL PROPERTY RIGHTS",
-    shortDescription: "Trademark registration, IP licensing, and infringement representation.",
-    description: "Securing and managing corporate intellectual property, trademarks, and licensing covenants.",
-    details: "Services include: Advising on intellectual Property Licensing. Getting Trade Mark Registered. Advising on passing off/ infringement matter and to represent the case before Trade Mark Registry for getting the mark registered.",
+    id: "due-diligence",
+    name: "Due Diligence",
+    shortDescription: "Our due diligence services are designed to identify legal, regulatory and compliance risks associated with corporate transactions. We conduct detailed reviews and provide practical insights that enable clients to make informed business and investment decisions.",
+    description: "Our due diligence services are designed to identify legal, regulatory and compliance risks associated with corporate transactions. We conduct detailed reviews and provide practical insights that enable clients to make informed business and investment decisions.",
+    details: "We perform rigorous secretarial, legal, and compliance due diligence audits for mergers, acquisitions, private equity funding, and joint ventures, delivering comprehensive risk analysis and remediation strategies.",
     includes: [
-      "Advising on intellectual Property Licensing.",
-      "Getting Trade Mark Registered.",
-      "Advising on passing off/ infringement matter and to represent the case before Trade Mark Registry for getting the mark registered."
-    ],
-    leadPartnerId: "mona-trivedi",
-    icon: "Award"
-  },
-  {
-    id: "fema",
-    name: "FOREIGN EXCHANGE MANAGEMENT ACT",
-    shortDescription: "Joint Venture formation, Wholly Owned Subsidiaries, and RBI compounding applications.",
-    description: "Compliance advisory under RBI and DIPP guidelines for foreign direct investment and outbound capital allocations.",
-    details: "Services include: Formation of Joint Venture (JV), Wholly Owned Subsidiary companies in and outside India in compliance with the requirements under Reserve Bank of India (RBI) / Department of Industrial Policy and Promotion (DIPP) and guideline framed thereunder. Providing guidance on inbound & outbound investments. Compounding Application before Reserve Bank of India in case of violation under FEMA.",
-    includes: [
-      "Formation of Joint Venture (JV), Wholly Owned Subsidiary companiesin and outside India in compliance with the requirements under Reserve Bank of India (RBI) / Department of Industrial Policy and Promotion (DIPP) and guideline framed thereunder.",
-      "Providing guidance on inbound & outbound investments.",
-      "Issue, transfer of shares to Foreigners and other Non-Resident Indians (NRI’s) under Automatic / Approval Route and providing guidance in deciding issue price.",
-      "Drafting of documentation to be submitted with concerned authorities thereunder.",
-      "Opening of Branch office in India and abroad and getting permission from Reserve Bank of India.",
-      "Consent / Approval of Secretariat of Industrial Approval (SIA) / Foreign Investment Promotion Board (FIPB) under Approval Route.",
-      "Compounding Application before Reserve Bank of India in case of violation under FEMA such as FDI and ECB guideline etc."
-    ],
-    leadPartnerId: "niraj-trivedi",
-    icon: "Globe"
-  },
-  {
-    id: "fcra",
-    name: "FOREIGN CONTRIBUTION (REGULATION) ACT",
-    shortDescription: "NGO registrations, designated bank accounts shifting, and MHA filings.",
-    description: "Guidance on registration eligibility and documentation for NGOs seeking foreign contributions.",
-    details: "Services include: Providing guidance on eligibility criteria for Registration & Prior Permission. Advising on and documentation required for Prior Permission, Registration, Condonation, Restoration, Shifting of Designated Bank, Renewal, change of constitution etc. of NGOs.",
-    includes: [
-      "Providing guidance on eligibility criteria for Registration& Prior Permission.",
-      "Advising on and documentation required for Prior Permission, Registration, Condonation, Restoration, Shifting of Designated Bank, Renewal, change of constitution etc. of NGOs.",
-      "Facilitate to obtain such Registration, Prior Permission, Condonation, Renewaletc. from the office of Ministry of Home Affairs – Delhi."
-    ],
-    leadPartnerId: "mona-trivedi",
-    icon: "ShieldCheck"
-  },
-  {
-    id: "ibc",
-    name: "INSOLVENCY AND BANKRUPTCY CODE",
-    shortDescription: "Voluntary liquidation, NCLT/NCLAT representations, and Creditor process facilitation.",
-    description: "Legal drafting and representation before tribunals under the Insolvency and Bankruptcy Code, 2016.",
-    details: "Services include: Drafting of Notice and application including Voluntary Liquidation under Insolvency Code. Appearing before NCLT and NCLAT for the matter under IBC. Facilitating Committee of Creditors, Resolution Professional, Liquidator in completion of process under Corporate Insolvency Resolution Process (CIRP), Liquidation Process etc.",
-    includes: [
-      "Drafting of Notice and application including Voluntary Liquidation under Insolvency Code.",
-      "Appearing before NCLT and NCLAT for the matter under IBC.",
-      "Facilitating Committee of Creditors, Resolution Professional, Liquidator in completion of process under Corporate Insolvency Resolution Process (CIRP), Liquidation Process etc."
-    ],
-    leadPartnerId: "niraj-trivedi",
-    icon: "FileText"
-  },
-  {
-    id: "banking",
-    name: "BANKS AND FINANCIAL INSTITUTIONS",
-    shortDescription: "MCA search reports, borrowing resolutions audits, and Due Diligence Reports.",
-    description: "Examination of loan agreement covenants and corporate compliance verification before availing bank credit.",
-    details: "Services include: Providing Search Report based on documents available on MCA. Examine covenants contained in the loan agreement thoroughly and to check whether all notices required to be sent to the FI and Banks have been complied. Providing Due Diligence Report as per RBI guideline.",
-    includes: [
-      "Providing Search Report based on documents available on MCA.",
-      "Examine covenants contained in the loan agreement thoroughly and to check whether all notices required to be sent to the FI and Banks have been complied and necessary approvals were obtained from the FI and Banks wherever required.",
-      "Information about Memorandum and Articles of Association, Borrowing powers and resolutions there under has been passed in proper manner or not by the company before availing loan.",
-      "Providing Due Diligence Report as per RBI guideline"
+      "Legal and secretarial due diligence for corporate transactions",
+      "Identification of regulatory, statutory, and compliance risks",
+      "Detailed reviews of corporate records, contracts, and filings",
+      "Practical insights for informed business and investment decisions",
+      "Due diligence reports for acquisitions, IPOs, and restructuring"
     ],
     leadPartnerId: "ashish-tripathi",
-    icon: "Briefcase"
+    icon: "Search"
   },
   {
-    id: "audit",
-    name: "AUDIT",
-    shortDescription: "Secretarial audits under Section 204, SEBI reconciliation, and governance audits.",
-    description: "Conducting independent statutory audits to verify corporate compliance health and governance metrics.",
-    details: "Services include: Due Diligence under Corporate Laws in case of Take Over, Change in Management, Joint Venture, IPO, QIB etc. Reconciliation of Share Capital Audit as per SEBI Guidelines. Corporate Governance. Annual Compliance of Corporate Laws. Secretarial Audit under Section 204.",
+    id: "nclt",
+    name: "NCLT Representation (Companies Act, 2013 & Insolvency & Bankruptcy Code, 2016)",
+    shortDescription: "We represent clients before the National Company Law Tribunal (NCLT) in matters arising under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016. Our team offers strategic advice and effective representation in corporate disputes, insolvency proceedings, mergers, compromises and other tribunal matters.",
+    description: "We represent clients before the National Company Law Tribunal (NCLT) in matters arising under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016. Our team offers strategic advice and effective representation in corporate disputes, insolvency proceedings, mergers, compromises and other tribunal matters.",
+    details: "With a dedicated NCLT and IBC desk established in Ahmedabad and Vadodara, we provide authoritative advocacy and strategic legal representation before NCLT benches and NCLAT across India.",
     includes: [
-      "Due Diligence under Corporate Laws in case of Take Over, Change in Management, Joint Venture, IPO, QIB etc.",
-      "Reconciliation of Share Capital Audit as per SEBI Guidelines",
-      "Corporate Governance",
-      "Annual Compliance of Corporate Laws as per SEBI guideline",
-      "Secretarial Audit"
-    ],
-    leadPartnerId: "niraj-trivedi",
-    icon: "ShieldAlert"
-  },
-  {
-    id: "representation",
-    name: "APPEARANCE BEFORE",
-    shortDescription: "Appearing before NCLT, NCLAT, SEBI, SAT, Regional Directors, ROC, and RBI.",
-    description: "Representation before quasi-judicial bodies and corporate regulators on compliance issues.",
-    details: "We represent clients before: Securities Exchange Board of India (SEBI), Securities Appellate Tribunal (SAT), Stock Exchanges, Regional Director (RD), Registrar of Companies (ROC), Ministry of Corporate Affairs – Delhi (HQ), Reserve Bank of India, Secretarial for Industrial Approval (SIA), National Company Law Tribunal / Appellate Tribunal (NCLT and NCLAT).",
-    includes: [
-      "Securities Exchange Board of India (SEBI)",
-      "Securities Appellate Tribunal (SAT)",
-      "Stock Exchanges",
-      "Regional Director (RD)",
-      "Registrar of Companies (ROC)",
-      "Ministry of Corporate Affairs – Delhi (HQ)",
-      "Reserve Bank of India",
-      "Secretarial for Industrial Approval (SIA)",
-      "National Company Law Tribunal / Appellate Tribunal (NCLT and NCLAT)"
+      "Representation before National Company Law Tribunal (NCLT) & NCLAT",
+      "Matters under Companies Act, 2013 and Insolvency & Bankruptcy Code (IBC, 2016)",
+      "Strategic advice and representation in insolvency and CIRP proceedings",
+      "Mergers, compromises, arrangements, and capital reduction petitions",
+      "Corporate disputes, oppression, and mismanagement litigation"
     ],
     leadPartnerId: "niraj-trivedi",
     icon: "Scale"
   },
   {
-    id: "clientele",
-    name: "CLIENTAL",
-    shortDescription: "Serving Public/Private Companies, NPOs/NGOs, NBFCs, and Banks.",
-    description: "A wide corporate and institutional client base built over three decades of professional excellence.",
-    details: "Our clientele includes: Public /Private Limited Companies, NPOs/NGOs, Government / Public Sector Companies, Joint Venture Companies, Multinational Companies, Limited Liability Partnerships (LLPs), Non Banking Financial Companies (NBFCs), Partnership Firms, Banks.",
+    id: "fema",
+    name: "FEMA Compliances",
+    shortDescription: "We advise clients on compliance with the Foreign Exchange Management Act (FEMA), including Foreign Direct Investment (FDI), Overseas Direct Investment (ODI) and External Commercial Borrowings (ECB). Our services ensure that cross-border transactions are structured efficiently and remain fully compliant with RBI regulations.",
+    description: "We advise clients on compliance with the Foreign Exchange Management Act (FEMA), including Foreign Direct Investment (FDI), Overseas Direct Investment (ODI) and External Commercial Borrowings (ECB). Our services ensure that cross-border transactions are structured efficiently and remain fully compliant with RBI regulations.",
+    details: "Our FEMA advisory practice guides multinational enterprises and Indian corporations in navigating RBI regulations, foreign exchange structures, inbound/outbound investments, and statutory compounding.",
     includes: [
-      "Public /Private Limited Companies",
-      "NPOs/NGOs",
-      "Government / Public Sector Companies",
-      "Joint Venture Companies",
-      "Multinational Companies",
-      "Limited Liability Partnerships (LLPs)",
-      "Non Banking Financial Companies (NBFCs)",
-      "Partnership Firms",
-      "Banks"
+      "Foreign Direct Investment (FDI) advisory and statutory filings",
+      "Overseas Direct Investment (ODI) structuring and compliance",
+      "External Commercial Borrowings (ECB) advisory and reporting",
+      "RBI compounding applications and representation for FEMA matters",
+      "Cross-border transaction structuring in compliance with RBI guidelines"
+    ],
+    leadPartnerId: "niraj-trivedi",
+    icon: "Globe"
+  },
+  {
+    id: "secretarial-audit",
+    name: "Secretarial Audit",
+    shortDescription: "We conduct secretarial audits to assess compliance with corporate laws, secretarial standards, and regulatory requirements. Our objective is to strengthen governance practices, identify compliance gaps and help organizations maintain the highest standards of corporate governance.",
+    description: "We conduct secretarial audits to assess compliance with corporate laws, secretarial standards, and regulatory requirements. Our objective is to strengthen governance practices, identify compliance gaps and help organizations maintain the highest standards of corporate governance.",
+    details: "Our secretarial audits provide independent verification of regulatory adherence, offering actionable recommendations to enhance board oversight and statutory compliance.",
+    includes: [
+      "Secretarial audits under Section 204 of the Companies Act, 2013",
+      "Assessment of compliance with corporate laws and secretarial standards",
+      "Corporate governance reviews and evaluation of board practices",
+      "Identification of compliance gaps and actionable remediation",
+      "Annual secretarial compliance reporting for listed and unlisted entities"
+    ],
+    leadPartnerId: "niraj-trivedi",
+    icon: "ShieldCheck"
+  },
+  {
+    id: "corporate-restructuring",
+    name: "Corporate Restructuring",
+    shortDescription: "We assist businesses in implementing corporate restructuring strategies that enhance operational efficiency and support long-term growth. Our services include mergers, demergers, amalgamations and other restructuring transactions while ensuring complete legal and regulatory compliance.",
+    description: "We assist businesses in implementing corporate restructuring strategies that enhance operational efficiency and support long-term growth. Our services include mergers, demergers, amalgamations and other restructuring transactions while ensuring complete legal and regulatory compliance.",
+    details: "We design and execute comprehensive restructuring schemes, advising boards on legal mechanics, regulatory approvals, and shareholder alignment.",
+    includes: [
+      "Mergers, demergers, and amalgamations",
+      "Drafting and execution of schemes of arrangement and compromise",
+      "Coordination with ROC, Regional Director, Official Liquidator, and NCLT",
+      "Operational efficiency and corporate reorganization strategies",
+      "Complete legal, statutory, and regulatory compliance throughout restructuring"
+    ],
+    leadPartnerId: "niraj-trivedi",
+    icon: "Briefcase"
+  },
+  {
+    id: "capital-restructuring",
+    name: "Capital Restructuring",
+    shortDescription: "We advise companies on restructuring their capital through reduction of share capital, buy-backs, preferential allotments, rights issues and other capital management strategies. Our approach helps businesses achieve an optimal capital structure while complying with applicable laws.",
+    description: "We advise companies on restructuring their capital through reduction of share capital, buy-backs, preferential allotments, rights issues and other capital management strategies. Our approach helps businesses achieve an optimal capital structure while complying with applicable laws.",
+    details: "We assist clients in optimizing their balance sheets and shareholding structures through statutory capital reduction, equity buy-backs, and strategic capital raises.",
+    includes: [
+      "Reduction of share capital under the Companies Act, 2013",
+      "Buy-back of securities and equity restructuring strategies",
+      "Preferential allotments, private placements, and rights issues",
+      "Bonus issues, ESOP structuring, and capital reorganization",
+      "Statutory compliance and regulatory filings for capital modifications"
+    ],
+    leadPartnerId: "ashish-tripathi",
+    icon: "BarChart"
+  },
+  {
+    id: "change-in-management",
+    name: "Change in Management",
+    shortDescription: "We provide end-to-end advisory services for changes in management and corporate control, including regulatory approvals, statutory filings and corporate documentation. Our team ensures a seamless transition while maintaining compliance with all applicable legal requirements.",
+    description: "We provide end-to-end advisory services for changes in management and corporate control, including regulatory approvals, statutory filings and corporate documentation. Our team ensures a seamless transition while maintaining compliance with all applicable legal requirements.",
+    details: "We manage executive leadership transitions, share transfers, director onboarding/exits, and corporate takeovers with strict regulatory precision.",
+    includes: [
+      "End-to-end advisory for changes in management and corporate control",
+      "Regulatory approvals, statutory ROC filings, and board documentation",
+      "Share transfer facilitation and takeover code compliance",
+      "Appointment, resignation, and remuneration structuring of managerial personnel",
+      "Seamless management transition with complete legal compliance"
     ],
     leadPartnerId: "niraj-trivedi",
     icon: "Users"
+  },
+  {
+    id: "ipr",
+    name: "Intellectual Property Law Services",
+    shortDescription: "We assist businesses in protecting and managing their intellectual property rights, including patents, trademarks, copyrights, designs and GI Tag and related registrations. Our services help clients safeguard their innovations, strengthen brand value and protect valuable business assets.",
+    description: "We assist businesses in protecting and managing their intellectual property rights, including patents, trademarks, copyrights, designs and GI Tag and related registrations. Our services help clients safeguard their innovations, strengthen brand value and protect valuable business assets.",
+    details: "Our IP practice offers comprehensive trademark, copyright, design, and GI Tag registration, licensing advisory, and infringement representation to protect core brand equity.",
+    includes: [
+      "Protection and management of intellectual property rights",
+      "Patents, trademarks, copyrights, designs, and GI Tag registrations",
+      "Intellectual property licensing, assignment, and commercial agreements",
+      "Infringement advisory, passing-off matters, and trademark registry representation",
+      "Safeguarding innovation and strengthening corporate brand value"
+    ],
+    leadPartnerId: "mona-trivedi",
+    icon: "Award"
   }
 ];
 
@@ -205,11 +184,12 @@ export const people = [
   {
     id: "niraj-trivedi",
     name: "CS NIRAJ TRIVEDI",
-    title: "Founder & Leader",
+    title: "PARTNER",
     officeId: "vadodara",
+    linkedin: "https://www.linkedin.com/in/niraj-trivedi-5458a117",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop",
-    bio: "CS NIRAJ TRIVEDI is a Fellow member of ICSI and founder of this firm, having extensive knowledge and experience of more than 30 years in the field of Corporate Laws such as the Companies Act, 2013, Foreign Exchange Management Act, 1999 (“FEMA”), Securities and Exchange Board of India Act, 1992 (along with its Rules and Regulations), Foreign Contribution (Regulation) Act, 2010 (“FCRA”), and the Insolvency and Bankruptcy Code, 2016 (“IBC”), among others.\n\nHe was the past Chairman of the Vadodara Chapter of ICSI and is in charge of the overall functioning of the firm. He holds a B.Com. (Honours), is an Associate Member of ACIS (U.K.), and also holds an LL.B. (Special), a Post Graduate Diploma in Cyber Law (PGDCL), and a Post Graduate Diploma in Labour Laws and Practice (PGDLP).\n\nAt present, he represents clients before various statutory authorities such as the National Company Law Tribunals (“NCLT”), National Company Law Appellate Tribunal (“NCLAT”), Regional Directors (“RD”), Registrars of Companies (“ROC”), Reserve Bank of India (“RBI”), and SEBI.\n\nHe is also actively involved in providing professional opinions on complex matters of corporate law, and frequently delivers lectures at various platforms and Study Circle meetings organized by ICSI and ICAI.",
-    practices: ["llp", "fema", "ibc", "audit", "representation"],
+    bio: "Fellow member of ICSI and founder of this firm. With over 30 years of professional experience, he has built an outstanding reputation in the field of Corporate Law, advising clients on the matters relating to the Companies Act, 2013, Foreign Exchange Management Act, 1999 (“FEMA”), Securities and Exchange Board of India Act, 1992 and its Rules and Regulations, Foreign Contribution (Regulation)Act, 2010 (“FCRA”), Insolvency and Bankruptcy Code, 2016 (“IBC\"), etc.\n\nHe has served as the chairman of the Vadodara Chapter of ICSI and currently leads the overall function of the firm. Academically, he holds a B.Com. (Hons.), is an Associate Member of ACIS (U.K.), and possesses an LL.B. (Special), a Post Graduate Diploma in Cyber Law (PGDCL) and a Post Graduate Diploma in Labour Laws and Practice (PGDLP).\n\nAt present, he is represent clients before various authorities such as National Company Law Tribunals (“NCLT”), National Company Law Appellate Tribunal (“NCLAT”) Regional Director (“RD”), Registrar of Companies (“ROC\"), Reserve Bank of India (“RBI\"), Securities and Exchange Board of India (“SEBI”).\n\nIn addition to his advisory practice, he also involves in giving opinion on various matters of corporate laws and deliberating lectures at various platforms and Study Circles meeting organized by ICSI and ICAI.",
+    practices: ["ipo", "nclt", "fema", "secretarial-audit", "corporate-restructuring", "change-in-management"],
     sectors: [],
     publications: [],
     roleType: "leader"
@@ -217,11 +197,11 @@ export const people = [
   {
     id: "mona-trivedi",
     name: "ADV. MONA TRIVEDI",
-    title: "Head of Legal & Drafting",
+    title: "LEGAL COUNSEL",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
-    bio: "She is an LL.M. (Gold Medalist) by qualification with around 25 years of experience in the fields of Corporate Laws, Banking Regulation, Revenue Matters, Debt Recovery, and Title Clearance. She has been associated with the firm since its inception and handles the drafting of various applications, petitions, appeals, schemes, and other legal documents to be submitted to statutory authorities such as NCLT, NCLAT, SEBI, ROC, RD, and RBI.",
-    practices: ["ipr", "fcra"],
+    bio: "She is LLM (Gold Medalist) by qualification and brings over 25 years of professional experience in the field of Corporate Laws, Banking Regulation, Revenue Matters, Debt Recovery, Title Clearance, etc. Since the inception of TNT & Associates, she has played a pivotal role in the firm's legal and advisory practice, contributing significantly to its growth and reputation.\n\nShe is responsible for drafting and reviewing a wide range of legal documents including Applications, Petitions, Appeals, Scheme and other legal documents to be submitted with statutory authorities such as NCLT, NCLAT, SEBI, ROC, RD, RBI etc.",
+    practices: ["ipr", "nclt"],
     sectors: [],
     publications: [],
     roleType: "leader"
@@ -229,47 +209,23 @@ export const people = [
   {
     id: "ashish-tripathi",
     name: "CS ASHISH TRIPATHI",
-    title: "Head of Ahmedabad Branch",
+    title: "PARTNER",
     officeId: "ahmedabad",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop",
-    bio: "He is an Associate Company Secretary and a senior partner of the firm with around 15 years of experience in Corporate Laws. He heads the Ahmedabad office and manages liaising with various statutory authorities at Ahmedabad and Gandhinagar, including the ROC, RD, NCLT, and the Stamp Office.",
-    practices: ["sebi", "banking"],
+    bio: "He is an Associate Company Secretary and senior partner of the firm, with over 15 years of professional experience in the field of Corporate Laws. His expertise spans corporate compliance, regulatory advisory, and representation before various statutory authorities.\n\nHe heads the firm's Ahmedabad office and is responsible for liaising with key regulatory and government authorities, including the Registrar of Companies (ROC), Regional Director (RD), National Company Law Tribunal (NCLT), and the Stamp Office.",
+    practices: ["due-diligence", "capital-restructuring", "ipo"],
     sectors: [],
     publications: [],
-    roleType: "expert"
+    roleType: "leader"
   },
   {
     id: "samir-raval",
     name: "CS SAMIR RAVAL",
-    title: "Associate",
+    title: "SENIOR ASSOCIATE",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop",
-    bio: "",
-    practices: [],
-    sectors: [],
-    publications: [],
-    roleType: "expert"
-  },
-  {
-    id: "vrund-bhrambhatt",
-    name: "CS VRUND BHRAMBHATT",
-    title: "Associate",
-    officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop",
-    bio: "",
-    practices: [],
-    sectors: [],
-    publications: [],
-    roleType: "expert"
-  },
-  {
-    id: "riya-shah",
-    name: "RIYA SHAH",
-    title: "Associate",
-    officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=2000&auto=format&fit=crop",
-    bio: "",
-    practices: [],
+    bio: "He is a Commerce Graduate with LLB (Spl.) and a Fellow Company Secretary and having experience of around 35 years in the Corporate World. Throughout his career, he has held key leadership positions in the company secretarial and compliance functions of some of India's leading organizations.\n\nHe has served in the Company Secretarial Department of reputed companies such as Gujarat Industries Power Company Limited, Reliance Industries Limited, Reliance Infocomm Limited, Zee Learn Limited and JMC Projects (India) Limited, a Kalptaaru Group Company.\n\nHe possesses experience in the areas of Company Law, Corporate Governance, Corporate Restructuring, SEBI Act, 1992 and its Rules and Regulations, Corporate Compliance and Regulatory Advisory.",
+    practices: ["ipo", "secretarial-audit", "corporate-restructuring"],
     sectors: [],
     publications: [],
     roleType: "expert"
@@ -277,11 +233,59 @@ export const people = [
   {
     id: "ismail-shaikhjiwala",
     name: "CS ISMAIL SHAIKHJIWALA",
-    title: "Associate",
+    title: "SENIOR ASSOCIATE",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop",
-    bio: "He is an Associate Company Secretary with around two years of experience in the field of Corporate Laws and FEMA. He handles company formation, company/LLP conversion, and legal compliances for all unlisted and private limited companies under the Companies Act, 2013, and the LLP Act.",
-    practices: ["llp", "fema"],
+    bio: "He is an Associate Company Secretary with around two years of professional experience in the areas of Corporate Laws and Foreign Exchange Management Act (FEMA) compliances. He is actively involved in providing corporate advisory and compliance support to a diverse range of clients.\n\nHis core responsibilities include incorporation of companies and LLPs, conversion of companies and LLPs, and ensuring statutory compliances for private limited and unlisted companies under the Companies Act, 2013 and the Limited Liability Partnership Act, 2008.",
+    practices: ["fema", "change-in-management"],
+    sectors: [],
+    publications: [],
+    roleType: "expert"
+  },
+  {
+    id: "vrund-bhrambhatt",
+    name: "CS VRUND BRAHMBHATT",
+    title: "ASSOCIATE",
+    officeId: "vadodara",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop",
+    bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Bachelor of Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA, and Secretarial Compliances.\n\nHe is actively involved in handling matters relating to incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting, and regulatory filings. He also handles matters pertaining to the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC) and undertakes various corporate restructuring and compliance-related assignments.",
+    practices: ["fema", "nclt", "corporate-restructuring"],
+    sectors: [],
+    publications: [],
+    roleType: "expert"
+  },
+  {
+    id: "vedant-parikh",
+    name: "CS VEDANT PARIKH",
+    title: "ASSOCIATE",
+    officeId: "vadodara",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
+    bio: "He is a qualified Company Secretary with over two years of professional experience in the field of Corporate Laws. He has developed expertise in corporate compliance, due diligence and secretarial advisory services.\n\nHis core responsibilities include conducting due diligence for Initial Public Offerings (IPOs), incorporation and registration of companies, including compliances relating to GIFT City and undertaking secretarial audits for listed and unlisted companies. He also assists clients in ensuring regulatory compliance and maintaining high standards of corporate governance.",
+    practices: ["ipo", "due-diligence", "secretarial-audit"],
+    sectors: [],
+    publications: [],
+    roleType: "expert"
+  },
+  {
+    id: "shrimal-patel",
+    name: "CS SHRIMAL PATEL",
+    title: "ASSOCIATE",
+    officeId: "ahmedabad",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
+    bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA and Secretarial Compliances.\n\nHis role involves providing advisory and compliance support across various statutory and regulatory frameworks, ensuring clients adhere to all applicable corporate and foreign exchange laws.",
+    practices: ["fema", "secretarial-audit"],
+    sectors: [],
+    publications: [],
+    roleType: "expert"
+  },
+  {
+    id: "riya-thakker",
+    name: "MS. RIYA THAKKER",
+    title: "ASSOCIATE",
+    officeId: "vadodara",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
+    bio: "She is Semi-Qualified Company Secretary and holds a master’s degree in commerce. She has over three years of professional experience in the field of Corporate Laws, FEMA and secretarial compliances.\n\nShe is actively involved in handling incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting and regulatory filings. She also assists clients in matters before the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC), providing efficient and compliant solutions across a wide range of corporate legal and regulatory matters.",
+    practices: ["fema", "nclt"],
     sectors: [],
     publications: [],
     roleType: "expert"
@@ -296,22 +300,44 @@ export const awards = [
 ];
 
 export const aboutOverview = {
-  headline: "A Legacy of Excellence & Integrity",
-  body1: "We are the firm of Practicing Company Secretaries (PCS) engaged in multi-disciplinary services rendering to various clients Corporates, Banks/FIs, Non Profit Organizations (NGOs), Firms etc. in India.",
-  body2: "At present our firm comprising of five qualified, dedicated and experienced Company Secretaries including Founder Promoter Niraj Trivedi."
+  headline: "Strategic Advisors – Navigating complexity with absolute compliance precision.",
+  paragraphs: [
+    "Established in 1999 by CS Neeraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries. The firm expanded its practice in 2005 to offer a wider range of services including SEBI regulations, FEMA compliances, corporate advisory and representation before various quasi-judicial authorities. This expansion enabled the firm to provide comprehensive solutions to clients navigating increasingly complex legal and regulatory requirements.",
+    "In 2018, the firm strengthened its presence with the establishment of its Ahmedabad office and launched a dedicated practice for matters before the National Company Law Tribunal (NCLT) and under the Insolvency and Bankruptcy Code (IBC). These developments marked a significant milestone in the firm's journey towards becoming a full-service corporate advisory practice.",
+    "Today, TNT & Associates has established a strong presence across India through its offices and associate network including Delhi. The firm proudly advises listed companies, multinational corporations, private enterprises, startups and emerging businesses, thus delivering practical and commercially driven solutions while upholding the highest standards of professionalism, integrity and client service.",
+    "Over the decades, the firm is offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services.",
+    "At TNT & Associates, our approach is built on understanding our clients' businesses, anticipating challenges and providing practical solutions that support informed decision making and sustainable growth. By combining technical expertise with commercial insight, we deliver advice that is both legally robust and business-oriented."
+  ],
+  body1: "Established in 1999 by CS Neeraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries.",
+  body2: "Today, TNT & Associates has established a strong presence across India through its offices and associate network including Delhi, advising listed companies, multinational corporations, private enterprises, startups and emerging businesses."
 };
 
 export const visionMission = {
-  vision: "To render professional company secretarial support of the highest quality at a reasonable fee, making our services value for money.",
-  mission: "To deliver ethical, precise, and business-centric Company Secretary services that empower enterprises to remain compliant, confident, and growth-ready in a dynamic regulatory environment."
+  vision: "At TNT & Associates, our vision is to be a trusted leader in Company Secretarial and Corporate Advisory Services by delivering excellence with integrity, professionalism and innovation. We aspire to empower businesses with sound governance, seamless compliance and strategic guidance enabling them to achieve sustainable growth while upholding the highest standards of ethics and corporate responsibility.",
+  mission: "At TNT & Associates, our mission is to provide reliable, timely and value driven Company Secretarial and Corporate Advisory Services that help the businesses to navigate the evolving regulatory landscape with confidence. We are committed to delivering practical solutions and building long term relationships founded on trust, integrity and professional excellence."
 };
 
 export const leadershipMessage = {
-  author: "CS NIRAJ TRIVEDI",
-  designation: "Founder & Leader",
-  quote: "Corporate governance is not a mere set of statutory rules; it is the absolute foundation of corporate trust, investor faith, and long-term enterprise sustainability.",
-  body: "Over the last three decades, we have partnered with public and private corporations, government units, and NGOs to ensure seamless alignment with evolving MCA, SEBI, and RBI compliance rules."
+  author: "CS NIRAJ TRIVEDI (PARTNER)",
+  designation: "TNT & ASSOCIATES",
+  quote: "Every business journey is shaped by opportunities, challenges and important decisions. At TNT & Associates, we believe that strong corporate governance and regulatory compliance are the cornerstone of every successful business. We are committed to helping businesses navigate challenges through sound corporate governance, regulatory compliance and practical advisory services. Our focus is on delivering reliable, strategic solutions while building lasting relationships founded on trust, transparency and consistent service. We sincerely thank our clients and stakeholders for their confidence in us and we look forward to being part of your growth story.",
+  body: ""
 };
+
+export const achievementsMilestones = [
+  {
+    title: "IPOs & Capital Markets",
+    body: "Successfully completed significant number of IPO’s, leading to listing on both the Main Board and SME Platform over the last few years."
+  },
+  {
+    title: "Landmark Mergers",
+    body: "Played an instrumental role in the merger of two Electricity Generation Companies under the Electricity Act (Independent of the Companies Act, 2013). The merger was subsequently recognized by Ministry of Corporate Affairs."
+  },
+  {
+    title: "NCLT Representation",
+    body: "Successfully completed various assignments before NCLT regarding mergers, corporate restructuring, capital reduction and oppression/ mismanagement cases."
+  }
+];
 
 export const journeyTimeline = [
   { year: "1994", milestone: "Firm Establishment", narrative: "Founded by CS Niraj Trivedi with a vision to provide specialized corporate secretarial services in Vadodara." },
@@ -322,10 +348,11 @@ export const journeyTimeline = [
 ];
 
 export const corporateValues = [
-  { title: "Integrity", body: "Absolute transparency and adherence to the ICSI code of conduct." },
-  { title: "Confidentiality", body: "Uncompromising protection of client data and strategic information." },
-  { title: "Partnership", body: "Acting as true stakeholders in the sustainable growth of our clients." },
-  { title: "Excellence", body: "Delivering meticulous accuracy in every legal and statutory filing." }
+  { title: "Integrity", body: "We hold the highest ethical standards ensuring honesty, transparency and accountability in every engagement." },
+  { title: "Confidentiality", body: "We safeguard our client’s information with utmost care maintaining strict confidentiality and trust." },
+  { title: "Professional Excellence", body: "We strive for accuracy, quality and continuous improvement while delivering services that meet the highest professional standards." },
+  { title: "Timeliness", body: "We value our client’s time and are dedicated to delivering prompt, efficient, and dependable services." },
+  { title: "Client Centric Approach", body: "We understand each client’s unique needs and provide practical and tailored solutions that support their business objectives." }
 ];
 
 export const faqs = []; // Removed: No FAQs on source site

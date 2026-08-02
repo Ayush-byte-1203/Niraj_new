@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, ShieldCheck, Compass, BarChart, ArrowRight, HelpCircle } from "lucide-react";
-import { practices, people, generalSecretarialPractices } from "../data/mockDb";
+import { practices, people } from "../data/mockDb";
 
 export default function ServicesList() {
   const steps = [
@@ -21,26 +21,12 @@ export default function ServicesList() {
         </p>
       </section>
 
-      {/* Corporate Secretarial Practice Overview */}
-      {generalSecretarialPractices && generalSecretarialPractices.length > 0 && (
-        <section className="corporate-overview-section padding-v hairline-bottom">
-          <h3 className="section-subtitle">Company Law & Secretarial Practice</h3>
-          <div className="corporate-overview-card">
-            <ul className="overview-points-grid">
-              {generalSecretarialPractices.map((point, idx) => (
-                <li key={idx} className="overview-point-item">
-                  <ShieldCheck className="check-icon" size={16} />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
       {/* 2. Interactive Service Grid */}
-      <section className="services-directory-section padding-v">
-        <h3 className="section-subtitle">Services Portfolio</h3>
+      <section className="services-directory-section" style={{ paddingTop: "2.5rem", paddingBottom: "4rem" }}>
+        <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
+          <span className="title-small accent-gold">Our Expertise</span>
+          <h2 className="title-medium">Practice Areas</h2>
+        </div>
         <div className="services-cards-grid">
           {practices.map((p, idx) => {
             const lead = people.find(person => person.id === p.leadPartnerId);
@@ -62,25 +48,27 @@ export default function ServicesList() {
       </section>
 
       {/* 3. Key Benefits / Featured Expertise */}
-      <section className="benefits-section padding-v hairline-bottom">
-        <div className="benefits-split-grid">
-          <div className="benefits-title-box">
-            <span className="title-small accent-gold">Enterprise Focus</span>
-            <h2 className="title-medium">Designed to prevent transaction friction.</h2>
-          </div>
-          <div className="benefits-list-box">
-            <div className="benefit-row">
-              <Compass size={24} className="gold-icon" />
-              <div>
-                <h4>Regulatory Foresight</h4>
-                <p className="text-muted">We map cross-border FDI requirements before capital is committed.</p>
-              </div>
+      <section className="benefits-section padding-v">
+        <div className="benefits-box-card">
+          <div className="benefits-split-grid">
+            <div className="benefits-title-box">
+              <span className="title-small accent-gold">Enterprise Focus</span>
+              <h2 className="title-medium">Designed to prevent transaction friction.</h2>
             </div>
-            <div className="benefit-row">
-              <BarChart size={24} className="gold-icon" />
-              <div>
-                <h4>Capital Efficiency</h4>
-                <p className="text-muted">Our Restructuring team optimizes covenant triggers to preserve corporate liquidity.</p>
+            <div className="benefits-list-box">
+              <div className="benefit-row">
+                <Compass size={24} className="gold-icon" />
+                <div>
+                  <h4>Regulatory Foresight</h4>
+                  <p className="text-muted">We map cross-border FDI requirements before capital is committed.</p>
+                </div>
+              </div>
+              <div className="benefit-row">
+                <BarChart size={24} className="gold-icon" />
+                <div>
+                  <h4>Capital Efficiency</h4>
+                  <p className="text-muted">Our Restructuring team optimizes covenant triggers to preserve corporate liquidity.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -88,11 +76,14 @@ export default function ServicesList() {
       </section>
 
       {/* 4. Process Overview Timeline */}
-      <section className="process-timeline-section padding-v">
-        <h3 className="section-subtitle">Engagement Methodology</h3>
+      <section className="process-timeline-section" style={{ padding: "4rem 0" }}>
+        <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
+          <span className="title-small accent-gold">Engagement Methodology</span>
+          <h2 className="title-medium">Our Structured Approach</h2>
+        </div>
         <div className="process-timeline-grid">
           {steps.map((step, idx) => (
-            <div key={idx} className="process-step-node">
+            <div key={idx} className="process-step-card editorial-card">
               <span className="step-phase serif-display">{step.year}</span>
               <h4>{step.title}</h4>
               <p className="text-muted">{step.desc}</p>
@@ -130,14 +121,17 @@ export default function ServicesList() {
           text-transform: uppercase;
           letter-spacing: 0.15em;
           color: var(--text-muted);
-          margin-bottom: 3rem;
-          border-bottom: 1px solid var(--border-light);
-          padding-bottom: 0.5rem;
+          margin-bottom: 2.5rem;
         }
         .services-cards-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 3rem;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
+        }
+        @media (max-width: 1024px) {
+          .services-cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
         @media (max-width: 768px) {
           .services-cards-grid {
@@ -148,9 +142,9 @@ export default function ServicesList() {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          min-height: 420px;
+          min-height: 400px;
           height: 100%;
-          background-color: var(--bg-primary);
+          background-color: var(--bg-primary) !important;
           padding: 2.5rem;
         }
         .card-index {
@@ -159,12 +153,12 @@ export default function ServicesList() {
           margin-bottom: 1.25rem;
         }
         .service-landing-card h3 {
-          font-size: 1.4rem;
+          font-size: 1.35rem;
           font-family: var(--font-sans);
           font-weight: 600;
           line-height: 1.3;
           margin-bottom: 1rem;
-          min-height: 3.8rem;
+          min-height: 3.6rem;
         }
         .card-desc {
           font-size: 0.95rem;
@@ -172,7 +166,7 @@ export default function ServicesList() {
           margin-bottom: var(--space-md);
           flex-grow: 1;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 4;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
@@ -192,6 +186,18 @@ export default function ServicesList() {
           align-items: center;
           gap: 0.5rem;
           margin-top: auto;
+        }
+        .benefits-box-card {
+          background-color: var(--bg-secondary);
+          border: 1px solid var(--border-light);
+          padding: 3.5rem;
+          border-radius: 4px;
+          width: 100%;
+        }
+        @media (max-width: 768px) {
+          .benefits-box-card {
+            padding: 2rem;
+          }
         }
         .benefits-split-grid {
           display: grid;
@@ -237,30 +243,44 @@ export default function ServicesList() {
             grid-template-columns: 1fr;
           }
         }
-        .process-step-node {
-          border-left: 1px solid var(--border-light);
-          padding-left: 2rem;
+        .process-step-card {
           display: flex;
           flex-direction: column;
-          gap: 0.75rem;
+          align-items: flex-start;
+          gap: 1rem;
+          background-color: var(--bg-primary) !important;
+          border: 1px solid var(--border-light);
+          border-radius: 16px;
+          padding: 2.5rem;
+          transition: var(--transition-curve-prestige);
         }
-        .step-phase {
+        .process-step-card:hover {
+          border-color: var(--accent-gold);
+          transform: translateY(-4px);
+          box-shadow: 0 12px 32px rgba(31, 31, 31, 0.06);
+        }
+        .process-step-card .step-phase {
           font-size: 1.75rem;
           color: var(--accent-gold);
-        }
-        .process-step-node h4 {
-          font-size: 1.25rem;
           font-weight: 500;
         }
-        .process-step-node p {
-          font-size: 0.9rem;
+        .process-step-card h4 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+        .process-step-card p {
+          font-size: 0.95rem;
           line-height: 1.6;
+          color: var(--text-muted);
         }
         .services-cta-banner {
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-card) !important;
           border: 1px solid var(--border-light);
-          padding: 4rem;
+          border-radius: 16px;
+          padding: 4.5rem 3rem;
           margin-top: 4rem;
+          box-shadow: 0 4px 24px rgba(31, 31, 31, 0.04);
         }
         .cta-box-layout {
           display: flex;
@@ -268,37 +288,6 @@ export default function ServicesList() {
           align-items: center;
           gap: 1rem;
           text-align: center;
-        }
-        .corporate-overview-card {
-          border: 1px solid var(--border-light);
-          padding: 2.5rem;
-          background-color: var(--bg-secondary);
-        }
-        .overview-points-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem 3rem;
-          list-style: none;
-          padding: 0;
-        }
-        @media (max-width: 991px) {
-          .overview-points-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-        }
-        .overview-point-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-          font-size: 0.95rem;
-          line-height: 1.6;
-          color: var(--text-secondary);
-        }
-        .overview-point-item .check-icon {
-          color: var(--accent-gold);
-          flex-shrink: 0;
-          margin-top: 0.25rem;
         }
       `}</style>
     </div>

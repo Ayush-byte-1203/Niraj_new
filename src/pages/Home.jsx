@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, Award, MapPin } from "lucide-react";
 import heroBg from "../assets/hero-bg.jpg";
 import { practices, people, offices, achievements } from "../data/mockDb";
+import logoImg from "../assets/TNT.png";
 
 export default function Home() {
   // Testimonials state
@@ -60,12 +61,12 @@ export default function Home() {
       >
         <div className="container">
           <div className="hero-content">
-            <span className="hero-tagline title-small">Strategic Advisors</span>
+            <span className="hero-tagline title-small">TNT &amp; Associates • Practicing Company Secretaries</span>
             <h1 className="hero-title title-display">
-              Navigating <span className="serif-display italic">Complexity</span> with absolute compliance precision.
+              Strategic Advisors – Navigating <span className="serif-display italic">complexity</span> with absolute compliance precision.
             </h1>
-            <p className="hero-description body-large">
-              Niraj Trivedi Company Secretaries guides enterprise corporations, investment funds, and NPOs through high-stakes mergers, compliance restructuring, and regulatory alignments.
+            <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
+              The firm is recognized as one of the leading Company Secretary firms in Gujarat, offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
             </p>
             <div className="hero-actions">
               <Link to="/services" className="btn-primary">Explore Services</Link>
@@ -83,17 +84,48 @@ export default function Home() {
       <section className="intro-section section-padding">
         <div className="container intro-grid">
           <div className="intro-title-col">
+            <img src={logoImg} alt="TNT & Associates Logo" className="intro-logo-badge" />
             <span className="title-small accent-gold">Company Overview</span>
             <h2 className="title-medium intro-headline">We deliver clarity where corporate ambition meets regulatory reality.</h2>
             <Link to="/about" className="gold-link mt-space">Learn Our History →</Link>
           </div>
-          <div className="intro-text-col">
-            <p className="body-large">
-              At Niraj Trivedi Company Secretaries, we help organizations resolve their most challenging regulatory hurdles and transactional milestones. Our qualified professionals bring compliance foresight to every engagement.
-            </p>
-            <p className="body-medium text-muted">
+          <div className="intro-text-col" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div
+              style={{
+                paddingLeft: "1.25rem",
+                borderLeft: "3px solid var(--accent-gold)",
+                fontWeight: "400",
+                fontSize: "1.1rem",
+                color: "var(--text-primary)",
+                lineHeight: "1.7"
+              }}
+            >
+              At TNT &amp; Associates, we help organizations resolve their most challenging regulatory hurdles and transactional milestones. Our qualified professionals bring compliance foresight to every engagement.
+            </div>
+            <div
+              style={{
+                paddingLeft: "1.25rem",
+                borderLeft: "3px solid var(--accent-gold)",
+                fontWeight: "400",
+                fontSize: "1.1rem",
+                color: "var(--text-primary)",
+                lineHeight: "1.7"
+              }}
+            >
               By mapping compliance goals directly against local statutory frameworks, we empower capital allocators and enterprise leaders to operate confidently.
-            </p>
+            </div>
+            <div
+              style={{
+                paddingLeft: "1.25rem",
+                borderLeft: "3px solid var(--accent-gold)",
+                fontWeight: "400",
+                fontSize: "1.1rem",
+                color: "var(--text-primary)",
+                lineHeight: "1.7"
+              }}
+            >
+              More than 35 years of experience in the field of Corporate Law, FEMA, IBC, Intellectual Property Rights.
+            </div>
           </div>
         </div>
       </section>
@@ -410,6 +442,12 @@ export default function Home() {
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
+        }
+        .intro-logo-badge {
+          height: 115px;
+          width: auto;
+          object-fit: contain;
+          margin-bottom: var(--space-md);
         }
         .intro-headline {
           font-weight: 300;

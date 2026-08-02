@@ -5,7 +5,7 @@
   --bg-primary: #F8F6F2;
   --bg-secondary: #F2ECE4;
   --bg-card: #FFFFFF;
-  --bg-overlay: rgba(248, 246, 242, 0.9);
+  --bg-overlay: rgba(248, 246, 242, 0.72);
   --text-primary: #1F1F1F;
   --text-muted: #575757;
   --accent-gold: #B9985A;
@@ -46,7 +46,7 @@
   --z-index-overlay: 5000;
 
   /* Header Height */
-  --header-height: 80px;
+  --header-height: 106px;
 }
 
 [data-theme="dark"] {
@@ -80,6 +80,10 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+}
+
+p {
+  text-align: justify;
 }
 
 a {

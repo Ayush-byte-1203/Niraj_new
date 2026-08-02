@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { aboutOverview, visionMission, leadershipMessage, corporateValues } from "../data/mockDb";
+import { aboutOverview, visionMission, leadershipMessage, corporateValues, achievementsMilestones } from "../data/mockDb";
 import { Shield, Target, Quote } from "lucide-react";
+import logoImg from "../assets/TNT.png";
 
 export default function About() {
   const [activeSection, setActiveSection] = useState("overview"); // 'overview' | 'values' | 'journey' | 'recognition'
@@ -8,6 +9,7 @@ export default function About() {
   return (
     <div className="about-page container section-padding fade-in-up">
       <div className="page-header">
+        <img src={logoImg} alt="TNT & Associates Logo" className="page-header-logo" />
         <span className="title-small accent-color">About Our Firm</span>
         <h1 className="title-medium page-main-title">A legacy of trust, built on strategic integrity.</h1>
       </div>
@@ -17,23 +19,108 @@ export default function About() {
 
         {/* Overview Section */}
         <div className="tab-pane fade-in-up">
-          <div className="overview-grid">
-            <div className="overview-text">
-              <h2 className="serif-display panel-headline">{aboutOverview.headline}</h2>
-              <p className="about-body-para">{aboutOverview.body1}</p>
-              <p className="about-body-para">{aboutOverview.body2}</p>
-            </div>
-            <div className="leadership-message-box">
-              <Quote className="quote-mark" size={32} />
-              <blockquote className="message-quote">
-                "{leadershipMessage.quote}"
-              </blockquote>
-              <div className="quote-author-details">
-                <strong>{leadershipMessage.author}</strong>
-                <span>{leadershipMessage.designation}</span>
+          <div className="overview-text">
+            <h2 className="serif-display panel-headline" style={{ marginBottom: "2.5rem" }}>
+              {aboutOverview.headline}
+            </h2>
+            {aboutOverview.paragraphs ? (
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+                  gap: "3rem 4rem",
+                  alignItems: "start"
+                }}
+              >
+                {/* Left Column: First 3 points */}
+                <ul
+                  style={{
+                    listStyleType: "none",
+                    paddingLeft: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "2.25rem",
+                    margin: 0
+                  }}
+                >
+                  {aboutOverview.paragraphs.slice(0, 3).map((para, idx) => (
+                    <li key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+                      <span
+                        style={{
+                          color: "var(--accent-gold)",
+                          fontSize: "1.35rem",
+                          lineHeight: "1.4",
+                          flexShrink: 0
+                        }}
+                      >
+                        •
+                      </span>
+                      <span className="about-body-para" style={{ margin: 0 }}>
+                        {para}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Right Column: Remaining 2 points */}
+                <ul
+                  style={{
+                    listStyleType: "none",
+                    paddingLeft: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "2.25rem",
+                    margin: 0
+                  }}
+                >
+                  {aboutOverview.paragraphs.slice(3, 5).map((para, idx) => (
+                    <li key={idx + 3} style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+                      <span
+                        style={{
+                          color: "var(--accent-gold)",
+                          fontSize: "1.35rem",
+                          lineHeight: "1.4",
+                          flexShrink: 0
+                        }}
+                      >
+                        •
+                      </span>
+                      <span className="about-body-para" style={{ margin: 0 }}>
+                        {para}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="message-body">{leadershipMessage.body}</p>
+            ) : (
+              <>
+                <p className="about-body-para">{aboutOverview.body1}</p>
+                <p className="about-body-para">{aboutOverview.body2}</p>
+              </>
+            )}
+          </div>
+
+          
+          {/* Leadership Quote Message Box Below the Bullet Points */}
+          <div
+            className="leadership-message-box"
+            style={{
+              width: "100%",
+              maxWidth: "1050px",
+              margin: "4rem auto 0"
+            }}
+          >
+            <Quote className="quote-mark" size={32} />
+            <blockquote className="message-quote" style={{ fontSize: "1.2rem", lineHeight: "1.8" }}>
+              "{leadershipMessage.quote}"
+            </blockquote>
+            <div className="quote-author-details" style={{ marginTop: "1.5rem" }}>
+              <strong>{leadershipMessage.author}</strong>
+              <span>{leadershipMessage.designation}</span>
             </div>
+            {leadershipMessage.body ? (
+              <p className="message-body">{leadershipMessage.body}</p>
+            ) : null}
           </div>
         </div>
 
@@ -51,7 +138,10 @@ export default function About() {
               </div>
             </div>
             <div className="values-list-col" style={{ marginTop: '4rem' }}>
-              <h3 className="section-subtitle">Core Guiding Principles</h3>
+              <h3 className="section-subtitle" style={{ marginBottom: '0.75rem' }}>Core Guiding Principles</h3>
+              <p className="about-body-para" style={{ maxWidth: '800px', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
+                Our work is guided by principles that define our professional standards and commitment to every client –
+              </p>
               <div className="principles-grid">
                 {corporateValues.map((val, idx) => (
                   <div key={idx} className="principle-card">
@@ -62,6 +152,52 @@ export default function About() {
                 ))}
               </div>
             </div>
+            {/* Achievements / Milestones Section */}
+          <div className="achievements-section" style={{ marginTop: "5rem" }}>
+            <h3 className="section-subtitle" style={{ marginBottom: "2rem" }}>
+              Achievements / Milestones
+            </h3>
+            <div
+              className="achievements-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: "2rem"
+              }}
+            >
+              {achievementsMilestones.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="principle-card"
+                  style={{
+                    backgroundColor: "var(--bg-secondary)",
+                    padding: "2rem",
+                    borderBottom: "none",
+                    borderTop: "3px solid var(--accent-gold)"
+                  }}
+                >
+                  <span
+                    className="serif-display"
+                    style={{
+                      fontSize: "1.75rem",
+                      color: "var(--accent-gold)",
+                      display: "block",
+                      marginBottom: "0.75rem"
+                    }}
+                  >
+                    0{idx + 1}
+                  </span>
+                  <h4 style={{ fontSize: "1.15rem", marginBottom: "0.75rem", fontWeight: 600 }}>
+                    {item.title}
+                  </h4>
+                  <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: 0 }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           </div>
         </div>
 
@@ -77,6 +213,13 @@ export default function About() {
         .page-header {
           margin-bottom: 4rem;
           max-width: 800px;
+        }
+        .page-header-logo {
+          height: 120px;
+          width: auto;
+          object-fit: contain;
+          margin-bottom: 1.25rem;
+          display: block;
         }
         .page-main-title {
           font-weight: 300;
@@ -112,6 +255,7 @@ export default function About() {
           display: grid;
           grid-template-columns: 1.1fr 0.9fr;
           gap: 5rem;
+          align-items: start;
         }
         @media (max-width: 991px) {
           .overview-grid {
@@ -207,8 +351,13 @@ export default function About() {
         }
         .principles-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3rem 2.5rem;
+        }
+        @media (max-width: 991px) {
+          .principles-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
         @media (max-width: 576px) {
           .principles-grid {

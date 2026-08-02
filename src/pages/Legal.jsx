@@ -40,7 +40,7 @@ export default function Legal() {
             <h2 className="serif-display">Privacy Policy & Data Rights</h2>
             <span className="last-updated">Last Updated: June 15, 2026</span>
             <p>
-              At Niraj Trivedi Company Secretaries, we respect your privacy and are committed to protecting your personal data. This privacy policy informs you how we look after your personal data when you visit our website and tells you about your privacy rights.
+              At TNT &amp; Associates, we respect your privacy and are committed to protecting your personal data. This privacy policy informs you how we look after your personal data when you visit our website and tells you about your privacy rights.
             </p>
             <p>
               We only collect data necessary to manage consults and job submissions. We do not sell or lease user information to third-party databases.
@@ -57,7 +57,7 @@ export default function Legal() {
               By accessing this website, you acknowledge compliance with corporate terms. The materials contained in this website are protected by applicable copyright and trademark law.
             </p>
             <p>
-              Under no circumstances shall Niraj Trivedi Company Secretaries be liable for any damages arising out of the use or inability to use the materials on this website.
+              Under no circumstances shall TNT &amp; Associates be liable for any damages arising out of the use or inability to use the materials on this website.
             </p>
           </div>
         )}
@@ -82,7 +82,7 @@ export default function Legal() {
             <h2 className="serif-display">Accessibility Statement</h2>
             <span className="last-updated">Last Updated: June 15, 2026</span>
             <p>
-              Niraj Trivedi Company Secretaries is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone, and applying the relevant accessibility standards (WCAG 2.1 AA).
+              TNT &amp; Associates is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone, and applying the relevant accessibility standards (WCAG 2.1 AA).
             </p>
           </div>
         )}
