@@ -372,7 +372,7 @@ export default function Home() {
           gap: var(--space-md);
           margin-top: var(--space-sm);
         }
-        @media (max-width: 480px) {
+        @media (max-width: 464px) {
           .hero-actions {
             flex-direction: column;
             width: 100%;
@@ -393,7 +393,7 @@ export default function Home() {
           color: var(--text-muted);
           pointer-events: none;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .scroll-indicator {
             display: none;
           }
@@ -431,7 +431,7 @@ export default function Home() {
           grid-template-columns: 1fr 1.2fr;
           gap: var(--space-lg);
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .intro-grid {
             grid-template-columns: 1fr;
             gap: var(--space-md);
@@ -475,12 +475,12 @@ export default function Home() {
           grid-template-columns: repeat(4, 1fr);
           gap: var(--space-lg);
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .stats-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        @media (max-width: 576px) {
+        @media (max-width: 464px) {
           .stats-grid {
             grid-template-columns: 1fr;
           }
@@ -655,7 +655,7 @@ export default function Home() {
           gap: 4rem;
           align-items: start;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .why-us-grid {
             grid-template-columns: 1fr;
             gap: 3rem;
@@ -833,7 +833,7 @@ export default function Home() {
           gap: 2.5rem;
           margin-top: 3rem;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .offices-grid-layout {
             grid-template-columns: 1fr;
             gap: 2rem;
@@ -984,8 +984,8 @@ export default function Home() {
           margin-top: var(--space-sm);
         }
         .carousel-nav-btn {
-          width: 40px;
-          height: 40px;
+          width: 48px;
+          height: 48px;
           border: 1px solid var(--border-light);
           display: flex;
           align-items: center;
@@ -1090,7 +1090,7 @@ export default function Home() {
           border-top: 1px solid var(--border-light);
           padding-top: var(--space-lg);
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .newsletter-box-inner {
             grid-template-columns: 1fr;
             gap: var(--space-md);

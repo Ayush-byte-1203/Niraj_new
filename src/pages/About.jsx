@@ -257,7 +257,7 @@ export default function About() {
           gap: 5rem;
           align-items: start;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .overview-grid {
             grid-template-columns: 1fr;
             gap: 4rem;
@@ -354,12 +354,12 @@ export default function About() {
           grid-template-columns: repeat(3, 1fr);
           gap: 3rem 2.5rem;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .principles-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        @media (max-width: 576px) {
+        @media (max-width: 464px) {
           .principles-grid {
             grid-template-columns: 1fr;
           }
@@ -367,6 +367,9 @@ export default function About() {
         .principle-card {
           border-bottom: 1px solid var(--border-light);
           padding-bottom: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
         }
         .principle-number {
           font-size: 2.2rem;

@@ -125,7 +125,7 @@ export default function PracticeDetail() {
           grid-template-columns: 2fr 1fr;
           gap: 5rem;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .practice-grid {
             grid-template-columns: 1fr;
             gap: 4rem;
@@ -170,7 +170,7 @@ export default function PracticeDetail() {
           grid-template-columns: 1fr 1fr;
           gap: 2rem;
         }
-        @media (max-width: 576px) {
+        @media (max-width: 464px) {
           .challenges-grid {
             grid-template-columns: 1fr;
           }

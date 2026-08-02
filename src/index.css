@@ -19,17 +19,12 @@
   --font-serif: 'Canela', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Spacing Scale */
-  --space-xs: 0.5rem;
-  /* 8px */
-  --space-sm: 1rem;
-  /* 16px */
-  --space-md: 2rem;
-  /* 32px */
-  --space-lg: 4rem;
-  /* 64px */
-  --space-xl: 8rem;
-  /* 128px */
+  /* Spacing Scale (Fluid) */
+  --space-xs: clamp(0.375rem, 1vw, 0.5rem);     /* 6px -> 8px */
+  --space-sm: clamp(0.75rem, 2vw, 1rem);        /* 12px -> 16px */
+  --space-md: clamp(1.25rem, 3vw, 2rem);        /* 20px -> 32px */
+  --space-lg: clamp(2.5rem, 5vw, 4rem);         /* 40px -> 64px */
+  --space-xl: clamp(4rem, 8vw, 8rem);           /* 64px -> 128px */
 
   /* Border Radius System */
   --border-radius-none: 0px;
@@ -70,6 +65,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -186,25 +192,14 @@ a:focus-visible {
 
 /* Layout Utilities */
 .container {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--space-md);
-  }
+  padding: 0 clamp(20px, 5vw, 64px);
 }
 
 .section-padding {
   padding: var(--space-xl) 0;
-}
-
-@media (max-width: 768px) {
-  .section-padding {
-    padding: var(--space-lg) 0;
-  }
 }
 
 /* Editorial Hairline Dividers */
@@ -220,16 +215,19 @@ a:focus-visible {
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-sm);
   background-color: var(--text-primary);
   color: var(--bg-primary);
   padding: var(--space-sm) var(--space-md);
+  min-height: 48px;
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border: 1px solid var(--text-primary);
   transition: var(--transition-curve-prestige);
+  text-align: center;
 }
 
 .btn-primary:hover {
@@ -240,16 +238,19 @@ a:focus-visible {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-sm);
   background-color: transparent;
   color: var(--text-primary);
   padding: var(--space-sm) var(--space-md);
+  min-height: 48px;
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border: 1px solid var(--border-light);
   transition: var(--transition-curve-prestige);
+  text-align: center;
 }
 
 .btn-secondary:hover {
@@ -335,7 +336,7 @@ section:nth-of-type(odd) {
 }
 
 section:nth-of-type(even) {
-  background-color: #FFFFFF !important;
+  background-color: #f8f6f2;
 }
 
 [data-theme="dark"] section:nth-of-type(even) {

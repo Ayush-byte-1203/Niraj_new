@@ -29,6 +29,18 @@ export default function Navbar({ onSearchOpen }) {
     localStorage.setItem("theme", "light");
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const handleToggleMegaMenu = (menuName) => {
     setActiveMegaMenu(activeMegaMenu === menuName ? null : menuName);
   };
@@ -166,7 +178,7 @@ export default function Navbar({ onSearchOpen }) {
           align-items: center;
           gap: 2.5rem;
         }
-        @media (max-width: 1100px) {
+        @media (max-width: 1080px) {
           .nav-desktop {
             display: none;
           }
@@ -293,6 +305,8 @@ export default function Navbar({ onSearchOpen }) {
           display: flex;
           align-items: center;
           justify-content: center;
+          min-width: 48px;
+          min-height: 48px;
           transition: var(--transition-fast);
         }
         .action-btn:hover {
@@ -301,7 +315,7 @@ export default function Navbar({ onSearchOpen }) {
         .menu-toggle {
           display: none;
         }
-        @media (max-width: 1100px) {
+        @media (max-width: 1080px) {
           .menu-toggle {
             display: flex;
           }
@@ -316,6 +330,7 @@ export default function Navbar({ onSearchOpen }) {
           z-index: 999;
           padding: 2rem;
           border-top: 1px solid var(--border-light);
+          overflow-y: auto;
         }
         .mobile-drawer-links {
           display: flex;

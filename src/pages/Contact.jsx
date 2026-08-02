@@ -183,7 +183,7 @@ export default function Contact() {
           gap: 5rem;
           align-items: start;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .contact-grid {
             grid-template-columns: 1fr;
             gap: 4rem;
@@ -289,7 +289,7 @@ export default function Contact() {
           grid-template-columns: 1fr 1fr;
           gap: 1.5rem;
         }
-        @media (max-width: 576px) {
+        @media (max-width: 464px) {
           .form-row-2col {
             grid-template-columns: 1fr;
             gap: 1.75rem;

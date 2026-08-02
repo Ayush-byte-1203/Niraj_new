@@ -128,7 +128,7 @@ export default function ServicesList() {
           grid-template-columns: repeat(3, 1fr);
           gap: 2.5rem;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1080px) {
           .services-cards-grid {
             grid-template-columns: repeat(2, 1fr);
           }
@@ -204,7 +204,7 @@ export default function ServicesList() {
           grid-template-columns: 1fr 1.2fr;
           gap: 4rem;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .benefits-split-grid {
             grid-template-columns: 1fr;
             gap: 2.5rem;
@@ -238,7 +238,7 @@ export default function ServicesList() {
           grid-template-columns: repeat(3, 1fr);
           gap: 3rem;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .process-timeline-grid {
             grid-template-columns: 1fr;
           }

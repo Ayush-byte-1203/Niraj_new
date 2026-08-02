@@ -183,7 +183,7 @@ export default function PeopleDetail() {
           grid-template-columns: 1fr 2fr;
           gap: 5rem;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1080px) {
           .profile-grid {
             grid-template-columns: 1fr;
             gap: 3rem;
@@ -266,7 +266,7 @@ export default function PeopleDetail() {
           grid-template-columns: 1fr 1fr;
           gap: 2.5rem;
         }
-        @media (max-width: 576px) {
+        @media (max-width: 464px) {
           .profile-academic-section {
             grid-template-columns: 1fr;
             gap: 1.5rem;
@@ -295,7 +295,7 @@ export default function PeopleDetail() {
           grid-template-columns: 1fr 1fr;
           gap: 2.5rem;
         }
-        @media (max-width: 576px) {
+        @media (max-width: 464px) {
           .relations-grid {
             grid-template-columns: 1fr;
           }

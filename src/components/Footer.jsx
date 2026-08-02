@@ -111,13 +111,13 @@ export default function Footer() {
           padding-bottom: 4rem;
           width: 100%;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1080px) {
           .footer-content-grid {
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
           }
         }
-        @media (max-width: 640px) {
+        @media (max-width: 464px) {
           .footer-content-grid {
             grid-template-columns: 1fr;
             gap: 2.5rem;
