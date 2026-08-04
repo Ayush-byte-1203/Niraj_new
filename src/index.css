@@ -90,6 +90,9 @@ body {
 
 p {
   text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 a {
@@ -147,8 +150,8 @@ a:focus-visible {
 /* Typography Scales */
 .title-display {
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: 0.95;
+  font-size: clamp(2rem, 7vw, 5.5rem);
+  line-height: 1.05;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
@@ -156,23 +159,23 @@ a:focus-visible {
 .title-hero {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.05;
+  font-size: clamp(1.75rem, 6vw, 4.5rem);
+  line-height: 1.1;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
 .title-medium {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.1;
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  line-height: 1.2;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
 
 .title-small {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;

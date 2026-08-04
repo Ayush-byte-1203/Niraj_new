@@ -106,7 +106,7 @@ export default function Footer() {
         }
         .footer-content-grid {
           display: grid;
-          grid-template-columns: 1.3fr 1.1fr 1.6fr 0.8fr;
+          grid-template-columns: 2fr 1fr 1fr 1fr;
           gap: 3rem;
           padding-bottom: 4rem;
           width: 100%;
@@ -145,15 +145,16 @@ export default function Footer() {
           transform: scale(1.03);
         }
         .footer-logo .logo-brand {
-          font-size: 1.4rem;
+          font-size: clamp(1rem, 3vw, 1.4rem);
           font-weight: 700;
-          letter-spacing: 0.25em;
+          letter-spacing: 0.15em;
           color: var(--text-primary);
         }
         .footer-logo .logo-sub {
-          font-size: 0.65rem;
-          letter-spacing: 0.35em;
+          font-size: clamp(0.5rem, 1.5vw, 0.65rem);
+          letter-spacing: 0.25em;
           color: var(--accent-gold);
+          margin-top: 2px;
         }
         .footer-brief {
           font-size: 0.9rem;
@@ -171,7 +172,7 @@ export default function Footer() {
         }
         .offices-grid-2 {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 1fr;
           gap: 1.5rem;
         }
         @media (max-width: 768px) {

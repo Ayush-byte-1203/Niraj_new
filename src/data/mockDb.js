@@ -20,15 +20,15 @@ export const offices = [
     coordinates: "23.0500, 72.5186",
     type: "Branch Office"
   },
-  {
-    id: "delhi",
-    city: "Delhi",
-    address: "Connaught Place, New Delhi, India",
-    phone: "0265-2784388",
-    email: "csneerajtrivedi@gmail.com",
-    coordinates: "28.6139, 77.2090",
-    type: "Associate Office"
-  }
+  // {
+  //   id: "delhi",
+  //   city: "Delhi",
+  //   address: "Connaught Place, New Delhi, India",
+  //   phone: "0265-2784388",
+  //   email: "csneerajtrivedi@gmail.com",
+  //   coordinates: "28.6139, 77.2090",
+  //   type: "Associate Office"
+  // }
 ];
 
 export const practices = [
@@ -266,18 +266,18 @@ export const people = [
     publications: [],
     roleType: "expert"
   },
-  {
-    id: "shrimal-patel",
-    name: "CS SHRIMAL PATEL",
-    title: "ASSOCIATE",
-    officeId: "ahmedabad",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
-    bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA and Secretarial Compliances.\n\nHis role involves providing advisory and compliance support across various statutory and regulatory frameworks, ensuring clients adhere to all applicable corporate and foreign exchange laws.",
-    practices: ["fema", "secretarial-audit"],
-    sectors: [],
-    publications: [],
-    roleType: "expert"
-  },
+  // {
+  //   id: "shrimal-patel",
+  //   name: "CS SHRIMAL PATEL",
+  //   title: "ASSOCIATE",
+  //   officeId: "ahmedabad",
+  //   image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
+  //   bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA and Secretarial Compliances.\n\nHis role involves providing advisory and compliance support across various statutory and regulatory frameworks, ensuring clients adhere to all applicable corporate and foreign exchange laws.",
+  //   practices: ["fema", "secretarial-audit"],
+  //   sectors: [],
+  //   publications: [],
+  //   roleType: "expert"
+  // },
   {
     id: "riya-thakker",
     name: "MS. RIYA THAKKER",

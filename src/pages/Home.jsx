@@ -829,7 +829,7 @@ export default function Home() {
         /* 9. Global Hub Locations */
         .offices-grid-layout {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 2.5rem;
           margin-top: 3rem;
         }

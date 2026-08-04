@@ -162,16 +162,17 @@ export default function Navbar({ onSearchOpen }) {
           flex-direction: column;
         }
         .logo-brand {
-          font-size: 1.35rem;
+          font-size: clamp(0.9rem, 2.5vw, 1.35rem);
           font-weight: 700;
-          letter-spacing: 0.25em;
+          letter-spacing: 0.15em;
           line-height: 1.1;
         }
         .logo-sub {
-          font-size: 0.65rem;
+          font-size: clamp(0.45rem, 1.2vw, 0.65rem);
           font-weight: 600;
-          letter-spacing: 0.4em;
+          letter-spacing: 0.2em;
           color: var(--text-muted);
+          margin-top: 2px;
         }
         .nav-desktop {
           display: flex;

@@ -117,20 +117,6 @@ export default function PeopleDetail() {
             </div>
           </div>
 
-          <div className="relations-grid" style={{ marginTop: "3rem" }}>
-            {matchedPractices.length > 0 && (
-              <div className="relation-block">
-                <h3 className="relation-title">Practice Focus</h3>
-                <div className="relation-links">
-                  {matchedPractices.map(p => (
-                    <Link key={p.id} to={`/services/${p.id}`} className="relation-tag-link">
-                      {p.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </div>
 
