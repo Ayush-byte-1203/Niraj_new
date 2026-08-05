@@ -72,6 +72,16 @@ html, body {
   width: 100%;
 }
 
+.menu-open-lock {
+  overflow: hidden !important;
+}
+
+.app-viewport-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -90,9 +100,6 @@ body {
 
 p {
   text-align: justify;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
 }
 
 a {

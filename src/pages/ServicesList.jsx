@@ -29,18 +29,11 @@ export default function ServicesList() {
         </div>
         <div className="services-cards-grid">
           {practices.map((p, idx) => {
-            const lead = people.find(person => person.id === p.leadPartnerId);
             return (
               <div key={p.id} className="service-landing-card editorial-card">
                 <span className="card-index serif-display">0{idx + 1}</span>
                 <h3>{p.name}</h3>
                 <p className="text-muted card-desc">{p.shortDescription}</p>
-                <div className="card-relation-meta">
-                  {lead && <span className="lead-tag">Practice Lead: {lead.name}</span>}
-                </div>
-                <Link to={`/services/${p.id}`} className="service-card-btn">
-                  Practice Details <ArrowRight size={14} />
-                </Link>
               </div>
             );
           })}
@@ -165,28 +158,10 @@ export default function ServicesList() {
           line-height: 1.6;
           margin-bottom: var(--space-md);
           flex-grow: 1;
-          display: -webkit-box;
-          -webkit-line-clamp: 4;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
         }
-        .card-relation-meta {
-          font-size: 0.8rem;
-          color: var(--text-muted);
-          margin-bottom: 1.25rem;
-          min-height: 1.2rem;
+
         }
-        .service-card-btn {
-          font-size: 0.8rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: var(--accent-gold);
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          margin-top: auto;
-        }
+
         .benefits-box-card {
           background-color: var(--bg-secondary);
           border: 1px solid var(--border-light);

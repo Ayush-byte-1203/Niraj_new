@@ -161,12 +161,6 @@ export default function Home() {
                 <div className="service-number serif-display">0{index + 1}</div>
                 <h3 className="service-title">{practice.name}</h3>
                 <p className="service-desc text-muted">{practice.shortDescription}</p>
-                <div className="service-expanded-drawer">
-                  <div className="drawer-divider"></div>
-                  <Link key={practice.id} to={`/services/${practice.id}`} className="drawer-link">
-                    Explore practice scope <ArrowRight size={14} />
-                  </Link>
-                </div>
               </div>
             ))}
           </div>
@@ -552,31 +546,8 @@ export default function Home() {
           line-height: 1.6;
           margin-bottom: var(--space-md);
           flex-grow: 1;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
         }
-        .service-expanded-drawer {
-          width: 100%;
-          margin-top: auto;
-        }
-        .drawer-divider {
-          width: 100%;
-          height: 1px;
-          background-color: var(--border-light);
-          margin-bottom: var(--space-sm);
-        }
-        .drawer-link {
-          font-size: 0.8rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: var(--accent-gold);
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
+
 
         /* 5. Industries Rows */
         .industries-rows-list {

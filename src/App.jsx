@@ -9,7 +9,6 @@ import SearchOverlay from "./components/SearchOverlay";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ServicesList from "./pages/ServicesList";
-import PracticeDetail from "./pages/PracticeDetail";
 import People from "./pages/People";
 import PeopleDetail from "./pages/PeopleDetail";
 import Contact from "./pages/Contact";
@@ -47,7 +46,6 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<ServicesList />} />
-            <Route path="/services/:id" element={<PracticeDetail />} />
             <Route path="/people" element={<People />} />
             <Route path="/people/:id" element={<PeopleDetail />} />
             <Route path="/contact" element={<Contact />} />

@@ -32,12 +32,15 @@ export default function Navbar({ onSearchOpen }) {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("menu-open-lock");
+      document.documentElement.classList.add("menu-open-lock");
     } else {
-      document.body.style.overflow = "";
+      document.body.classList.remove("menu-open-lock");
+      document.documentElement.classList.remove("menu-open-lock");
     }
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("menu-open-lock");
+      document.documentElement.classList.remove("menu-open-lock");
     };
   }, [mobileMenuOpen]);
 
@@ -60,7 +63,7 @@ export default function Navbar({ onSearchOpen }) {
     <>
       <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
-          <Link to="/" className="logo-area" aria-label="Home">
+          <Link to="/" className="logo-area" aria-label="Home" onClick={() => { setMobileMenuOpen(false); window.scrollTo(0, 0); }}>
             <img src={logoImg} alt="TNT & Associates Logo" className="navbar-logo-img" />
             <div className="logo-text">
               <span className="logo-brand">TNT &amp; ASSOCIATES</span>
