@@ -163,6 +163,12 @@ export default function People() {
           margin-bottom: 4rem;
           background-color: var(--bg-secondary);
           padding: 2rem;
+          min-width: 0;
+        }
+        @media (max-width: 768px) {
+          .advanced-filter-panel {
+            padding: 1.5rem;
+          }
         }
         .search-box {
           display: flex;
@@ -170,6 +176,7 @@ export default function People() {
           gap: 0.75rem;
           border-bottom: 1px solid var(--text-primary);
           padding-bottom: 0.5rem;
+          min-width: 0;
         }
         .search-icon {
           color: var(--text-muted);
@@ -183,6 +190,9 @@ export default function People() {
           font-weight: 400;
           color: var(--text-primary);
           width: 100%;
+          min-width: 0;
+          text-overflow: ellipsis;
+          box-sizing: border-box;
         }
         .filters-matrix {
           display: grid;
@@ -202,13 +212,17 @@ export default function People() {
           outline: none;
           color: var(--text-primary);
           cursor: pointer;
+          width: 100%;
+          box-sizing: border-box;
+          text-overflow: ellipsis;
         }
         
         /* Grid Layout */
         .people-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
           gap: 3rem;
+          width: 100%;
         }
         .person-card {
           display: flex;

@@ -27,9 +27,9 @@ export default function DisclaimerModal() {
         <p className="disclaimer-text">
           As per regulatory standards governing professional services:
           <br /><br />
-          The user wishes to gain more information about <strong>TNT &amp; Associates</strong> for their own information and use. 
-          The information about TNT &amp; Associates is provided to the user only on their specific request, and any information 
-          obtained or materials downloaded from this website is completely at the user's volition. 
+          The user wishes to gain more information about <strong>TNT &amp; Associates</strong> for their own information and use.
+          The information about TNT &amp; Associates is provided to the user only on their specific request, and any information
+          obtained or materials downloaded from this website is completely at the user's volition.
           Any transmission, receipt or use of this site would not create any professional relationship.
         </p>
         <div className="disclaimer-actions">

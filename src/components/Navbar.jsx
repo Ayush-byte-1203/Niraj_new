@@ -135,11 +135,13 @@ export default function Navbar({ onSearchOpen }) {
         .logo-area {
           display: flex;
           align-items: center;
-          gap: 0.85rem;
+          gap: clamp(0.5rem, 2vw, 0.85rem);
           text-decoration: none;
+          min-width: 0;
         }
         .navbar-logo-img {
-          height: 88px;
+          height: clamp(50px, 10vw, 88px);
+          max-width: 55vw;
           width: auto;
           object-fit: contain;
           transition: transform 0.3s ease;
@@ -147,11 +149,6 @@ export default function Navbar({ onSearchOpen }) {
         }
         .logo-area:hover .navbar-logo-img {
           transform: scale(1.04);
-        }
-        @media (max-width: 768px) {
-          .navbar-logo-img {
-            height: 65px;
-          }
         }
         .logo-v {
           font-family: var(--font-serif);
@@ -163,19 +160,22 @@ export default function Navbar({ onSearchOpen }) {
         .logo-text {
           display: flex;
           flex-direction: column;
+          min-width: 0;
         }
         .logo-brand {
-          font-size: clamp(0.9rem, 2.5vw, 1.35rem);
+          font-size: clamp(0.75rem, 2vw, 1.35rem);
           font-weight: 700;
           letter-spacing: 0.15em;
           line-height: 1.1;
+          white-space: nowrap;
         }
         .logo-sub {
-          font-size: clamp(0.45rem, 1.2vw, 0.65rem);
+          font-size: clamp(0.4rem, 1vw, 0.65rem);
           font-weight: 600;
           letter-spacing: 0.2em;
           color: var(--text-muted);
           margin-top: 2px;
+          white-space: nowrap;
         }
         .nav-desktop {
           display: flex;

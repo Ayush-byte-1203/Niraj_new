@@ -102,9 +102,16 @@ export default function ServicesList() {
         .services-hero-banner {
           padding-bottom: var(--space-lg);
           margin-bottom: var(--space-lg);
+          max-width: 900px;
+          margin: 0 auto var(--space-lg) auto;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         .max-width-para {
           max-width: 750px;
+          margin: var(--space-md) auto 0 auto;
         }
         .padding-v {
           padding: 4rem 0;
@@ -139,9 +146,10 @@ export default function ServicesList() {
           height: 100%;
           background-color: var(--bg-primary) !important;
           padding: 2.5rem;
+          min-width: 0;
         }
         .card-index {
-          font-size: 2.2rem;
+          font-size: clamp(1.5rem, 4vw, 2.2rem);
           color: var(--accent-gold);
           margin-bottom: 1.25rem;
         }
@@ -159,9 +167,6 @@ export default function ServicesList() {
           margin-bottom: var(--space-md);
           flex-grow: 1;
         }
-
-        }
-
         .benefits-box-card {
           background-color: var(--bg-secondary);
           border: 1px solid var(--border-light);
@@ -228,6 +233,7 @@ export default function ServicesList() {
           border-radius: 16px;
           padding: 2.5rem;
           transition: var(--transition-curve-prestige);
+          min-width: 0;
         }
         .process-step-card:hover {
           border-color: var(--accent-gold);

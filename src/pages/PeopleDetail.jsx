@@ -132,6 +132,8 @@ export default function PeopleDetail() {
           margin-bottom: 3rem;
           border-bottom: 1px solid var(--border-light);
           padding-bottom: 1.5rem;
+          flex-wrap: wrap;
+          gap: 1rem;
         }
         .back-nav-btn {
           display: inline-flex;
@@ -171,7 +173,7 @@ export default function PeopleDetail() {
         }
         @media (max-width: 1080px) {
           .profile-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
             gap: 3rem;
           }
         }
@@ -179,6 +181,7 @@ export default function PeopleDetail() {
           display: flex;
           flex-direction: column;
           gap: 2.5rem;
+          min-width: 0;
         }
         .profile-image-container {
           position: relative;
@@ -212,20 +215,30 @@ export default function PeopleDetail() {
         }
         .contact-row {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 1rem;
           font-size: 0.9rem;
           color: var(--text-secondary);
+        }
+        .contact-row span, .contact-row a {
+          word-break: break-word;
+          overflow-wrap: break-word;
+          min-width: 0;
+          flex: 1;
         }
         .profile-main {
           display: flex;
           flex-direction: column;
           gap: 2.5rem;
+          min-width: 0;
         }
         .profile-name {
-          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-size: clamp(1.75rem, 6vw, 4rem);
           line-height: 1.1;
           margin-top: -0.5rem;
+          word-wrap: break-word;
+          word-break: break-word;
+          min-width: 0;
         }
         .section-title {
           font-size: 0.85rem;
@@ -252,7 +265,7 @@ export default function PeopleDetail() {
           grid-template-columns: 1fr 1fr;
           gap: 2.5rem;
         }
-        @media (max-width: 464px) {
+        @media (max-width: 768px) {
           .profile-academic-section {
             grid-template-columns: 1fr;
             gap: 1.5rem;
@@ -281,7 +294,7 @@ export default function PeopleDetail() {
           grid-template-columns: 1fr 1fr;
           gap: 2.5rem;
         }
-        @media (max-width: 464px) {
+        @media (max-width: 768px) {
           .relations-grid {
             grid-template-columns: 1fr;
           }

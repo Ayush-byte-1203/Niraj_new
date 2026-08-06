@@ -152,12 +152,12 @@ export default function Contact() {
       {otherOffices.length > 0 && (
         <section className="other-offices-section" style={{ marginTop: "6rem" }}>
           <span className="title-small accent-color">Branch & Associate Offices</span>
-          <div className="other-offices-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "3rem", marginTop: "2rem" }}>
+          <div className="other-offices-grid" style={{ marginTop: "2rem" }}>
             {otherOffices.map((office) => (
               <div key={office.id} className="other-office-card" style={{ border: "1px solid var(--border-light)", padding: "2.5rem", backgroundColor: "var(--bg-secondary)" }}>
                 <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "1.35rem", marginBottom: "1rem" }}>{office.city} Office</h3>
                 <p className="office-address" style={{ marginBottom: "1.5rem" }}>{office.address}</p>
-                  {/* Email and Phone removed as per request */}
+                {/* Email and Phone removed as per request */}
               </div>
             ))}
           </div>
@@ -165,6 +165,16 @@ export default function Contact() {
       )}
 
       <style>{`
+        .other-offices-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3rem;
+        }
+        @media (max-width: 768px) {
+          .other-offices-grid {
+            grid-template-columns: 1fr;
+          }
+        }
         .contact-page {
           padding-top: calc(var(--header-height) + 4rem);
           text-align: left;
@@ -202,7 +212,7 @@ export default function Contact() {
           margin-bottom: -0.5rem;
         }
         .hq-title {
-          font-size: 3rem;
+          font-size: clamp(2rem, 5vw, 3rem);
           font-weight: 400;
           margin: 0;
         }
@@ -218,15 +228,22 @@ export default function Contact() {
           flex-direction: column;
           gap: 1.5rem;
           margin-top: 1rem;
+          min-width: 0;
         }
         .meta-row {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 1.25rem;
           font-size: 1.05rem;
           color: var(--text-secondary);
           transition: color 0.3s ease;
           text-decoration: none;
+          min-width: 0;
+        }
+        .meta-row span {
+          min-width: 0;
+          word-break: break-word;
+          overflow-wrap: break-word;
         }
         .meta-row:hover {
           color: var(--accent-gold);
@@ -289,7 +306,7 @@ export default function Contact() {
           grid-template-columns: 1fr 1fr;
           gap: 1.5rem;
         }
-        @media (max-width: 464px) {
+        @media (max-width: 768px) {
           .form-row-2col {
             grid-template-columns: 1fr;
             gap: 1.75rem;

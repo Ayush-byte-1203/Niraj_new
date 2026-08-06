@@ -27,7 +27,7 @@ export default function About() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))",
                   gap: "3rem 4rem",
                   alignItems: "start"
                 }}
@@ -100,7 +100,7 @@ export default function About() {
             )}
           </div>
 
-          
+
           {/* Leadership Quote Message Box Below the Bullet Points */}
           <div
             className="leadership-message-box"
@@ -153,50 +153,50 @@ export default function About() {
               </div>
             </div>
             {/* Achievements / Milestones Section */}
-          <div className="achievements-section" style={{ marginTop: "5rem" }}>
-            <h3 className="section-subtitle" style={{ marginBottom: "2rem" }}>
-              Achievements / Milestones
-            </h3>
-            <div
-              className="achievements-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: "2rem"
-              }}
-            >
-              {achievementsMilestones.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="principle-card"
-                  style={{
-                    backgroundColor: "var(--bg-secondary)",
-                    padding: "2rem",
-                    borderBottom: "none",
-                    borderTop: "3px solid var(--accent-gold)"
-                  }}
-                >
-                  <span
-                    className="serif-display"
+            <div className="achievements-section" style={{ marginTop: "5rem" }}>
+              <h3 className="section-subtitle" style={{ marginBottom: "2rem" }}>
+                Achievements / Milestones
+              </h3>
+              <div
+                className="achievements-grid"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
+                  gap: "2rem"
+                }}
+              >
+                {achievementsMilestones.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="principle-card"
                     style={{
-                      fontSize: "1.75rem",
-                      color: "var(--accent-gold)",
-                      display: "block",
-                      marginBottom: "0.75rem"
+                      backgroundColor: "var(--bg-secondary)",
+                      padding: "2rem",
+                      borderBottom: "none",
+                      borderTop: "3px solid var(--accent-gold)"
                     }}
                   >
-                    0{idx + 1}
-                  </span>
-                  <h4 style={{ fontSize: "1.15rem", marginBottom: "0.75rem", fontWeight: 600 }}>
-                    {item.title}
-                  </h4>
-                  <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: 0 }}>
-                    {item.body}
-                  </p>
-                </div>
-              ))}
+                    <span
+                      className="serif-display"
+                      style={{
+                        fontSize: "1.75rem",
+                        color: "var(--accent-gold)",
+                        display: "block",
+                        marginBottom: "0.75rem"
+                      }}
+                    >
+                      0{idx + 1}
+                    </span>
+                    <h4 style={{ fontSize: "1.15rem", marginBottom: "0.75rem", fontWeight: 600 }}>
+                      {item.title}
+                    </h4>
+                    <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: 0 }}>
+                      {item.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
           </div>
         </div>
@@ -264,7 +264,7 @@ export default function About() {
           }
         }
         .panel-headline {
-          font-size: 2.2rem;
+          font-size: clamp(1.5rem, 4vw, 2.2rem);
           line-height: 1.25;
           margin-bottom: 2rem;
         }
@@ -359,7 +359,7 @@ export default function About() {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        @media (max-width: 464px) {
+        @media (max-width: 768px) {
           .principles-grid {
             grid-template-columns: 1fr;
           }
@@ -370,9 +370,10 @@ export default function About() {
           display: flex;
           flex-direction: column;
           height: 100%;
+          min-width: 0;
         }
         .principle-number {
-          font-size: 2.2rem;
+          font-size: clamp(1.5rem, 4vw, 2.2rem);
           color: var(--accent-gold);
           display: block;
           margin-bottom: 0.5rem;

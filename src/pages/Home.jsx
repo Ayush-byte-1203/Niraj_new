@@ -487,7 +487,7 @@ export default function Home() {
           gap: var(--space-xs);
         }
         .stat-num {
-          font-size: 4rem;
+          font-size: clamp(2.5rem, 6vw, 4rem);
           line-height: 1;
           color: var(--text-primary);
         }
@@ -515,7 +515,7 @@ export default function Home() {
         }
         .services-showcase-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
           gap: var(--space-md);
         }
         .service-showcase-card {
@@ -529,7 +529,7 @@ export default function Home() {
           padding: 2.5rem;
         }
         .service-number {
-          font-size: 2.5rem;
+          font-size: clamp(1.75rem, 5vw, 2.5rem);
           color: var(--accent-gold);
           margin-bottom: var(--space-md);
         }
@@ -575,7 +575,7 @@ export default function Home() {
           border-color: var(--text-primary);
         }
         .industry-row-num {
-          font-size: 2rem;
+          font-size: clamp(1.5rem, 4vw, 2rem);
           color: var(--accent-gold);
         }
         .industry-row-main h3 {
@@ -652,7 +652,7 @@ export default function Home() {
           padding-bottom: 1.5rem;
         }
         .diff-index {
-          font-size: 2rem;
+          font-size: clamp(1.5rem, 4vw, 2rem);
           color: var(--accent-gold);
           line-height: 1;
           font-family: var(--font-serif);
@@ -671,7 +671,7 @@ export default function Home() {
         /* 7. Featured Insights */
         .insights-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
           gap: var(--space-md);
         }
         .insight-card {
@@ -885,7 +885,7 @@ export default function Home() {
           padding-left: var(--space-sm);
         }
         .award-row-year {
-          font-size: 2.2rem;
+          font-size: clamp(1.5rem, 4vw, 2.2rem);
           color: var(--accent-gold);
           line-height: 1;
         }
@@ -977,7 +977,7 @@ export default function Home() {
         /* 12. Latest Updates */
         .updates-cards-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
           gap: var(--space-md);
         }
         .update-card-item {
