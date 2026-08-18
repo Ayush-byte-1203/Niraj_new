@@ -6,16 +6,6 @@ import { practices, people, offices, achievements } from "../data/mockDb";
 import logoImg from "../assets/TNT.png";
 
 export default function Home() {
-  // Testimonials state
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const testimonials = [
-    {
-      quote: "The firm demonstrates a profound understanding of corporate law. Their meticulous approach to secretarial audits and governance frameworks has been instrumental in maintaining our compliance health.",
-      author: "Board of Directors",
-      role: "Client Enterprise"
-    }
-  ];
-
   // Statistics state counters
   const [stats, setStats] = useState({ years: 0, experts: 0, officesCount: 0, volume: 0 });
 
@@ -42,14 +32,6 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleNextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
     <div className="home-container fade-in-up">
       {/* 1. HERO SECTION */}
@@ -62,7 +44,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <span className="hero-tagline title-small">TNT &amp; Associates • Practicing Company Secretaries</span>
-            <h1 className="hero-title title-display">
+            <h1 className="hero-title title-display" style={{ fontWeight: "bold" }}>
               Strategic Advisors – Navigating <span className="serif-display italic">complexity</span> with absolute compliance precision.
             </h1>
             <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
@@ -84,7 +66,7 @@ export default function Home() {
       <section className="intro-section section-padding">
         <div className="container intro-grid">
           <div className="intro-title-col">
-            <img src={logoImg} alt="TNT & Associates Logo" className="intro-logo-badge" />
+            {/* <img src={logoImg} alt="TNT & Associates Logo" className="intro-logo-badge" /> */}
             <span className="title-small accent-gold">Company Overview</span>
             <h2 className="title-medium intro-headline">We deliver clarity where corporate ambition meets regulatory reality.</h2>
             <Link to="/about" className="gold-link mt-space">Learn Our History →</Link>
@@ -288,32 +270,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 11. CLIENT TESTIMONIALS */}
-      <section className="testimonials-section section-padding">
-        <div className="container testimonials-inner-box">
-          <span className="title-small accent-gold text-center block">Client Perspectives</span>
-
-          <div className="testimonial-carousel-window">
-            <blockquote className="carousel-quote-text serif-display italic">
-              "{testimonials[currentTestimonial].quote}"
-            </blockquote>
-            <div className="carousel-author-info">
-              <strong>{testimonials[currentTestimonial].author}</strong>
-              <span className="text-muted">{testimonials[currentTestimonial].role}</span>
-            </div>
-          </div>
-
-          <div className="carousel-navigation-buttons">
-            <button className="carousel-nav-btn" onClick={handlePrevTestimonial} aria-label="Previous testimonial">
-              <ChevronLeft size={20} />
-            </button>
-            <span className="carousel-index-counter">0{currentTestimonial + 1} / 0{testimonials.length}</span>
-            <button className="carousel-nav-btn" onClick={handleNextTestimonial} aria-label="Next testimonial">
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* Preserved empty section to maintain nth-of-type CSS parity for CTA banner */}
+      <section style={{ display: "none" }}></section>
 
       {/* 13. CALL TO ACTION (CTA) */}
       <section className="cta-banner-section">

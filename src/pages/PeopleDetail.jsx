@@ -52,7 +52,7 @@ export default function PeopleDetail() {
         {/* Profile Card Sidebar */}
         <div className="profile-sidebar">
           <div className="profile-image-container">
-            <img src={person.image} alt={person.name} />
+            {/* Image removed as requested */}
           </div>
           <div className="profile-contact-card">
             <h3>Contact Details</h3>
@@ -233,7 +233,7 @@ export default function PeopleDetail() {
           min-width: 0;
         }
         .profile-name {
-          font-size: clamp(1.75rem, 6vw, 4rem);
+          font-size: clamp(1.25rem, 5vw, 3.5rem);
           line-height: 1.1;
           margin-top: -0.5rem;
           word-wrap: break-word;

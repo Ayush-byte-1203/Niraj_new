@@ -49,9 +49,10 @@ export default function Footer() {
             <div key={office.id} className="office-card">
               <h5>Head Office Vadodara</h5>
               <p className="office-address">{office.address}</p>
+              <p className="office-contact" style={{ fontWeight: 600, marginTop: "0.5rem", marginBottom: "0.25rem" }}>Contact :</p>
               <p className="office-contact">Phone: {office.phone}</p>
-              <p className="office-contact">Email: {office.email}</p>
-              <p className="office-contact">Email: niraj@nirajtrivedi-cs.com</p>
+              <p className="office-contact" style={{ whiteSpace: "nowrap" }}>Email: {office.email}</p>
+              <p className="office-contact" style={{ whiteSpace: "nowrap" }}>Email: niraj@nirajtrivedi-cs.com</p>
             </div>
           ))}
         </div>
@@ -195,6 +196,10 @@ export default function Footer() {
           color: var(--text-muted);
           line-height: 1.6;
           margin-bottom: 0.75rem;
+          text-align: justify;
+          text-justify: inter-word;
+          hyphens: auto;
+          -webkit-hyphens: auto;
         }
         .office-card .office-contact {
           font-size: 0.85rem;

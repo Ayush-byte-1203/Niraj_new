@@ -109,7 +109,7 @@ export default function People() {
             return (
               <Link key={person.id} to={`/people/${person.id}`} className="person-card">
                 <div className="person-image-wrapper">
-                  <img src={person.image} alt={person.name} className="person-image" />
+                  {/* Image removed as requested */}
                 </div>
                 <div className="person-meta">
                   <h3>{person.name}</h3>
@@ -140,6 +140,8 @@ export default function People() {
         .page-main-title {
           font-weight: 300;
           margin-top: 1rem;
+          font-size: clamp(1.25rem, 3.5vw, 2.75rem);
+          white-space: nowrap;
         }
         .directory-controls {
           display: flex;

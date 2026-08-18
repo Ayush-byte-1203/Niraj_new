@@ -79,9 +79,6 @@ export default function Navbar({ onSearchOpen }) {
           </nav>
 
           <div className="nav-actions">
-            <button className="action-btn" onClick={onSearchOpen} aria-label="Search">
-              <Search size={18} />
-            </button>
             <button className="action-btn menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>

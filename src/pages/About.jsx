@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div className="about-page container section-padding fade-in-up">
       <div className="page-header">
-        <img src={logoImg} alt="TNT & Associates Logo" className="page-header-logo" />
+        {/* <img src={logoImg} alt="TNT & Associates Logo" className="page-header-logo" /> */}
         <span className="title-small accent-color">About Our Firm</span>
         <h1 className="title-medium page-main-title">A legacy of trust, built on strategic integrity.</h1>
       </div>
@@ -20,7 +20,7 @@ export default function About() {
         {/* Overview Section */}
         <div className="tab-pane fade-in-up">
           <div className="overview-text">
-            <h2 className="serif-display panel-headline" style={{ marginBottom: "2.5rem" }}>
+            <h2 className="serif-display panel-headline" style={{ marginBottom: "2.5rem", fontSize: "1rem", fontWeight: "bold" }}>
               {aboutOverview.headline}
             </h2>
             {aboutOverview.paragraphs ? (
@@ -139,7 +139,7 @@ export default function About() {
             </div>
             <div className="values-list-col" style={{ marginTop: '4rem' }}>
               <h3 className="section-subtitle" style={{ marginBottom: '0.75rem' }}>Core Guiding Principles</h3>
-              <p className="about-body-para" style={{ maxWidth: '800px', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
+              <p className="about-body-para" style={{ maxWidth: '100%', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
                 Our work is guided by principles that define our professional standards and commitment to every client –
               </p>
               <div className="principles-grid">
@@ -212,7 +212,7 @@ export default function About() {
         }
         .page-header {
           margin-bottom: 4rem;
-          max-width: 800px;
+          max-width: 100%;
         }
         .page-header-logo {
           height: 120px;
@@ -224,6 +224,7 @@ export default function About() {
         .page-main-title {
           font-weight: 300;
           margin-top: 1rem;
+          white-space: nowrap;
         }
         .about-tabs {
           display: flex;
@@ -264,7 +265,7 @@ export default function About() {
           }
         }
         .panel-headline {
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
+          font-size: clamp(1.25rem, 5vw, 3.5rem);
           line-height: 1.25;
           margin-bottom: 2rem;
         }
@@ -273,6 +274,7 @@ export default function About() {
           line-height: 1.8;
           color: var(--text-secondary);
           margin-bottom: 1.5rem;
+          text-align: justify;
         }
         .leadership-message-box {
           border: 1px solid var(--border-light);

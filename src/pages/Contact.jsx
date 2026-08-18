@@ -30,7 +30,7 @@ export default function Contact() {
         {/* Left Side: Office Information */}
         <div className="contact-left-col">
           <div className="active-office-details">
-            <img src={logoImg} alt="TNT & Associates Logo" className="contact-hq-logo" />
+            {/* place <img src={logoImg} alt="TNT & Associates Logo" className="contact-hq-logo" /> */}
             <span className="title-small accent-color">Headquarters</span>
             <h2 className="serif-display hq-title">{hqOffice.city} Office</h2>
             <p className="office-address">{hqOffice.address}</p>
@@ -52,7 +52,7 @@ export default function Contact() {
                 <div className="meta-icon-wrapper"><LinkedinIcon size={16} /></div>
                 <span>LinkedIn: CS Niraj Trivedi ↗</span>
               </a>
-              <div className="meta-row hours-row">
+              {/* <div className="meta-row hours-row">
                 <div className="meta-icon-wrapper"><Clock size={16} /></div>
                 <div>
                   <strong>Business Hours</strong>
@@ -61,9 +61,24 @@ export default function Contact() {
                     Saturday: By Appointment Only
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
+
+          {/* Other Offices Grid - Moved to Left Column */}
+          {otherOffices.length > 0 && (
+            <div className="other-offices-section" style={{ marginTop: "4rem" }}>
+              <span className="title-small accent-color" style={{ marginBottom: "1.5rem", display: "inline-block" }}>Branch & Associate Offices</span>
+              <div className="other-offices-list" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {otherOffices.map((office) => (
+                  <div key={office.id} className="other-office-card" style={{ border: "1px solid var(--border-light)", padding: "1.5rem", backgroundColor: "var(--bg-primary)", borderRadius: "12px", maxWidth: "420px" }}>
+                    <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "1.25rem", marginBottom: "1rem", color: "var(--text-primary)" }}>{office.city} Office</h3>
+                    <p className="office-address" style={{ margin: 0, textAlign: "justify", textJustify: "inter-word", hyphens: "auto", WebkitHyphens: "auto" }}>{office.address}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right Side: Inquiry Form */}
@@ -148,33 +163,9 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Other Offices Grid */}
-      {otherOffices.length > 0 && (
-        <section className="other-offices-section" style={{ marginTop: "6rem" }}>
-          <span className="title-small accent-color">Branch & Associate Offices</span>
-          <div className="other-offices-grid" style={{ marginTop: "2rem" }}>
-            {otherOffices.map((office) => (
-              <div key={office.id} className="other-office-card" style={{ border: "1px solid var(--border-light)", padding: "2.5rem", backgroundColor: "var(--bg-secondary)" }}>
-                <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "1.35rem", marginBottom: "1rem" }}>{office.city} Office</h3>
-                <p className="office-address" style={{ marginBottom: "1.5rem" }}>{office.address}</p>
-                {/* Email and Phone removed as per request */}
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      {/* Other offices moved to the left column */}
 
       <style>{`
-        .other-offices-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 3rem;
-        }
-        @media (max-width: 768px) {
-          .other-offices-grid {
-            grid-template-columns: 1fr;
-          }
-        }
         .contact-page {
           padding-top: calc(var(--header-height) + 4rem);
           text-align: left;
@@ -186,6 +177,8 @@ export default function Contact() {
         .page-main-title {
           font-weight: 300;
           margin-top: 1rem;
+          font-size: clamp(1.25rem, 3.5vw, 2.75rem);
+          white-space: nowrap;
         }
         .contact-grid {
           display: grid;
@@ -212,9 +205,10 @@ export default function Contact() {
           margin-bottom: -0.5rem;
         }
         .hq-title {
-          font-size: clamp(2rem, 5vw, 3rem);
+          font-size: clamp(1.25rem, 4vw, 2.5rem);
           font-weight: 400;
           margin: 0;
+          white-space: nowrap;
         }
         .office-address {
           font-size: 1.15rem;

@@ -15,7 +15,7 @@ export default function ServicesList() {
       {/* 1. Hero Banner */}
       <section className="services-hero-banner hairline-bottom">
         <span className="title-small accent-gold">Our Capabilities</span>
-        <h1 className="title-display">Strategic Advisory for <span className="serif-display italic">Enterprise Transactions</span>.</h1>
+        <h1 className="title-display" style={{ whiteSpace: "nowrap", fontSize: "clamp(1.25rem, 3.5vw, 3rem)" }}>Strategic Advisory for <span className="serif-display italic">Enterprise Transactions</span>.</h1>
         <p className="body-large text-muted mt-space max-width-para">
           We combine structural foresight with regulatory precision to guide organizations through landmark debt structuring, joint ventures, and market entries.
         </p>
@@ -166,6 +166,10 @@ export default function ServicesList() {
           line-height: 1.6;
           margin-bottom: var(--space-md);
           flex-grow: 1;
+          text-align: justify;
+          text-justify: inter-word;
+          hyphens: auto;
+          -webkit-hyphens: auto;
         }
         .benefits-box-card {
           background-color: var(--bg-secondary);
