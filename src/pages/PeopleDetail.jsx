@@ -259,6 +259,11 @@ export default function PeopleDetail() {
           font-size: 1.1rem;
           line-height: 1.8;
           color: var(--text-secondary);
+          text-align: justify;
+          text-justify: inter-word;
+          -webkit-hyphens: auto;
+          -ms-hyphens: auto;
+          hyphens: auto;
         }
         .profile-academic-section {
           display: grid;

@@ -44,8 +44,8 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <span className="hero-tagline title-small">TNT &amp; Associates • Practicing Company Secretaries</span>
-            <h1 className="hero-title title-display" style={{ fontWeight: "bold" }}>
-              Strategic Advisors – Navigating <span className="serif-display italic">complexity</span> with absolute compliance precision.
+            <h1 className="hero-title title-display" style={{ fontWeight: "500", fontSize: "clamp(1.5rem, 4.5vw, 3.25rem)", lineHeight: "1.1" }}>
+              Strategic Advisors – Navigating <span style={{ fontStyle: "italic" }}>complexity with absolute</span> compliance precision.
             </h1>
             <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
               The firm is recognized as one of the leading Company Secretary firms in Gujarat, offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
@@ -72,42 +72,45 @@ export default function Home() {
             <Link to="/about" className="gold-link mt-space">Learn Our History →</Link>
           </div>
           <div className="intro-text-col" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-            <div
+            <p
               style={{
                 paddingLeft: "1.25rem",
                 borderLeft: "3px solid var(--accent-gold)",
                 fontWeight: "400",
                 fontSize: "1.1rem",
                 color: "var(--text-primary)",
-                lineHeight: "1.7"
+                lineHeight: "1.7",
+                margin: 0
               }}
             >
               At TNT &amp; Associates, we help organizations resolve their most challenging regulatory hurdles and transactional milestones. Our qualified professionals bring compliance foresight to every engagement.
-            </div>
-            <div
+            </p>
+            <p
               style={{
                 paddingLeft: "1.25rem",
                 borderLeft: "3px solid var(--accent-gold)",
                 fontWeight: "400",
                 fontSize: "1.1rem",
                 color: "var(--text-primary)",
-                lineHeight: "1.7"
+                lineHeight: "1.7",
+                margin: 0
               }}
             >
               By mapping compliance goals directly against local statutory frameworks, we empower capital allocators and enterprise leaders to operate confidently.
-            </div>
-            <div
+            </p>
+            <p
               style={{
                 paddingLeft: "1.25rem",
                 borderLeft: "3px solid var(--accent-gold)",
                 fontWeight: "400",
                 fontSize: "1.1rem",
                 color: "var(--text-primary)",
-                lineHeight: "1.7"
+                lineHeight: "1.7",
+                margin: 0
               }}
             >
               More than 35 years of experience in the field of Corporate Law, FEMA, IBC, Intellectual Property Rights.
-            </div>
+            </p>
           </div>
         </div>
       </section>
