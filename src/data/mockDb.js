@@ -5,7 +5,7 @@ export const offices = [
   {
     id: "vadodara",
     city: "Head Office Vadodara",
-    address: "218 – 220 Saffron Complex, Fatehgunj, Vadodara, 390002, Gujarat",
+    address: "218-220 Saffron Complex, Fatehgunj, Vadodara, 390002, Gujarat",
     phone: "0265-2784388",
     email: "csneerajtrivedi@gmail.com",
     coordinates: "22.3197, 73.1895",
@@ -14,7 +14,7 @@ export const offices = [
   {
     id: "ahmedabad",
     city: "Ahmedabad",
-    address: "B-2/304, Vishwas Flats, Behind J.G. International School, Gulab Tower Road, Thaltej, Ahmedabad - 380061",
+    address: "B-2/304, Vishwas Flats, Behind J.G. International School, Gulab Tower Road, Thaltej, Ahmedabad-380061",
     phone: "0265-2784388",
     email: "csneerajtrivedi@gmail.com",
     coordinates: "23.0500, 72.5186",
@@ -34,147 +34,181 @@ export const offices = [
 export const practices = [
   {
     id: "ipo",
-    name: "Initial Public Offerings (IPO)",
-    shortDescription: "We provide comprehensive advisory services for companies planning to raise capital through an Initial Public Offering (IPO). Our team assists in due diligence, regulatory compliance, documentation and coordination with various intermediaries to ensure a smooth and successful listing process.",
-    description: "We provide comprehensive advisory services for companies planning to raise capital through an Initial Public Offering (IPO). Our team assists in due diligence, regulatory compliance, documentation and coordination with various intermediaries to ensure a smooth and successful listing process.",
-    details: "Our team provides end-to-end guidance for companies aspiring to list on the Main Board or SME Platform. We work closely with merchant bankers, legal advisors, underwriters, and stock exchanges to facilitate a seamless transition to a public company.",
+    name: "Initial Public Offering (IPO) Services",
+    shortDescription: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements.",
+    description: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements. Our team assists companies in preparing for the IPO process and navigating the regulatory framework applicable to public issues and listing of securities.",
+    details: "",
     includes: [
-      "Due diligence for IPOs and capital raising transactions",
-      "Regulatory compliance under SEBI ICDR and Listing Regulations",
-      "Documentation and drafting of offer documents and statutory filings",
-      "Coordination with merchant bankers, stock exchanges, and intermediaries",
-      "Main Board and SME Platform listing advisory"
+      "IPO Due Diligence",
+      "Corporate and Secretarial Due Diligence",
+      "Assistance in preparation and review of IPO-related documents",
+      "Regulatory and statutory compliance",
+      "Coordination and assistance with SEBI and Stock Exchange requirement",
+      "Corporate restructuring and capital restructuring in connection with IPOs",
+      "Assistance with pre-IPO and post-IPO compliances",
+      "Support throughout the IPO and listing process"
     ],
     leadPartnerId: "niraj-trivedi",
     icon: "TrendingUp"
   },
   {
-    id: "due-diligence",
-    name: "Due Diligence",
-    shortDescription: "Our due diligence services are designed to identify legal, regulatory and compliance risks associated with corporate transactions. We conduct detailed reviews and provide practical insights that enable clients to make informed business and investment decisions.",
-    description: "Our due diligence services are designed to identify legal, regulatory and compliance risks associated with corporate transactions. We conduct detailed reviews and provide practical insights that enable clients to make informed business and investment decisions.",
-    details: "We perform rigorous secretarial, legal, and compliance due diligence audits for mergers, acquisitions, private equity funding, and joint ventures, delivering comprehensive risk analysis and remediation strategies.",
+    id: "llp",
+    name: "Limited Liability Partnership Act",
+    shortDescription: "We provide comprehensive legal, secretarial and regulatory services for Limited Liability Partnerships, assisting clients from incorporation and structuring to ongoing statutory compliances and corporate changes.",
+    description: "We provide comprehensive legal, secretarial and regulatory services for Limited Liability Partnerships, assisting clients from incorporation and structuring to ongoing statutory compliances and corporate changes. Our services are tailored to meet the specific requirements of LLPs under the Limited Liability Partnership Act, 2008 and applicable rules and regulations.",
+    details: "",
     includes: [
-      "Legal and secretarial due diligence for corporate transactions",
-      "Identification of regulatory, statutory, and compliance risks",
-      "Detailed reviews of corporate records, contracts, and filings",
-      "Practical insights for informed business and investment decisions",
-      "Due diligence reports for acquisitions, IPOs, and restructuring"
-    ],
-    leadPartnerId: "ashish-tripathi",
-    icon: "Search"
-  },
-  {
-    id: "nclt",
-    name: "NCLT Representation (Companies Act, 2013 & Insolvency & Bankruptcy Code, 2016)",
-    shortDescription: "We represent clients before the National Company Law Tribunal (NCLT) in matters arising under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016. Our team offers strategic advice and effective representation in corporate disputes, insolvency proceedings, mergers, compromises and other tribunal matters.",
-    description: "We represent clients before the National Company Law Tribunal (NCLT) in matters arising under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016. Our team offers strategic advice and effective representation in corporate disputes, insolvency proceedings, mergers, compromises and other tribunal matters.",
-    details: "With a dedicated NCLT and IBC desk established in Ahmedabad and Vadodara, we provide authoritative advocacy and strategic legal representation before NCLT benches and NCLAT across India.",
-    includes: [
-      "Representation before National Company Law Tribunal (NCLT) & NCLAT",
-      "Matters under Companies Act, 2013 and Insolvency & Bankruptcy Code (IBC, 2016)",
-      "Strategic advice and representation in insolvency and CIRP proceedings",
-      "Mergers, compromises, arrangements, and capital reduction petitions",
-      "Corporate disputes, oppression, and mismanagement litigation"
+      "Assistance with incorporation, name approval, preparation of the LLP Agreement and statutory filings.",
+      "Formation of LLP, conversion of Company into LLP or otherwise.",
+      "Drafting, reviewing and modification of LLP Agreements in accordance with the requirements of the partners.",
+      "Reconstitution of Partnership Deed including change in the capital, partners etc.",
+      "Assistance with necessary approvals and filings for changes in the LLP's registered office, name, business activities, partners or capital of partners etc.",
+      "Winding and striking off of LLP",
+      "Guidance on timely submission of forms with the office of Registrar of Companies including Statutory and Event Based submission."
     ],
     leadPartnerId: "niraj-trivedi",
-    icon: "Scale"
+    icon: "Users"
+  },
+  {
+    id: "sebi",
+    name: "Securities and Exchange Board of India Act and Its Regulations",
+    shortDescription: "We provide comprehensive advisory and compliance services in relation to the Securities and Exchange Board of India Act and the regulations, rules and guidelines issued thereunder.",
+    description: "We provide comprehensive advisory and compliance services in relation to the Securities and Exchange Board of India Act and the regulations, rules and guidelines issued thereunder. Our services are aimed at helping companies, promoters, investors and other market participants understand and comply with the evolving securities regulatory framework.",
+    details: "",
+    includes: [
+      "Providing guidance for Listing / Revocation of securities with stock exchanges.",
+      "Providing guidance as required under the Listing Regulations and action to be taken by the company there under such as periodically compliance including compliances under Corporate Governance and Listing Regulation etc.",
+      "Issue of shares/ securities as Bonus / Rights Issue /Public Issue (IPO/FPO), Private Placement, ESOP, QIBs, FIIs etc. including drafting of related documents and papers.",
+      "Providing guidance in drafting of Prospectus/ Letter of Offer or other related documents and obtaining various approvals and getting the security listed with the stock exchanges etc. in association with Merchant Bankers.",
+      "This includes providing guidance in respect of compliance under Listing Regulations and communication with SEBI/ Stock Exchanges for SME / Main Board.",
+      "Providing proper guidance to the companies under SEBI Takeover code, Buy Back of securities, Insider Trading Regulation and drafting of various communication with the SEBI / Stock Exchanges / Shareholders in this connection. This includes drafting of application to be submitted to SEBI for seeking exemption under SAST, ICDR etc.",
+      "Delisting of securities in compliance with the SEBI regulation."
+    ],
+    leadPartnerId: "niraj-trivedi",
+    icon: "BarChart"
   },
   {
     id: "fema",
-    name: "FEMA Compliances",
-    shortDescription: "We advise clients on compliance with the Foreign Exchange Management Act (FEMA), including Foreign Direct Investment (FDI), Overseas Direct Investment (ODI) and External Commercial Borrowings (ECB). Our services ensure that cross-border transactions are structured efficiently and remain fully compliant with RBI regulations.",
-    description: "We advise clients on compliance with the Foreign Exchange Management Act (FEMA), including Foreign Direct Investment (FDI), Overseas Direct Investment (ODI) and External Commercial Borrowings (ECB). Our services ensure that cross-border transactions are structured efficiently and remain fully compliant with RBI regulations.",
-    details: "Our FEMA advisory practice guides multinational enterprises and Indian corporations in navigating RBI regulations, foreign exchange structures, inbound/outbound investments, and statutory compounding.",
+    name: "Foreign Exchange Management Act",
+    shortDescription: "We provide comprehensive advisory and compliance services under the Foreign Exchange Management Act, 1999 (FEMA) and the regulations, rules, notifications and directions issued thereunder.",
+    description: "We provide comprehensive advisory and compliance services under the Foreign Exchange Management Act, 1999 (FEMA) and the regulations, rules, notifications and directions issued thereunder. We assist Indian and foreign businesses in navigating cross-border transactions and ensuring compliance with the applicable foreign exchange framework.",
+    details: "",
     includes: [
-      "Foreign Direct Investment (FDI) advisory and statutory filings",
-      "Overseas Direct Investment (ODI) structuring and compliance",
-      "External Commercial Borrowings (ECB) advisory and reporting",
-      "RBI compounding applications and representation for FEMA matters",
-      "Cross-border transaction structuring in compliance with RBI guidelines"
+      "Formation of Joint Venture (JV), Wholly Owned Subsidiary companies in and outside India in compliance with the requirements under Reserve Bank of India (RBI) / Department of Industrial Policy and Promotion (DIPP) and guideline framed thereunder.",
+      "Providing guidance on inbound & outbound investments.",
+      "Issue, transfer of shares to Foreigners and other Non-Resident Indians (NRI’s) under Automatic / Approval Route and providing guidance in deciding issue price.",
+      "Drafting of documentation to be submitted with concerned authorities thereunder.",
+      "Opening of Branch office in India and abroad and getting permission from Reserve Bank of India.",
+      "Consent / Approval of Secretariat of Industrial Approval (SIA) / Foreign Investment Promotion Board (FIPB) under Approval Route.",
+      "Compounding Application before Reserve Bank of India in case of violation under FEMA such as FDI and ECB guideline etc."
     ],
     leadPartnerId: "niraj-trivedi",
     icon: "Globe"
   },
   {
-    id: "secretarial-audit",
-    name: "Secretarial Audit",
-    shortDescription: "We conduct secretarial audits to assess compliance with corporate laws, secretarial standards, and regulatory requirements. Our objective is to strengthen governance practices, identify compliance gaps and help organizations maintain the highest standards of corporate governance.",
-    description: "We conduct secretarial audits to assess compliance with corporate laws, secretarial standards, and regulatory requirements. Our objective is to strengthen governance practices, identify compliance gaps and help organizations maintain the highest standards of corporate governance.",
-    details: "Our secretarial audits provide independent verification of regulatory adherence, offering actionable recommendations to enhance board oversight and statutory compliance.",
+    id: "fcra",
+    name: "Foreign Contribution (Regulation) Act",
+    shortDescription: "We provide advisory and compliance services under the Foreign Contribution Regulation Act, 2010 (FCRA) and the rules and regulations framed thereunder.",
+    description: "We provide advisory and compliance services under the Foreign Contribution Regulation Act, 2010 (FCRA) and the rules and regulations framed thereunder. We assist eligible organisations in ensuring proper regulatory compliance while receiving, utilising and reporting foreign contributions in accordance with the applicable legal framework.",
+    details: "",
     includes: [
-      "Secretarial audits under Section 204 of the Companies Act, 2013",
-      "Assessment of compliance with corporate laws and secretarial standards",
-      "Corporate governance reviews and evaluation of board practices",
-      "Identification of compliance gaps and actionable remediation",
-      "Annual secretarial compliance reporting for listed and unlisted entities"
+      "Providing guidance on eligibility criteria for Registration and Prior Permission.",
+      "Advising on and documentation required for Prior Permission, Registration, Condonation, Restoration, Shifting of Designated Bank, Renewal, change of constitution etc. of NGOs.",
+      "Facilitate to obtain such Registration, Prior Permission, Condonation, Renewal etc. from the office of Ministry of Home Affairs -Delhi."
     ],
     leadPartnerId: "niraj-trivedi",
+    icon: "Briefcase"
+  },
+  {
+    id: "ibc",
+    name: "Insolvency and Bankruptcy Code",
+    shortDescription: "We provide comprehensive legal and advisory services in matters arising under the Insolvency and Bankruptcy Code, 2016 (IBC).",
+    description: "We provide comprehensive legal and advisory services in matters arising under the Insolvency and Bankruptcy Code, 2016 (IBC). Our team assists corporate entities, creditors and other stakeholders in navigating insolvency proceedings, restructuring requirements and related proceedings before the adjudicating and appellate authorities.",
+    details: "",
+    includes: [
+      "Drafting of Notice and application including Voluntary Liquidation under Insolvency Code.",
+      "Appearing before NCLT and NCLAT for the matter under IBC.",
+      "Assistance to Financial Creditors in matters relating to initiation of insolvency proceedings against corporate debtors.",
+      "Assistance to Operational Creditors in initiating insolvency proceedings and responding to applications filed by Operational Creditors.",
+      "Facilitating Resolution Professional, Liquidator in completion of process under Corporate Insolvency Resolution Process (CIRP), Liquidation Process etc."
+    ],
+    leadPartnerId: "niraj-trivedi",
+    icon: "Scale"
+  },
+  {
+    id: "banking",
+    name: "Banking and Finance",
+    shortDescription: "We provide comprehensive legal, regulatory and compliance services to banks, financial institutions and other regulated entities in relation to applicable banking laws and regulations.",
+    description: "We provide comprehensive legal, regulatory and compliance services to banks, financial institutions and other regulated entities in relation to applicable banking laws and regulations, including the Banking Regulation Act, RBI directions and other relevant regulatory frameworks. Our services are designed to assist clients in meeting regulatory obligations, maintaining effective governance and addressing complex banking and financial matters.",
+    details: "",
+    includes: [
+      "Providing Search Report based on documents available on MCA.",
+      "Examine covenants contained in the loan agreement thoroughly and to check whether all notices required to be sent to the Financial Institutions and Banks have been complied and necessary approvals were obtained from the FI and Banks wherever required.",
+      "Information about Memorandum and Articles of Association, borrowing powers and resolutions there under has been passed in proper manner or not by the company before availing loan.",
+      "Providing Due Diligence Report as per RBI guideline"
+    ],
+    leadPartnerId: "ashish-tripathi",
     icon: "ShieldCheck"
+  },
+  {
+    id: "audit",
+    name: "Audit",
+    shortDescription: "We provide specialized audit and compliance review services to help companies assess their compliance with applicable corporate laws, regulations and secretarial standards.",
+    description: "We provide specialized audit and compliance review services to help companies assess their compliance with applicable corporate laws, regulations and secretarial standards. Our audit approach focuses on identifying compliance gaps, strengthening governance practices and providing practical recommendations for corrective measures.",
+    details: "",
+    includes: [
+      "Due Diligence under Corporate Laws in case of Take Over, Change in Management, Joint Venture, IPO, QIB etc.",
+      "Conducting Secretarial Audit in accordance with the Companies Act, 2013 and applicable regulations.",
+      "Reconciliation of Share Capital Audit as per SEBI Guidelines",
+      "Corporate Governance",
+      "Annual Compliance of Corporate Laws as per SEBI guideline"
+    ],
+    leadPartnerId: "niraj-trivedi",
+    icon: "Search"
+  },
+  {
+    id: "ipr",
+    name: "Intellectual Property Laws",
+    shortDescription: "We provide advisory and legal support in matters relating to Intellectual Property Rights (IPR), helping businesses protect, manage and commercially utilise their intellectual assets.",
+    description: "We provide advisory and legal support in matters relating to Intellectual Property Rights (IPR), helping businesses protect, manage and commercially utilise their intellectual assets. Our services cover the identification, registration, protection and enforcement of intellectual property rights in accordance with applicable laws.",
+    details: "",
+    includes: [
+      "Advising on intellectual Property Licensing.",
+      "Getting Trademark Registered.",
+      "Advising on passing off/ infringement matter and to represent the case before Trademark Registry for getting the mark registered."
+    ],
+    leadPartnerId: "mona-trivedi",
+    icon: "Award"
   },
   {
     id: "corporate-restructuring",
     name: "Corporate Restructuring",
-    shortDescription: "We assist businesses in implementing corporate restructuring strategies that enhance operational efficiency and support long-term growth. Our services include mergers, demergers, amalgamations and other restructuring transactions while ensuring complete legal and regulatory compliance.",
-    description: "We assist businesses in implementing corporate restructuring strategies that enhance operational efficiency and support long-term growth. Our services include mergers, demergers, amalgamations and other restructuring transactions while ensuring complete legal and regulatory compliance.",
-    details: "We design and execute comprehensive restructuring schemes, advising boards on legal mechanics, regulatory approvals, and shareholder alignment.",
+    shortDescription: "We provide comprehensive advisory and implementation support for corporate restructuring transactions, helping businesses reorganize their corporate structure, ownership, operations and liabilities.",
+    description: "We provide comprehensive advisory and implementation support for corporate restructuring transactions, helping businesses reorganize their corporate structure, ownership, operations and liabilities in accordance with their strategic and commercial objectives. Our team assists clients in navigating the legal, regulatory and procedural requirements involved in complex restructuring transactions.",
+    details: "",
     includes: [
-      "Mergers, demergers, and amalgamations",
-      "Drafting and execution of schemes of arrangement and compromise",
-      "Coordination with ROC, Regional Director, Official Liquidator, and NCLT",
-      "Operational efficiency and corporate reorganization strategies",
-      "Complete legal, statutory, and regulatory compliance throughout restructuring"
+      "Advisory and assistance in relation to mergers, amalgamations and schemes of arrangement between companies.",
+      "Assistance with demergers and re-organisation of business undertakings.",
+      "Assistance with alteration and re-organisation of share capital, including reduction of share capital.",
+      "Assistance in obtaining necessary approvals and completing statutory filings before the NCLT, ROC, Regional Director and other regulatory authorities.",
+      "Assistance with implementation of approved restructuring arrangements and completion of consequential corporate and regulatory compliances."
     ],
     leadPartnerId: "niraj-trivedi",
     icon: "Briefcase"
   },
   {
     id: "capital-restructuring",
-    name: "Capital Restructuring",
-    shortDescription: "We advise companies on restructuring their capital through reduction of share capital, buy-backs, preferential allotments, rights issues and other capital management strategies. Our approach helps businesses achieve an optimal capital structure while complying with applicable laws.",
-    description: "We advise companies on restructuring their capital through reduction of share capital, buy-backs, preferential allotments, rights issues and other capital management strategies. Our approach helps businesses achieve an optimal capital structure while complying with applicable laws.",
-    details: "We assist clients in optimizing their balance sheets and shareholding structures through statutory capital reduction, equity buy-backs, and strategic capital raises.",
+    name: "Capital Restructuring Services",
+    shortDescription: "We advise companies on restructuring and reorganising their share capital and securities structure to meet their business, financial and strategic objectives.",
+    description: "We advise companies on restructuring and reorganising their share capital and securities structure to meet their business, financial and strategic objectives. Our services cover a wide range of capital-related corporate actions, with assistance in fulfilling the applicable legal, regulatory and procedural requirements.",
+    details: "",
     includes: [
-      "Reduction of share capital under the Companies Act, 2013",
-      "Buy-back of securities and equity restructuring strategies",
-      "Preferential allotments, private placements, and rights issues",
-      "Bonus issues, ESOP structuring, and capital reorganization",
-      "Statutory compliance and regulatory filings for capital modifications"
+      "Advisory and assistance in relation to reduction of share capital and the requisite regulatory and NCLT process.",
+      "Assistance with buy-back of shares and other securities in accordance with applicable laws and regulations.",
+      "Assistance with rights issues, preferential allotments, private placements and other permitted methods of raising share capital."
     ],
     leadPartnerId: "ashish-tripathi",
     icon: "BarChart"
-  },
-  {
-    id: "change-in-management",
-    name: "Change in Management",
-    shortDescription: "We provide end-to-end advisory services for changes in management and corporate control, including regulatory approvals, statutory filings and corporate documentation. Our team ensures a seamless transition while maintaining compliance with all applicable legal requirements.",
-    description: "We provide end-to-end advisory services for changes in management and corporate control, including regulatory approvals, statutory filings and corporate documentation. Our team ensures a seamless transition while maintaining compliance with all applicable legal requirements.",
-    details: "We manage executive leadership transitions, share transfers, director onboarding/exits, and corporate takeovers with strict regulatory precision.",
-    includes: [
-      "End-to-end advisory for changes in management and corporate control",
-      "Regulatory approvals, statutory ROC filings, and board documentation",
-      "Share transfer facilitation and takeover code compliance",
-      "Appointment, resignation, and remuneration structuring of managerial personnel",
-      "Seamless management transition with complete legal compliance"
-    ],
-    leadPartnerId: "niraj-trivedi",
-    icon: "Users"
-  },
-  {
-    id: "ipr",
-    name: "Intellectual Property Law Services",
-    shortDescription: "We assist businesses in protecting and managing their intellectual property rights, including patents, trademarks, copyrights, designs and GI Tag and related registrations. Our services help clients safeguard their innovations, strengthen brand value and protect valuable business assets.",
-    description: "We assist businesses in protecting and managing their intellectual property rights, including patents, trademarks, copyrights, designs and GI Tag and related registrations. Our services help clients safeguard their innovations, strengthen brand value and protect valuable business assets.",
-    details: "Our IP practice offers comprehensive trademark, copyright, design, and GI Tag registration, licensing advisory, and infringement representation to protect core brand equity.",
-    includes: [
-      "Protection and management of intellectual property rights",
-      "Patents, trademarks, copyrights, designs, and GI Tag registrations",
-      "Intellectual property licensing, assignment, and commercial agreements",
-      "Infringement advisory, passing-off matters, and trademark registry representation",
-      "Safeguarding innovation and strengthening corporate brand value"
-    ],
-    leadPartnerId: "mona-trivedi",
-    icon: "Award"
   }
 ];
 
@@ -300,7 +334,7 @@ export const awards = [
 ];
 
 export const aboutOverview = {
-  headline: "Strategic Advisors – Navigating complexity with absolute compliance precision.",
+  headline: "Strategic Advisors-Navigating complexity with absolute compliance precision.",
   paragraphs: [
     "Established in 1999 by CS Neeraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries. The firm expanded its practice in 2005 to offer a wider range of services including SEBI regulations, FEMA compliances, corporate advisory and representation before various quasi-judicial authorities. This expansion enabled the firm to provide comprehensive solutions to clients navigating increasingly complex legal and regulatory requirements.",
     "In 2018, the firm strengthened its presence with the establishment of its Ahmedabad office and launched a dedicated practice for matters before the National Company Law Tribunal (NCLT) and under the Insolvency and Bankruptcy Code (IBC). These developments marked a significant milestone in the firm's journey towards becoming a full-service corporate advisory practice.",

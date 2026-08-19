@@ -104,6 +104,11 @@ svg {
   height: auto;
 }
 
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
@@ -111,7 +116,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.4s ease, color 0.4s ease;
-  overflow-x: hidden;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -124,12 +128,6 @@ p {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-}
-
-@media (max-width: 768px) {
-  p {
-    text-align: left;
-  }
 }
 
 a {
@@ -187,7 +185,7 @@ a:focus-visible {
 /* Typography Scales */
 .title-display {
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 5vw, 3.5rem);
+  font-size: clamp(1.25rem, 4vw, 2.15rem);
   line-height: 1.05;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -198,7 +196,7 @@ a:focus-visible {
 .title-hero {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.25rem, 5vw, 3.5rem);
+  font-size: clamp(1.25rem, 4vw, 2.15rem);
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -208,7 +206,7 @@ a:focus-visible {
 
 .title-medium {
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 5vw, 3.5rem);
+  font-size: clamp(1.25rem, 4vw, 2.15rem);
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -235,6 +233,34 @@ a:focus-visible {
   font-size: 0.95rem;
   line-height: 1.7;
   font-weight: 400;
+}
+
+/* Global Text Justification for Body Paragraphs */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Exceptions to Text Justification */
+.text-center p,
+.text-center,
+.service-cta-banner p,
+.cta-banner-section p,
+.services-cta-banner p,
+.error-page p,
+p.error-message {
+  text-align: center !important;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+.office-address,
+.person-title {
+  text-align: left !important;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 /* Layout Utilities */

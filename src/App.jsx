@@ -9,8 +9,8 @@ import SearchOverlay from "./components/SearchOverlay";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ServicesList from "./pages/ServicesList";
+import ServiceDetail from "./pages/ServiceDetail";
 import People from "./pages/People";
-import PeopleDetail from "./pages/PeopleDetail";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
 import Legal from "./pages/Legal";
@@ -46,8 +46,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<ServicesList />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/people" element={<People />} />
-            <Route path="/people/:id" element={<PeopleDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/privacy" element={<Legal />} />

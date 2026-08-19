@@ -11,7 +11,7 @@ export default function About() {
       <div className="page-header">
         {/* <img src={logoImg} alt="TNT & Associates Logo" className="page-header-logo" /> */}
         <span className="title-small accent-color">About Our Firm</span>
-        <h1 className="title-medium page-main-title">A legacy of trust, built on strategic integrity.</h1>
+        <h1 className="title-display page-main-title">A legacy of trust, built on strategic integrity.</h1>
       </div>
 
       {/* Dynamic Content Panel */}
@@ -20,9 +20,7 @@ export default function About() {
         {/* Overview Section */}
         <div className="tab-pane fade-in-up">
           <div className="overview-text">
-            <h2 className="serif-display panel-headline" style={{ marginBottom: "2.5rem", fontSize: "1rem", fontWeight: "bold" }}>
-              {aboutOverview.headline}
-            </h2>
+
             {aboutOverview.paragraphs ? (
               <div
                 style={{
@@ -224,7 +222,6 @@ export default function About() {
         .page-main-title {
           font-weight: 300;
           margin-top: 1rem;
-          white-space: nowrap;
         }
         .about-tabs {
           display: flex;
@@ -325,7 +322,7 @@ export default function About() {
         .card-item {
           border: 1px solid var(--border-light);
           padding: 2.5rem;
-          background-color: var(--bg-secondary);
+          background-color: var(--bg-secondarymak);
         }
         .card-item h3 {
           font-size: 1.2rem;

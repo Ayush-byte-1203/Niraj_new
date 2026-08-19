@@ -23,7 +23,7 @@ export default function Contact() {
     <div className="contact-page container section-padding fade-in-up">
       <div className="page-header">
         <span className="title-small accent-color">Contact Our Firm</span>
-        <h1 className="title-medium page-main-title">Schedule a Strategic Consultation</h1>
+        <h1 className="title-display page-main-title">Schedule a Strategic Consultation</h1>
       </div>
 
       <div className="contact-grid">
@@ -177,8 +177,6 @@ export default function Contact() {
         .page-main-title {
           font-weight: 300;
           margin-top: 1rem;
-          font-size: clamp(1.25rem, 3.5vw, 2.75rem);
-          white-space: nowrap;
         }
         .contact-grid {
           display: grid;
@@ -208,7 +206,6 @@ export default function Contact() {
           font-size: clamp(1.25rem, 4vw, 2.5rem);
           font-weight: 400;
           margin: 0;
-          white-space: nowrap;
         }
         .office-address {
           font-size: 1.15rem;

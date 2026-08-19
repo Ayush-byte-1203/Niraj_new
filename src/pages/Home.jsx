@@ -44,8 +44,8 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <span className="hero-tagline title-small">TNT &amp; Associates • Practicing Company Secretaries</span>
-            <h1 className="hero-title title-display" style={{ fontWeight: "500", fontSize: "clamp(1.5rem, 4.5vw, 3.25rem)", lineHeight: "1.1" }}>
-              Strategic Advisors – Navigating <span style={{ fontStyle: "italic" }}>complexity with absolute</span> compliance precision.
+            <h1 className="hero-title title-display" style={{ fontWeight: "500", lineHeight: "1.1" }}>
+              Strategic Advisors-Navigating <span style={{ fontStyle: "italic" }}>complexity with absolute</span> compliance precision.
             </h1>
             <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
               The firm is recognized as one of the leading Company Secretary firms in Gujarat, offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
@@ -141,7 +141,7 @@ export default function Home() {
           </div>
 
           <div className="services-showcase-grid">
-            {practices.map((practice, index) => (
+            {practices.slice(0, 3).map((practice, index) => (
               <div key={practice.id} className="service-showcase-card editorial-card">
                 <div className="service-number serif-display">0{index + 1}</div>
                 <h3 className="service-title">{practice.name}</h3>
@@ -196,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* 8. LEADERSHIP PREVIEW */}
-      <section className="leadership-section section-padding">
+      {/* <section className="leadership-section section-padding">
         <div className="container">
           <div className="section-header">
             <div className="header-meta">
@@ -221,10 +221,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 9. GLOBAL HUB LOCATIONS */}
-      <section className="global-presence-section section-padding">
+      <section className="global-presence-section section-padding" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-header">
             <div className="header-meta">
@@ -253,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* 10. ACHIEVEMENTS & AWARDS */}
-      <section className="awards-timeline-section section-padding">
+      <section className="awards-timeline-section section-padding" style={{ paddingTop: 0 }}>
         <div className="container">
           <h2 className="title-medium text-center section-title-border">Achievements</h2>
 
@@ -277,15 +277,11 @@ export default function Home() {
       <section style={{ display: "none" }}></section>
 
       {/* 13. CALL TO ACTION (CTA) */}
-      <section className="cta-banner-section">
-        <div className="container cta-inner-grid">
-          <div className="cta-heading-col">
-            <span className="title-small text-muted">Consultation Gateway</span>
-            <h2 className="title-medium cta-banner-headline">Ready to discuss your corporate secretarial strategy?</h2>
-          </div>
-          <div className="cta-action-col">
-            <Link to="/contact" className="btn-primary">Connect with Partners</Link>
-          </div>
+      <section className="container" style={{ paddingBottom: "4rem", paddingTop: "4rem" }}>
+        <div className="service-cta-banner">
+          <h3 className="title-medium">Ready to discuss your corporate secretarial strategy?</h3>
+          <p className="text-muted mt-space">Connect with our specialized advisory team for a strategic consultation.</p>
+          <Link to="/contact" className="btn-primary" style={{ marginTop: "2rem", display: "inline-block" }}>Schedule Consultation</Link>
         </div>
       </section>
 
@@ -979,40 +975,19 @@ export default function Home() {
         }
 
         /* 13. CTA Banner */
-        .cta-banner-section {
-          background-color: var(--text-primary);
-          color: var(--bg-primary);
-          padding: 6rem 0;
-        }
-        [data-theme="dark"] .cta-banner-section {
+        .service-cta-banner {
           background-color: var(--bg-secondary);
-          color: var(--text-primary);
-          border-top: 1px solid var(--border-light);
-          border-bottom: 1px solid var(--border-light);
-        }
-        .cta-inner-grid {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          text-align: left;
+          border: 1px solid var(--border-light);
+          border-radius: 16px;
+          padding: 4.5rem 3rem;
+          text-align: center;
         }
         @media (max-width: 768px) {
-          .cta-inner-grid {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: var(--space-md);
+          .service-cta-banner {
+            padding: 3rem 1.5rem;
           }
         }
-        .cta-heading-col {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        .cta-banner-headline {
-          font-weight: 300;
-          color: var(--accent-gold);
-        }
-
+        
         /* 14. Newsletter Area */
         .newsletter-box-inner {
           display: grid;
