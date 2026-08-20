@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronRight, ShieldCheck, Compass, BarChart, ArrowRight, HelpCircle } from "lucide-react";
 import { practices, people } from "../data/mockDb";
 
 export default function ServicesList() {
+  const navigate = useNavigate();
   const steps = [
     { year: "Phase 1", title: "Diagnostic Assessment", desc: "We review operational compliance, term sheets, and covenant bindings." },
     { year: "Phase 2", title: "Strategic Structuring", desc: "Our team designs custom transaction vehicles and regulatory alignment frameworks." },
@@ -84,14 +85,14 @@ export default function ServicesList() {
         <div className="services-cards-grid">
           {practices.map((p, idx) => {
             return (
-              <div key={p.id} className="service-landing-card editorial-card" style={{ display: "flex", flexDirection: "column" }}>
+              <div key={p.id} className="service-landing-card editorial-card" style={{ display: "flex", flexDirection: "column", cursor: "pointer" }} onClick={() => navigate(`/services/${p.id}`)}>
                 <span className="card-index serif-display">0{idx + 1}</span>
                 <h3>{p.name}</h3>
                 <p className="text-muted card-desc">{p.shortDescription}</p>
                 <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
-                  <Link to={`/services/${p.id}`} className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", textDecoration: "none", fontSize: "0.95rem" }}>
+                  <span className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", fontSize: "0.95rem" }}>
                     Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
-                  </Link>
+                  </span>
                 </div>
               </div>
             );

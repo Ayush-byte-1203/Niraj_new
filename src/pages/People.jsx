@@ -39,6 +39,8 @@ export default function People() {
               <div 
                 key={person.id} 
                 className="person-card"
+                onClick={() => setSelectedPerson(person)}
+                style={{ cursor: 'pointer' }}
               >
                 <div className="person-meta" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "1.5rem" }}>
                   <div className="person-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, Award, MapPin } from "lucide-react";
 import heroBg from "../assets/hero-bg.jpg";
 import { practices, people, offices, achievements } from "../data/mockDb";
 import logoImg from "../assets/TNT.png";
 
 export default function Home() {
+  const navigate = useNavigate();
   // Statistics state counters
   const [stats, setStats] = useState({ years: 0, experts: 0, officesCount: 0, volume: 0 });
 
@@ -142,14 +143,14 @@ export default function Home() {
 
           <div className="services-showcase-grid">
             {practices.slice(0, 3).map((practice, index) => (
-              <div key={practice.id} className="service-showcase-card editorial-card">
+              <div key={practice.id} className="service-showcase-card editorial-card" style={{ cursor: "pointer" }} onClick={() => navigate(`/services/${practice.id}`)}>
                 <div className="service-number serif-display">0{index + 1}</div>
                 <h3 className="service-title">{practice.name}</h3>
                 <p className="service-desc text-muted">{practice.shortDescription}</p>
                 <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
-                  <Link to={`/services/${practice.id}`} className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", textDecoration: "none", fontSize: "0.95rem" }}>
+                  <span className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", fontSize: "0.95rem" }}>
                     Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
-                  </Link>
+                  </span>
                 </div>
               </div>
             ))}
