@@ -335,10 +335,11 @@ p.error-message {
 
 .gold-link {
   color: var(--accent-gold);
-  font-family: var(--sfont-serif);
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.35rem;
   display: inline-flex;
+  white-space: nowrap;
   align-items: center;
   gap: var(--space-xs);
   transition: var(--transition-duration-fast) ease;
