@@ -185,7 +185,7 @@ a:focus-visible {
 /* Typography Scales */
 .title-display {
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 4vw, 2.15rem);
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
   line-height: 1.05;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -196,7 +196,7 @@ a:focus-visible {
 .title-hero {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.25rem, 4vw, 2.15rem);
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -206,7 +206,7 @@ a:focus-visible {
 
 .title-medium {
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 4vw, 2.15rem);
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -335,7 +335,7 @@ p.error-message {
 
 .gold-link {
   color: var(--accent-gold);
-  font-family: var(--font-serif);
+  font-family: var(--sfont-serif);
   font-style: italic;
   font-size: 1.35rem;
   display: inline-flex;
