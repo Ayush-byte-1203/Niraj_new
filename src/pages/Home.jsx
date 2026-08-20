@@ -146,6 +146,11 @@ export default function Home() {
                 <div className="service-number serif-display">0{index + 1}</div>
                 <h3 className="service-title">{practice.name}</h3>
                 <p className="service-desc text-muted">{practice.shortDescription}</p>
+                <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
+                  <Link to={`/services/${practice.id}`} className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", textDecoration: "none", fontSize: "0.95rem" }}>
+                    Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
