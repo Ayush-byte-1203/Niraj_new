@@ -1,31 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import { ChevronRight, ShieldCheck, Compass, BarChart, ArrowRight, HelpCircle } from "lucide-react";
+import { ChevronRight, ShieldCheck, Compass, BarChart, ArrowRight, HelpCircle, X, CheckCircle2 } from "lucide-react";
 import { practices, people } from "../data/mockDb";
 
 export default function ServicesList() {
+  const [selectedService, setSelectedService] = useState(null);
+
   const steps = [
     { year: "Phase 1", title: "Diagnostic Assessment", desc: "We review operational compliance, term sheets, and covenant bindings." },
     { year: "Phase 2", title: "Strategic Structuring", desc: "Our team designs custom transaction vehicles and regulatory alignment frameworks." },
     { year: "Phase 3", title: "Clearance & Execution", desc: "We coordinate with administrative agencies to close the transaction smoothly." }
   ];
 
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (selectedService) {
+      document.body.classList.add('menu-open-lock');
+      document.documentElement.classList.add('menu-open-lock');
+    } else {
+      document.body.classList.remove('menu-open-lock');
+      document.documentElement.classList.remove('menu-open-lock');
+    }
+    return () => {
+      document.body.classList.remove('menu-open-lock');
+      document.documentElement.classList.remove('menu-open-lock');
+    };
+  }, [selectedService]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setSelectedService(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
     <div className="services-landing-page container section-padding fade-in-up">
-      {/* 1. Hero Banner */}
-      <section className="services-hero-banner hairline-bottom">
-        <span className="title-small accent-gold">Our Capabilities</span>
-        <h1 className="title-display" style={{ marginTop: "1rem" }}>Strategic Advisory for <span className="serif-display italic">Enterprise Transactions</span>.</h1>
-        <div className="max-width-para" style={{ marginTop: "2rem" }}>
-          <p className="text-primary" style={{ marginBottom: "1.25rem", fontSize: "1.1rem", lineHeight: "1.7", textAlign: "justify", textJustify: "inter-word", hyphens: "auto", WebkitHyphens: "auto" }}>
-            We provide comprehensive corporate and legal services designed to help businesses navigate complex regulatory requirements, maintain statutory compliance, and achieve their corporate objectives.
-          </p>
-          <p className="text-muted" style={{ fontSize: "1.05rem", lineHeight: "1.7", textAlign: "justify", textJustify: "inter-word", hyphens: "auto", WebkitHyphens: "auto" }}>
-            Our firm represents and advises clients before various statutory, regulatory and quasi-judicial authorities like Securities Exchange Board of India (SEBI), Securities Appellate Tribunal (SAT), Stock Exchanges, Regional Director (RD), Registrar of Companies (ROC), Ministry of Corporate Affairs -Delhi (HQ), Reserve Bank of India, National Company Law Tribunal / Appellate Tribunal (NCLT and NCLAT) and many more.
-          </p>
-        </div>
-      </section>
-
       {/* 1.5. Corporate Overview & Companies Act */}
       <section className="corporate-overview-section" style={{ paddingBottom: "4rem" }}>
 
@@ -37,7 +48,7 @@ export default function ServicesList() {
             </h2>
             <div className="max-width-para" style={{ marginTop: "1.5rem" }}>
               <p className="text-muted" style={{ margin: 0, fontSize: "1.1rem", lineHeight: "1.7", textAlign: "justify", textJustify: "inter-word", hyphens: "auto", WebkitHyphens: "auto" }}>
-              We provide comprehensive advisory and compliance services under the Companies Act, 2013 assisting companies in meeting their statutory obligations and maintaining effective corporate governance. Our services are designed to support businesses throughout their corporate lifecycle, from incorporation and routine compliances to significant corporate actions and regulatory matters. It includes:
+                We provide comprehensive advisory and compliance services under the Companies Act, 2013 assisting companies in meeting their statutory obligations and maintaining effective corporate governance. Our services are designed to support businesses throughout their corporate lifecycle, from incorporation and routine compliances to significant corporate actions and regulatory matters. It includes:
               </p>
             </div>
           </div>
@@ -82,16 +93,29 @@ export default function ServicesList() {
           <h2 className="title-display" style={{ marginTop: "1rem" }}>Practice Areas</h2>
         </div>
         <div className="services-cards-grid">
-          {practices.map((p, idx) => {
+          {practices.map((p) => {
             return (
-              <div key={p.id} className="service-landing-card editorial-card" style={{ display: "flex", flexDirection: "column" }}>
-                <span className="card-index serif-display">0{idx + 1}</span>
-                <h3>{p.name}</h3>
-                <p className="text-muted card-desc">{p.shortDescription}</p>
-                <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
-                  <Link to={`/services/${p.id}`} className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", textDecoration: "none", fontSize: "0.95rem" }}>
-                    Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
-                  </Link>
+              <div
+                key={p.id}
+                className="service-landing-card editorial-card"
+                onClick={() => setSelectedService(p)}
+                style={{ cursor: "pointer" }}
+              >
+                {p.image && (
+                  <div className="card-bg-img" style={{ backgroundImage: `url(${p.image})` }}></div>
+                )}
+                <div className="card-content-wrap" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%" }}>
+                  <h3>{p.name}</h3>
+                  <p className="text-muted card-desc">{p.shortDescription}</p>
+                  <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setSelectedService(p); }}
+                      className="show-more-link"
+                      style={{ background: "none", border: "none", padding: 0, cursor: "pointer", display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", fontSize: "0.95rem" }}
+                    >
+                      Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             );
@@ -99,50 +123,57 @@ export default function ServicesList() {
         </div>
       </section>
 
-      {/* 3. Key Benefits / Featured Expertise */}
-      <section className="benefits-section padding-v">
-        <div className="benefits-box-card">
-          <div className="benefits-split-grid">
-            <div className="benefits-title-box">
-              <span className="title-small accent-gold">Enterprise Focus</span>
-              <h2 className="title-medium">Designed to prevent transaction friction.</h2>
+      {/* Service Detail Modal Popup */}
+      {selectedService && createPortal(
+        <div className="service-modal-overlay" onClick={() => setSelectedService(null)}>
+          <div className="service-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="service-modal-close-x" onClick={() => setSelectedService(null)} aria-label="Close">
+              <X size={20} />
+            </button>
+            <div className="service-modal-header">
+              <span className="title-small accent-gold">Practice Area</span>
+              <h2 className="service-modal-title">{selectedService.name}</h2>
             </div>
-            <div className="benefits-list-box">
-              <div className="benefit-row">
-                <Compass size={24} className="gold-icon" />
-                <div>
-                  <h4>Regulatory Foresight</h4>
-                  <p className="text-muted">We map cross-border FDI requirements before capital is committed.</p>
+
+            <div className="service-modal-body">
+              <p className="service-modal-desc">
+                {selectedService.description}
+              </p>
+              {selectedService.details && (
+                <p className="service-modal-details">
+                  {selectedService.details}
+                </p>
+              )}
+
+              {selectedService.includes && selectedService.includes.length > 0 && (
+                <div className="service-modal-capabilities">
+                  <h4 className="title-small accent-gold" style={{ marginBottom: "1rem" }}>Core Capabilities</h4>
+                  <ul className="service-modal-list">
+                    {selectedService.includes.map((item, idx) => (
+                      <li key={idx} className="service-modal-item">
+                        <CheckCircle2 size={18} className="gold-icon flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-              <div className="benefit-row">
-                <BarChart size={24} className="gold-icon" />
-                <div>
-                  <h4>Capital Efficiency</h4>
-                  <p className="text-muted">Our Restructuring team optimizes covenant triggers to preserve corporate liquidity.</p>
-                </div>
-              </div>
+              )}
+            </div>
+
+            <div className="service-modal-footer">
+              <Link to="/contact" className="btn-primary" onClick={() => setSelectedService(null)}>
+                Schedule Consultation
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </div>,
+        document.body
+      )}
 
-      {/* 4. Process Overview Timeline */}
-      <section className="process-timeline-section" style={{ padding: "4rem 0" }}>
-        <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
-          <span className="title-small accent-gold">Engagement Methodology</span>
-          <h2 className="title-medium">Our Structured Approach</h2>
-        </div>
-        <div className="process-timeline-grid">
-          {steps.map((step, idx) => (
-            <div key={idx} className="process-step-card editorial-card">
-              <span className="step-phase serif-display">{step.year}</span>
-              <h4>{step.title}</h4>
-              <p className="text-muted">{step.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 3. Key Benefits / Featured Expertise */}
+
+
+
 
       {/* 5. CTA & Contact Gateway */}
       <section className="services-cta-banner">
@@ -197,19 +228,45 @@ export default function ServicesList() {
           }
         }
         .service-landing-card {
+          position: relative;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          min-height: 400px;
+          min-height: 380px;
           height: 100%;
-          background-color: var(--bg-card) !important;
+          background-color: var(--bg-card);
           padding: 2.5rem;
           min-width: 0;
+          border-radius: 8px;
+          border: 1px solid var(--border-light);
+          transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
-        .card-index {
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
-          color: var(--accent-gold);
-          margin-bottom: 1.25rem;
+        .service-landing-card .card-bg-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-size: cover;
+          background-position: center;
+          opacity: 0.16;
+          filter: grayscale(15%);
+          transition: transform 0.5s ease, opacity 0.5s ease;
+          z-index: 1;
+        }
+        .service-landing-card:hover {
+          transform: translateY(-5px);
+          border-color: var(--accent-gold);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+        }
+        .service-landing-card:hover .card-bg-img {
+          transform: scale(1.08);
+          opacity: 0.32;
+        }
+        .card-content-wrap {
+          position: relative;
+          z-index: 2;
         }
         .service-landing-card h3 {
           font-size: 1.35rem;
@@ -378,6 +435,132 @@ export default function ServicesList() {
           font-size: 1.5rem;
           line-height: 1;
           top: -2px;
+        }
+
+        /* Service Modal Styles */
+        .service-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          z-index: 99999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: fadeIn 0.25s ease;
+          padding: 1.5rem;
+        }
+        .service-modal-content {
+          background: var(--bg-primary);
+          width: 100%;
+          max-width: 750px;
+          max-height: 80vh;
+          border-radius: 8px;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          border: 1px solid var(--border-light);
+          padding: 2.5rem;
+        }
+        @media (max-width: 768px) {
+          .service-modal-content {
+            padding: 1.75rem;
+            max-height: 85vh;
+          }
+        }
+        .service-modal-close-x {
+          position: absolute;
+          top: 1.25rem;
+          right: 1.25rem;
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-light);
+          color: var(--text-primary);
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 10;
+          transition: background 0.2s, color 0.2s;
+        }
+        .service-modal-close-x:hover {
+          background: var(--text-primary);
+          color: var(--bg-primary);
+        }
+        .service-modal-header {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid var(--border-light);
+        }
+        .service-modal-title {
+          font-size: 1.75rem;
+          font-weight: 600;
+          font-family: var(--font-sans);
+          color: var(--text-primary);
+          margin-top: 0.5rem;
+          line-height: 1.25;
+        }
+        @media (max-width: 768px) {
+          .service-modal-title {
+            font-size: 1.35rem;
+          }
+        }
+        .service-modal-body {
+          overflow-y: auto;
+          flex-grow: 1;
+          padding-right: 0.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .service-modal-desc {
+          font-size: 1.05rem;
+          line-height: 1.7;
+          color: var(--text-primary);
+          margin-bottom: 1.5rem;
+          text-align: justify;
+        }
+        .service-modal-details {
+          font-size: 0.95rem;
+          line-height: 1.65;
+          color: var(--text-muted);
+          margin-bottom: 1.5rem;
+        }
+        .service-modal-capabilities {
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-light);
+          padding: 1.5rem;
+          border-radius: 6px;
+        }
+        .service-modal-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.85rem;
+        }
+        .service-modal-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          font-size: 0.92rem;
+          color: var(--text-secondary);
+          line-height: 1.5;
+        }
+        .service-modal-footer {
+          display: flex;
+          justify-content: flex-end;
+          padding-top: 1rem;
+          border-top: 1px solid var(--border-light);
         }
       `}</style>
     </div>

@@ -38,6 +38,7 @@ export const practices = [
     shortDescription: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements.",
     description: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements. Our team assists companies in preparing for the IPO process and navigating the regulatory framework applicable to public issues and listing of securities.",
     details: "",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "IPO Due Diligence",
       "Corporate and Secretarial Due Diligence",
@@ -57,6 +58,7 @@ export const practices = [
     shortDescription: "We provide comprehensive legal, secretarial and regulatory services for Limited Liability Partnerships, assisting clients from incorporation and structuring to ongoing statutory compliances and corporate changes.",
     description: "We provide comprehensive legal, secretarial and regulatory services for Limited Liability Partnerships, assisting clients from incorporation and structuring to ongoing statutory compliances and corporate changes. Our services are tailored to meet the specific requirements of LLPs under the Limited Liability Partnership Act, 2008 and applicable rules and regulations.",
     details: "",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Assistance with incorporation, name approval, preparation of the LLP Agreement and statutory filings.",
       "Formation of LLP, conversion of Company into LLP or otherwise.",
@@ -75,6 +77,7 @@ export const practices = [
     shortDescription: "We provide comprehensive advisory and compliance services in relation to the Securities and Exchange Board of India Act and the regulations, rules and guidelines issued thereunder.",
     description: "We provide comprehensive advisory and compliance services in relation to the Securities and Exchange Board of India Act and the regulations, rules and guidelines issued thereunder. Our services are aimed at helping companies, promoters, investors and other market participants understand and comply with the evolving securities regulatory framework.",
     details: "",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Providing guidance for Listing / Revocation of securities with stock exchanges.",
       "Providing guidance as required under the Listing Regulations and action to be taken by the company there under such as periodically compliance including compliances under Corporate Governance and Listing Regulation etc.",
@@ -93,6 +96,7 @@ export const practices = [
     shortDescription: "We provide comprehensive advisory and compliance services under the Foreign Exchange Management Act, 1999 (FEMA) and the regulations, rules, notifications and directions issued thereunder.",
     description: "We provide comprehensive advisory and compliance services under the Foreign Exchange Management Act, 1999 (FEMA) and the regulations, rules, notifications and directions issued thereunder. We assist Indian and foreign businesses in navigating cross-border transactions and ensuring compliance with the applicable foreign exchange framework.",
     details: "",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Formation of Joint Venture (JV), Wholly Owned Subsidiary companies in and outside India in compliance with the requirements under Reserve Bank of India (RBI) / Department of Industrial Policy and Promotion (DIPP) and guideline framed thereunder.",
       "Providing guidance on inbound & outbound investments.",
@@ -111,6 +115,7 @@ export const practices = [
     shortDescription: "We provide advisory and compliance services under the Foreign Contribution Regulation Act, 2010 (FCRA) and the rules and regulations framed thereunder.",
     description: "We provide advisory and compliance services under the Foreign Contribution Regulation Act, 2010 (FCRA) and the rules and regulations framed thereunder. We assist eligible organisations in ensuring proper regulatory compliance while receiving, utilising and reporting foreign contributions in accordance with the applicable legal framework.",
     details: "",
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Providing guidance on eligibility criteria for Registration and Prior Permission.",
       "Advising on and documentation required for Prior Permission, Registration, Condonation, Restoration, Shifting of Designated Bank, Renewal, change of constitution etc. of NGOs.",
@@ -125,6 +130,7 @@ export const practices = [
     shortDescription: "We provide comprehensive legal and advisory services in matters arising under the Insolvency and Bankruptcy Code, 2016 (IBC).",
     description: "We provide comprehensive legal and advisory services in matters arising under the Insolvency and Bankruptcy Code, 2016 (IBC). Our team assists corporate entities, creditors and other stakeholders in navigating insolvency proceedings, restructuring requirements and related proceedings before the adjudicating and appellate authorities.",
     details: "",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Drafting of Notice and application including Voluntary Liquidation under Insolvency Code.",
       "Appearing before NCLT and NCLAT for the matter under IBC.",
@@ -141,6 +147,7 @@ export const practices = [
     shortDescription: "We provide comprehensive legal, regulatory and compliance services to banks, financial institutions and other regulated entities in relation to applicable banking laws and regulations.",
     description: "We provide comprehensive legal, regulatory and compliance services to banks, financial institutions and other regulated entities in relation to applicable banking laws and regulations, including the Banking Regulation Act, RBI directions and other relevant regulatory frameworks. Our services are designed to assist clients in meeting regulatory obligations, maintaining effective governance and addressing complex banking and financial matters.",
     details: "",
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Providing Search Report based on documents available on MCA.",
       "Examine covenants contained in the loan agreement thoroughly and to check whether all notices required to be sent to the Financial Institutions and Banks have been complied and necessary approvals were obtained from the FI and Banks wherever required.",
@@ -156,6 +163,7 @@ export const practices = [
     shortDescription: "We provide specialized audit and compliance review services to help companies assess their compliance with applicable corporate laws, regulations and secretarial standards.",
     description: "We provide specialized audit and compliance review services to help companies assess their compliance with applicable corporate laws, regulations and secretarial standards. Our audit approach focuses on identifying compliance gaps, strengthening governance practices and providing practical recommendations for corrective measures.",
     details: "",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Due Diligence under Corporate Laws in case of Take Over, Change in Management, Joint Venture, IPO, QIB etc.",
       "Conducting Secretarial Audit in accordance with the Companies Act, 2013 and applicable regulations.",
@@ -172,6 +180,7 @@ export const practices = [
     shortDescription: "We provide advisory and legal support in matters relating to Intellectual Property Rights (IPR), helping businesses protect, manage and commercially utilise their intellectual assets.",
     description: "We provide advisory and legal support in matters relating to Intellectual Property Rights (IPR), helping businesses protect, manage and commercially utilise their intellectual assets. Our services cover the identification, registration, protection and enforcement of intellectual property rights in accordance with applicable laws.",
     details: "",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Advising on intellectual Property Licensing.",
       "Getting Trademark Registered.",
@@ -186,6 +195,7 @@ export const practices = [
     shortDescription: "We provide comprehensive advisory and implementation support for corporate restructuring transactions, helping businesses reorganize their corporate structure, ownership, operations and liabilities.",
     description: "We provide comprehensive advisory and implementation support for corporate restructuring transactions, helping businesses reorganize their corporate structure, ownership, operations and liabilities in accordance with their strategic and commercial objectives. Our team assists clients in navigating the legal, regulatory and procedural requirements involved in complex restructuring transactions.",
     details: "",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Advisory and assistance in relation to mergers, amalgamations and schemes of arrangement between companies.",
       "Assistance with demergers and re-organisation of business undertakings.",
@@ -202,6 +212,7 @@ export const practices = [
     shortDescription: "We advise companies on restructuring and reorganising their share capital and securities structure to meet their business, financial and strategic objectives.",
     description: "We advise companies on restructuring and reorganising their share capital and securities structure to meet their business, financial and strategic objectives. Our services cover a wide range of capital-related corporate actions, with assistance in fulfilling the applicable legal, regulatory and procedural requirements.",
     details: "",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
     includes: [
       "Advisory and assistance in relation to reduction of share capital and the requisite regulatory and NCLT process.",
       "Assistance with buy-back of shares and other securities in accordance with applicable laws and regulations.",
@@ -219,6 +230,7 @@ export const people = [
     id: "niraj-trivedi",
     name: "CS NIRAJ TRIVEDI",
     title: "PARTNER",
+    degree: "FCS, B.Com (Hons.), LL.B., ACIS (U.K.), PGDCL, PGDLP",
     officeId: "vadodara",
     linkedin: "https://www.linkedin.com/in/niraj-trivedi-5458a117",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop",
@@ -232,6 +244,7 @@ export const people = [
     id: "mona-trivedi",
     name: "ADV. MONA TRIVEDI",
     title: "LEGAL COUNSEL",
+    degree: "LL.M. (Gold Medalist)",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
     bio: "She is LLM (Gold Medalist) by qualification and brings over 25 years of professional experience in the field of Corporate Laws, Banking Regulation, Revenue Matters, Debt Recovery, Title Clearance, etc. Since the inception of TNT & Associates, she has played a pivotal role in the firm's legal and advisory practice, contributing significantly to its growth and reputation.\n\nShe is responsible for drafting and reviewing a wide range of legal documents including Applications, Petitions, Appeals, Scheme and other legal documents to be submitted with statutory authorities such as NCLT, NCLAT, SEBI, ROC, RD, RBI etc.",
@@ -244,6 +257,7 @@ export const people = [
     id: "ashish-tripathi",
     name: "CS ASHISH TRIPATHI",
     title: "PARTNER",
+    degree: "ACS",
     officeId: "ahmedabad",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop",
     bio: "He is an Associate Company Secretary and senior partner of the firm, with over 15 years of professional experience in the field of Corporate Laws. His expertise spans corporate compliance, regulatory advisory, and representation before various statutory authorities.\n\nHe heads the firm's Ahmedabad office and is responsible for liaising with key regulatory and government authorities, including the Registrar of Companies (ROC), Regional Director (RD), National Company Law Tribunal (NCLT), and the Stamp Office.",
@@ -256,6 +270,7 @@ export const people = [
     id: "samir-raval",
     name: "CS SAMIR RAVAL",
     title: "SENIOR ASSOCIATE",
+    degree: "FCS, B.Com, LL.B. (Spl.)",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop",
     bio: "He is a Commerce Graduate with LLB (Spl.) and a Fellow Company Secretary and having experience of around 35 years in the Corporate World. Throughout his career, he has held key leadership positions in the company secretarial and compliance functions of some of India's leading organizations.\n\nHe has served in the Company Secretarial Department of reputed companies such as Gujarat Industries Power Company Limited, Reliance Industries Limited, Reliance Infocomm Limited, Zee Learn Limited and JMC Projects (India) Limited, a Kalptaaru Group Company.\n\nHe possesses experience in the areas of Company Law, Corporate Governance, Corporate Restructuring, SEBI Act, 1992 and its Rules and Regulations, Corporate Compliance and Regulatory Advisory.",
@@ -268,6 +283,7 @@ export const people = [
     id: "ismail-shaikhjiwala",
     name: "CS ISMAIL SHAIKHJIWALA",
     title: "SENIOR ASSOCIATE",
+    degree: "ACS",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop",
     bio: "He is an Associate Company Secretary with around two years of professional experience in the areas of Corporate Laws and Foreign Exchange Management Act (FEMA) compliances. He is actively involved in providing corporate advisory and compliance support to a diverse range of clients.\n\nHis core responsibilities include incorporation of companies and LLPs, conversion of companies and LLPs, and ensuring statutory compliances for private limited and unlisted companies under the Companies Act, 2013 and the Limited Liability Partnership Act, 2008.",
@@ -280,6 +296,7 @@ export const people = [
     id: "vrund-bhrambhatt",
     name: "CS VRUND BRAHMBHATT",
     title: "ASSOCIATE",
+    degree: "ACS, B.Com",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop",
     bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Bachelor of Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA, and Secretarial Compliances.\n\nHe is actively involved in handling matters relating to incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting, and regulatory filings. He also handles matters pertaining to the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC) and undertakes various corporate restructuring and compliance-related assignments.",
@@ -292,6 +309,7 @@ export const people = [
     id: "vedant-parikh",
     name: "CS VEDANT PARIKH",
     title: "ASSOCIATE",
+    degree: "ACS",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
     bio: "He is a qualified Company Secretary with over two years of professional experience in the field of Corporate Laws. He has developed expertise in corporate compliance, due diligence and secretarial advisory services.\n\nHis core responsibilities include conducting due diligence for Initial Public Offerings (IPOs), incorporation and registration of companies, including compliances relating to GIFT City and undertaking secretarial audits for listed and unlisted companies. He also assists clients in ensuring regulatory compliance and maintaining high standards of corporate governance.",
@@ -300,22 +318,11 @@ export const people = [
     publications: [],
     roleType: "expert"
   },
-  // {
-  //   id: "shrimal-patel",
-  //   name: "CS SHRIMAL PATEL",
-  //   title: "ASSOCIATE",
-  //   officeId: "ahmedabad",
-  //   image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
-  //   bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA and Secretarial Compliances.\n\nHis role involves providing advisory and compliance support across various statutory and regulatory frameworks, ensuring clients adhere to all applicable corporate and foreign exchange laws.",
-  //   practices: ["fema", "secretarial-audit"],
-  //   sectors: [],
-  //   publications: [],
-  //   roleType: "expert"
-  // },
   {
     id: "riya-thakker",
     name: "MS. RIYA THAKKER",
     title: "ASSOCIATE",
+    degree: "M.Com (CS Semi-Qualified)",
     officeId: "vadodara",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
     bio: "She is Semi-Qualified Company Secretary and holds a master’s degree in commerce. She has over three years of professional experience in the field of Corporate Laws, FEMA and secretarial compliances.\n\nShe is actively involved in handling incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting and regulatory filings. She also assists clients in matters before the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC), providing efficient and compliant solutions across a wide range of corporate legal and regulatory matters.",
@@ -334,7 +341,7 @@ export const awards = [
 ];
 
 export const aboutOverview = {
-  headline: "Strategic Advisors-Navigating complexity with absolute compliance precision.",
+  headline: "TNT & Associates • Practicing Company Secretaries",
   paragraphs: [
     "Established in 1999 by CS Neeraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries. The firm expanded its practice in 2005 to offer a wider range of services including SEBI regulations, FEMA compliances, corporate advisory and representation before various quasi-judicial authorities. This expansion enabled the firm to provide comprehensive solutions to clients navigating increasingly complex legal and regulatory requirements.",
     "In 2018, the firm strengthened its presence with the establishment of its Ahmedabad office and launched a dedicated practice for matters before the National Company Law Tribunal (NCLT) and under the Insolvency and Bankruptcy Code (IBC). These developments marked a significant milestone in the firm's journey towards becoming a full-service corporate advisory practice.",

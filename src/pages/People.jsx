@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { MapPin, Search, RefreshCw } from "lucide-react";
+import { MapPin, Search, RefreshCw, X } from "lucide-react";
 import LinkedinIcon from "../components/LinkedinIcon";
 import { people, offices, practices } from "../data/mockDb";
 
@@ -21,6 +21,13 @@ export default function People() {
       document.documentElement.classList.remove('menu-open-lock');
     };
   }, [selectedPerson]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setSelectedPerson(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   return (
     <div className="people-page container section-padding fade-in-up">
@@ -45,8 +52,9 @@ export default function People() {
                 <div className="person-meta" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "1.5rem" }}>
                   <div className="person-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                     <div>
-                      <h3 style={{ fontWeight: "bold" }}>{person.name}</h3>
-                      <p className="person-title">{person.title}</p>
+                      <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem" }}>{person.name}</h3>
+                      {person.degree && <p className="person-degree" style={{ fontSize: "0.82rem", color: "var(--accent-gold)", fontWeight: "500", margin: "0 0 0.4rem 0" }}>{person.degree}</p>}
+                      <p className="person-title" style={{ margin: 0 }}>{person.title}</p>
                     </div>
                     {person.linkedin && (
                       <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="linkedin-link" aria-label={`LinkedIn profile for ${person.name}`} onClick={(e) => e.stopPropagation()}>
@@ -68,32 +76,52 @@ export default function People() {
           })}
         </div>
 
-      {/* Modal Popup */}
+      {/* Premium Modal Popup */}
       {selectedPerson && createPortal(
         <div className="person-modal-overlay" onClick={() => setSelectedPerson(null)}>
           <div className="person-modal-content" onClick={(e) => e.stopPropagation()}>
-            
-            <div className="modal-header">
-              <h2 className="modal-name">{selectedPerson.name}</h2>
-              <p className="modal-designation">{selectedPerson.title}</p>
-            </div>
-            
-            <div className="modal-bio">
-              {selectedPerson.bio.split('\n').map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+
+            {/* Close button */}
+            <button className="modal-close-x" onClick={() => setSelectedPerson(null)} aria-label="Close">
+              <X size={20} />
+            </button>
+
+            {/* Left: Photo column */}
+            <div className="modal-photo-col">
+              <div className="modal-photo-frame">
+                <img src={selectedPerson.image} alt={selectedPerson.name} className="modal-photo-img" />
+              </div>
+              <div className="modal-photo-info">
+                <p className="modal-photo-name">{selectedPerson.name}</p>
+                {selectedPerson.degree && <p className="modal-photo-degree" style={{ fontSize: "0.78rem", color: "var(--accent-gold)", fontWeight: "500", margin: "0.2rem 0" }}>{selectedPerson.degree}</p>}
+                <p className="modal-photo-title">{selectedPerson.title}</p>
+                {selectedPerson.linkedin && (
+                  <a href={selectedPerson.linkedin} target="_blank" rel="noopener noreferrer" className="modal-linkedin">
+                    <LinkedinIcon size={16} /> LinkedIn
+                  </a>
+                )}
+              </div>
             </div>
 
-            <div className="modal-footer">
-              <button className="modal-close-link" onClick={() => setSelectedPerson(null)}>
-                Explore all people
-              </button>
+            {/* Right: Bio column */}
+            <div className="modal-bio-col">
+              <div className="modal-bio-header">
+                <h2 className="modal-name">{selectedPerson.name}</h2>
+                {selectedPerson.degree && <p className="modal-degree" style={{ fontSize: "0.95rem", color: "var(--accent-gold)", fontWeight: "500", margin: "0 0 0.4rem 0" }}>{selectedPerson.degree}</p>}
+                <p className="modal-designation">{selectedPerson.title}</p>
+              </div>
+              <div className="modal-bio">
+                {selectedPerson.bio.split('\n').map((paragraph, idx) => (
+                  paragraph.trim() && <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
           </div>
         </div>,
         document.body
       )}
+
 
       <style>{`
         .people-page {
@@ -219,91 +247,159 @@ export default function People() {
           bottom: 0;
           width: 100vw;
           height: 100vh;
-          background: rgba(0, 0, 0, 0.4);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           z-index: 99999;
           display: flex;
           align-items: center;
           justify-content: center;
-          animation: fadeIn 0.2s ease;
+          animation: fadeIn 0.25s ease;
+          padding: 1.5rem;
         }
         .person-modal-content {
           background: var(--bg-primary);
-          width: 60%;
-          max-height: 70vh;
-          border-radius: 4px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+          width: 100%;
+          max-width: 850px;
+          max-height: 80vh;
+          border-radius: 6px;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
           position: relative;
-          display: flex;
-          flex-direction: column;
+          display: grid;
+          grid-template-columns: 280px 1fr;
+          overflow: hidden;
+          border: 1px solid var(--border-light);
         }
         @media (max-width: 768px) {
           .person-modal-content {
-            width: 90%;
+            grid-template-columns: 1fr;
             max-height: 85vh;
+            overflow-y: auto;
           }
         }
-        .modal-header {
-          padding: 3rem 3rem 1.5rem 3rem;
-          text-align: center;
-          flex-shrink: 0;
-        }
-        @media (max-width: 768px) {
-          .modal-header {
-            padding: 2rem 2rem 1rem 2rem;
-          }
-        }
-        .modal-name {
-          font-weight: bold;
-          font-size: 2.25rem;
-          margin-bottom: 0.5rem;
-          font-family: var(--font-sans);
+        .modal-close-x {
+          position: absolute;
+          top: 1.25rem;
+          right: 1.25rem;
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-light);
           color: var(--text-primary);
-          text-align: center;
-        }
-        @media (max-width: 768px) {
-          .modal-name {
-            font-size: 1.6rem;
-          }
-        }
-        .modal-designation {
-          font-size: 1.15rem;
-          color: var(--text-secondary);
-          margin-bottom: 0.5rem;
-          text-align: center;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-        @media (max-width: 768px) {
-          .modal-designation {
-            font-size: 0.95rem;
-          }
-        }
-        .modal-location {
-          font-size: 1rem;
-          color: var(--text-muted);
-          margin-bottom: 0;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
+          z-index: 10;
+          transition: background 0.2s, color 0.2s;
         }
-        .modal-bio {
-          text-align: justify;
-          font-size: 1.05rem;
-          line-height: 1.7;
+        .modal-close-x:hover {
+          background: var(--text-primary);
+          color: var(--bg-primary);
+        }
+
+        /* Photo Column */
+        .modal-photo-col {
+          background: var(--bg-secondary);
+          display: flex;
+          flex-direction: column;
+          border-right: 1px solid var(--border-light);
+        }
+        @media (max-width: 768px) {
+          .modal-photo-col {
+            border-right: none;
+            border-bottom: 1px solid var(--border-light);
+          }
+        }
+        .modal-photo-frame {
+          width: 100%;
+          height: 280px;
+          overflow: hidden;
+          background: var(--border-light);
+        }
+        .modal-photo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+        .modal-photo-info {
+          padding: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .modal-photo-name {
+          font-weight: 600;
+          font-size: 1.1rem;
           color: var(--text-primary);
-          padding: 0 3rem;
+          margin: 0;
+        }
+        .modal-photo-title {
+          font-size: 0.8rem;
+          color: var(--accent-gold);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin: 0;
+        }
+        .modal-linkedin {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          color: #0077b5;
+          font-size: 0.85rem;
+          font-weight: 500;
+          margin-top: 0.5rem;
+          text-decoration: none;
+        }
+        .modal-linkedin:hover {
+          text-decoration: underline;
+        }
+
+        /* Bio Column */
+        .modal-bio-col {
+          display: flex;
+          flex-direction: column;
+          padding: 2.5rem;
           overflow-y: auto;
-          flex-grow: 1;
           min-height: 0;
         }
         @media (max-width: 768px) {
-          .modal-bio {
-            padding: 0 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
+          .modal-bio-col {
+            padding: 1.5rem;
           }
+        }
+        .modal-bio-header {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid var(--border-light);
+        }
+        .modal-name {
+          font-weight: 600;
+          font-size: 1.8rem;
+          margin: 0 0 0.4rem 0;
+          font-family: var(--font-sans);
+          color: var(--text-primary);
+        }
+        @media (max-width: 768px) {
+          .modal-name {
+            font-size: 1.4rem;
+          }
+        }
+        .modal-designation {
+          font-size: 0.9rem;
+          color: var(--text-muted);
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+        .modal-bio {
+          text-align: justify;
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: var(--text-primary);
         }
         .modal-bio p {
           margin-bottom: 1rem;
@@ -311,30 +407,7 @@ export default function People() {
         .modal-bio p:last-child {
           margin-bottom: 0;
         }
-        .modal-footer {
-          padding: 1.5rem 3rem 3rem 3rem;
-          text-align: center;
-          flex-shrink: 0;
-        }
-        @media (max-width: 768px) {
-          .modal-footer {
-            padding: 1.5rem 2rem 2rem 2rem;
-          }
-        }
-        .modal-close-link {
-          background: none;
-          border: none;
-          color: var(--accent-gold);
-          font-weight: 600;
-          font-size: 1.1rem;
-          cursor: pointer;
-          text-decoration: underline;
-          padding: 0.5rem 1rem;
-          transition: color 0.2s;
-        }
-        .modal-close-link:hover {
-          color: var(--text-primary);
-        }
+
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }

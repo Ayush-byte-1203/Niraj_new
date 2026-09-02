@@ -107,7 +107,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
                       <h3><ShieldCheck size={18} /> Services</h3>
                       <div className="results-list">
                         {results.practices.map(p => (
-                          <Link key={p.id} to={`/services/${p.id}`} onClick={onClose} className="result-item">
+                          <Link key={p.id} to="/services" onClick={onClose} className="result-item">
                             <strong>{p.name}</strong>
                             <span>{p.shortDescription}</span>
                           </Link>
@@ -121,7 +121,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
                       <h3><User size={18} /> Our People</h3>
                       <div className="results-list">
                         {results.people.map(p => (
-                          <Link key={p.id} to={`/people/${p.id}`} onClick={onClose} className="result-item">
+                          <Link key={p.id} to="/people" onClick={onClose} className="result-item">
                             <strong>{p.name}</strong>
                             <span>{p.title}</span>
                           </Link>

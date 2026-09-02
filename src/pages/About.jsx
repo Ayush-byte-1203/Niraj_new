@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { aboutOverview, visionMission, leadershipMessage, corporateValues, achievementsMilestones } from "../data/mockDb";
+import { aboutOverview, visionMission, leadershipMessage, corporateValues, achievementsMilestones, people } from "../data/mockDb";
 import { Shield, Target, Quote } from "lucide-react";
 import logoImg from "../assets/TNT.png";
 
@@ -100,26 +100,43 @@ export default function About() {
 
 
           {/* Leadership Quote Message Box Below the Bullet Points */}
-          <div
-            className="leadership-message-box"
-            style={{
-              width: "100%",
-              maxWidth: "1050px",
-              margin: "4rem auto 0"
-            }}
-          >
-            <Quote className="quote-mark" size={32} />
-            <blockquote className="message-quote" style={{ fontSize: "1.2rem", lineHeight: "1.8" }}>
-              "{leadershipMessage.quote}"
-            </blockquote>
-            <div className="quote-author-details" style={{ marginTop: "1.5rem" }}>
-              <strong>{leadershipMessage.author}</strong>
-              <span>{leadershipMessage.designation}</span>
-            </div>
-            {leadershipMessage.body ? (
-              <p className="message-body">{leadershipMessage.body}</p>
-            ) : null}
-          </div>
+          {(() => {
+            const partner = people.find(p => p.id === "niraj-trivedi");
+            return (
+              <div className="leadership-message-box" style={{ width: "100%", maxWidth: "1050px", margin: "4rem auto 0" }}>
+                <div className="leadership-message-inner">
+                  {/* Quote side */}
+                  <div className="leadership-quote-side">
+                    <Quote className="quote-mark" size={28} />
+                    <blockquote className="message-quote" style={{ fontSize: "1.1rem", lineHeight: "1.85" }}>
+                      "{leadershipMessage.quote}"
+                    </blockquote>
+                    <div className="quote-author-details" style={{ marginTop: "1.75rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+                      <div className="author-divider"></div>
+                      <div>
+                        <strong style={{ display: "block", fontSize: "0.95rem", letterSpacing: "0.05em" }}>{leadershipMessage.author}</strong>
+                        <span style={{ fontSize: "0.78rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.12em" }}>{leadershipMessage.designation}</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Portrait side */}
+                  {partner && (
+                    <div className="leadership-portrait-side">
+                      <img
+                        src={partner.image}
+                        alt={partner.name}
+                        className="leadership-portrait-img"
+                      />
+                      <div className="leadership-portrait-caption">
+                        <span className="portrait-name">{partner.name}</span>
+                        <span className="portrait-title">{partner.title}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {/* Values Section */}
@@ -143,7 +160,6 @@ export default function About() {
               <div className="principles-grid">
                 {corporateValues.map((val, idx) => (
                   <div key={idx} className="principle-card">
-                    <span className="principle-number serif-display">0{idx + 1}</span>
                     <h4>{val.title}</h4>
                     <p>{val.body}</p>
                   </div>
@@ -174,17 +190,6 @@ export default function About() {
                       borderTop: "3px solid var(--accent-gold)"
                     }}
                   >
-                    <span
-                      className="serif-display"
-                      style={{
-                        fontSize: "1.75rem",
-                        color: "var(--accent-gold)",
-                        display: "block",
-                        marginBottom: "0.75rem"
-                      }}
-                    >
-                      0{idx + 1}
-                    </span>
                     <h4 style={{ fontSize: "1.15rem", marginBottom: "0.75rem", fontWeight: 600 }}>
                       {item.title}
                     </h4>
@@ -275,11 +280,81 @@ export default function About() {
         }
         .leadership-message-box {
           border: 1px solid var(--border-light);
-          padding: 3rem;
           background-color: var(--bg-secondary);
+          overflow: hidden;
+        }
+        .leadership-message-inner {
+          display: grid;
+          grid-template-columns: 1fr 280px;
+          gap: 0;
+        }
+        @media (max-width: 900px) {
+          .leadership-message-inner {
+            grid-template-columns: 1fr;
+          }
+        }
+        .leadership-quote-side {
+          padding: 3rem;
           display: flex;
           flex-direction: column;
-          gap: 1.5rem;
+          gap: 1.25rem;
+          border-right: 1px solid var(--border-light);
+        }
+        @media (max-width: 900px) {
+          .leadership-quote-side {
+            border-right: none;
+            border-bottom: 1px solid var(--border-light);
+          }
+        }
+        .leadership-portrait-side {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          overflow: hidden;
+        }
+        .leadership-portrait-img {
+          width: 100%;
+          height: 100%;
+          min-height: 320px;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+        }
+        @media (max-width: 900px) {
+          .leadership-portrait-img {
+            min-height: 260px;
+            object-position: center 20%;
+          }
+        }
+        .leadership-portrait-caption {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+          padding: 1.5rem 1.25rem 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+        .portrait-name {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: #fff;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+        .portrait-title {
+          font-size: 0.72rem;
+          color: rgba(255,255,255,0.7);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        .author-divider {
+          width: 32px;
+          height: 2px;
+          background: var(--accent-gold);
+          flex-shrink: 0;
         }
         .quote-mark {
           color: var(--accent-gold);
@@ -371,12 +446,7 @@ export default function About() {
           height: 100%;
           min-width: 0;
         }
-        .principle-number {
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
-          color: var(--accent-gold);
-          display: block;
-          margin-bottom: 0.5rem;
-        }
+
         .principle-card h4 {
           font-size: 1.15rem;
           font-family: var(--font-sans);

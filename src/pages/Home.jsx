@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, Award, MapPin } from "lucide-react";
 import heroBg from "../assets/hero-bg.jpg";
@@ -9,6 +9,39 @@ export default function Home() {
   // Statistics state counters
   const [stats, setStats] = useState({ years: 0, experts: 0, officesCount: 0, volume: 0 });
 
+  // Core Values sticky-scroll refs
+  const coreValuesRef = useRef(null);
+  const valueItemsRef = useRef([]);
+  const progressFillRef = useRef(null);
+
+  // Reveal each value item as it enters the viewport
+  useEffect(() => {
+    const items = valueItemsRef.current.filter(Boolean);
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            // Update progress bar based on how many items are visible
+            const visible = valueItemsRef.current.filter(
+              (el) => el && el.classList.contains("in-view")
+            ).length;
+            if (progressFillRef.current) {
+              progressFillRef.current.style.width = `${(visible / items.length) * 100}%`;
+            }
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: "0px 0px -5% 0px" }
+    );
+
+    items.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  // Stats counter animation
   useEffect(() => {
     const duration = 1200; // ms
     const steps = 60;
@@ -43,16 +76,14 @@ export default function Home() {
       >
         <div className="container">
           <div className="hero-content">
-            <span className="hero-tagline title-small">TNT &amp; Associates • Practicing Company Secretaries</span>
             <h1 className="hero-title title-display" style={{ fontWeight: "500", lineHeight: "1.1" }}>
-              Strategic Advisors-Navigating <span style={{ fontStyle: "italic" }}>complexity with absolute</span> compliance precision.
+              TNT &amp; Associates • <span style={{ fontStyle: "italic" }}>Practicing Company Secretaries</span>
             </h1>
             <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
               The firm is recognized as one of the leading Company Secretary firms in Gujarat, offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
             </p>
             <div className="hero-actions">
               <Link to="/services" className="btn-primary">Explore Services</Link>
-              <Link to="/contact" className="btn-primary">Global Presence</Link>
             </div>
           </div>
         </div>
@@ -129,74 +160,39 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* 4. FEATURED SERVICES */}
-      <section className="featured-services-section section-padding">
-        <div className="container">
-          <div className="section-header">
-            <div className="header-meta">
-              <span className="title-small accent-gold">Our Services</span>
-              <h2 className="title-medium">Core Capabilities</h2>
-            </div>
-            <Link to="/services" className="gold-link">View All Capabilities →</Link>
-          </div>
-
-          <div className="services-showcase-grid">
-            {practices.slice(0, 3).map((practice, index) => (
-              <div key={practice.id} className="service-showcase-card editorial-card">
-                <div className="service-number serif-display">0{index + 1}</div>
-                <h3 className="service-title">{practice.name}</h3>
-                <p className="service-desc text-muted">{practice.shortDescription}</p>
-                <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
-                  <Link to={`/services/${practice.id}`} className="show-more-link" style={{ display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", textDecoration: "none", fontSize: "0.95rem" }}>
-                    Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 6. WHY CHOOSE US (VALUES) */}
-      <section className="why-us-section section-padding">
+
+      <section className="why-us-section section-padding" ref={coreValuesRef}>
         <div className="container why-us-grid">
+
+          {/* LEFT: sticky — stays in place while right side scrolls */}
           <div className="why-us-info-col">
             <span className="title-small accent-gold">Our Values</span>
             <h2 className="title-medium">Core Guiding Principles</h2>
             <p className="body-large text-muted mt-space">
               We operate under a strict code of ethics, delivering meticulous accuracy, absolute confidentiality, and timely compliance execution.
             </p>
+            <div className="values-progress-bar">
+              <div className="values-progress-fill" ref={progressFillRef}></div>
+            </div>
           </div>
+
+          {/* RIGHT: items revealed one by one via IntersectionObserver */}
           <div className="why-us-list-col">
-            <div className="value-differentiator-item">
-              <div className="diff-index serif-display">01</div>
-              <div className="diff-content">
-                <h4>Professional Ethics</h4>
-                <p className="text-muted">Unwavering commitment to ICSI code of conduct and professional integrity.</p>
+            {[
+              { title: "Professional Ethics",    desc: "Unwavering commitment to ICSI code of conduct and professional integrity." },
+              { title: "Strict Confidentiality", desc: "Absolute discretion and security regarding all corporate data and strategies." },
+              { title: "Meticulous Accuracy",    desc: "Precision in drafting, filing, and representing clients before regulatory bodies." },
+              { title: "Timely Execution",        desc: "Proactive compliance management to avoid penalties and ensure smooth operations." }
+            ].map((val, i) => (
+              <div key={i} className="value-differentiator-item" ref={el => valueItemsRef.current[i] = el}>
+                <div className="diff-icon-dot"></div>
+                <h4>{val.title}</h4>
+                <p className="text-muted">{val.desc}</p>
               </div>
-            </div>
-            <div className="value-differentiator-item">
-              <div className="diff-index serif-display">02</div>
-              <div className="diff-content">
-                <h4>Strict Confidentiality</h4>
-                <p className="text-muted">Absolute discretion and security regarding all corporate data and strategies.</p>
-              </div>
-            </div>
-            <div className="value-differentiator-item">
-              <div className="diff-index serif-display">03</div>
-              <div className="diff-content">
-                <h4>Meticulous Accuracy</h4>
-                <p className="text-muted">Precision in drafting, filing, and representing clients before regulatory bodies.</p>
-              </div>
-            </div>
-            <div className="value-differentiator-item">
-              <div className="diff-index serif-display">04</div>
-              <div className="diff-content">
-                <h4>Timely Execution</h4>
-                <p className="text-muted">Proactive compliance management to avoid penalties and ensure smooth operations.</p>
-              </div>
-            </div>
+            ))}
           </div>
+
         </div>
       </section>
 
@@ -265,7 +261,6 @@ export default function Home() {
           <div className="awards-table-list">
             {achievements.map((ach, i) => (
               <div key={i} className="award-table-row">
-                <span className="award-row-year serif-display">0{i + 1}</span>
                 <div className="award-row-main">
                   <p className="body-large text-muted">{ach}</p>
                 </div>
@@ -292,7 +287,7 @@ export default function Home() {
 
       <style>{`
         .home-container {
-          overflow: hidden;
+          /* overflow: hidden removed — it breaks position: sticky on child elements */
         }
         
         /* 1. Hero Styles */
@@ -585,51 +580,86 @@ export default function Home() {
         .why-us-grid {
           display: grid;
           grid-template-columns: 1fr 1.2fr;
-          gap: 4rem;
+          gap: 5rem;
           align-items: start;
         }
         @media (max-width: 1080px) {
           .why-us-grid {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2.5rem;
           }
         }
+        /* Left col sticks while right col scrolls past it */
         .why-us-info-col {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
+          position: sticky;
+          top: calc(var(--header-height, 80px) + 3rem);
+          align-self: start;
+        }
+        @media (max-width: 1080px) {
+          .why-us-info-col { position: static; }
+        }
+        .values-progress-bar {
+          width: 100%;
+          height: 2px;
+          background: var(--border-light);
+          margin-top: 2.5rem;
+          border-radius: 2px;
+          overflow: hidden;
+        }
+        .values-progress-fill {
+          height: 100%;
+          width: 0%;
+          background: var(--accent-gold);
+          border-radius: 2px;
+          transition: width 0.4s ease;
         }
         .why-us-list-col {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 0;
         }
         .value-differentiator-item {
-          display: grid;
-          grid-template-columns: 50px 1fr;
-          gap: 1.5rem;
-          text-align: left;
+          padding: 2.25rem 0;
           border-bottom: 1px solid var(--border-light);
-          padding-bottom: 1.5rem;
+          opacity: 0;
+          transform: translateY(28px);
+          transition: opacity 0.55s ease, transform 0.55s ease;
         }
-        .diff-index {
-          font-size: clamp(1.5rem, 4vw, 2rem);
-          color: var(--accent-gold);
-          line-height: 1;
-          font-family: var(--font-serif);
-          font-weight: 500;
+        .value-differentiator-item:first-child {
+          border-top: 1px solid var(--border-light);
         }
-        .diff-content h4 {
+        .value-differentiator-item.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        @media (max-width: 1080px) {
+          .value-differentiator-item {
+            opacity: 1;
+            transform: none;
+          }
+        }
+        .diff-icon-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: var(--accent-gold);
+          margin-bottom: 0.75rem;
+        }
+        .value-differentiator-item h4 {
           font-size: 1.25rem;
           font-weight: 500;
           margin: 0 0 0.5rem 0;
+          line-height: 1.3;
         }
-        .diff-content p {
+        .value-differentiator-item p {
           font-size: 0.95rem;
           margin: 0;
+          line-height: 1.65;
         }
-
         /* 7. Featured Insights */
         .insights-grid {
           display: grid;
@@ -827,7 +857,7 @@ export default function Home() {
         }
         .award-table-row {
           display: grid;
-          grid-template-columns: 0.5fr 3fr 0.5fr;
+          grid-template-columns: 1fr auto;
           gap: var(--space-md);
           padding: var(--space-md) 0;
           border-bottom: 1px solid var(--border-light);
@@ -846,11 +876,7 @@ export default function Home() {
           background-color: var(--bg-secondary);
           padding-left: var(--space-sm);
         }
-        .award-row-year {
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
-          color: var(--accent-gold);
-          line-height: 1;
-        }
+
         .award-row-main h4 {
           font-size: 1.25rem;
           font-weight: 500;
