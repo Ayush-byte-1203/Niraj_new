@@ -1,6 +1,12 @@
 // Relational Mock Database for Niraj Trivedi CS (Practicing Company Secretaries)
 // Single Source of Truth: https://niraj-seven.vercel.app
 
+import IsmailImg from '../images/Ismail.jpeg';
+import RiyaImg from '../images/Riya.jpeg';
+import SamirImg from '../images/Samirbhai.jpeg';
+import VedantImg from '../images/Vedant.jpeg';
+import VrundImg from '../images/Vrund.jpeg';
+
 export const offices = [
   {
     id: "vadodara",
@@ -272,7 +278,7 @@ export const people = [
     title: "SENIOR ASSOCIATE",
     degree: "FCS, B.Com, LL.B. (Spl.)",
     officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop",
+    image: SamirImg,
     bio: "He is a Commerce Graduate with LLB (Spl.) and a Fellow Company Secretary and having experience of around 35 years in the Corporate World. Throughout his career, he has held key leadership positions in the company secretarial and compliance functions of some of India's leading organizations.\n\nHe has served in the Company Secretarial Department of reputed companies such as Gujarat Industries Power Company Limited, Reliance Industries Limited, Reliance Infocomm Limited, Zee Learn Limited and JMC Projects (India) Limited, a Kalptaaru Group Company.\n\nHe possesses experience in the areas of Company Law, Corporate Governance, Corporate Restructuring, SEBI Act, 1992 and its Rules and Regulations, Corporate Compliance and Regulatory Advisory.",
     practices: ["ipo", "secretarial-audit", "corporate-restructuring"],
     sectors: [],
@@ -285,7 +291,7 @@ export const people = [
     title: "SENIOR ASSOCIATE",
     degree: "ACS",
     officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop",
+    image: IsmailImg,
     bio: "He is an Associate Company Secretary with around two years of professional experience in the areas of Corporate Laws and Foreign Exchange Management Act (FEMA) compliances. He is actively involved in providing corporate advisory and compliance support to a diverse range of clients.\n\nHis core responsibilities include incorporation of companies and LLPs, conversion of companies and LLPs, and ensuring statutory compliances for private limited and unlisted companies under the Companies Act, 2013 and the Limited Liability Partnership Act, 2008.",
     practices: ["fema", "change-in-management"],
     sectors: [],
@@ -298,7 +304,7 @@ export const people = [
     title: "ASSOCIATE",
     degree: "ACS, B.Com",
     officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop",
+    image: VrundImg,
     bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Bachelor of Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA, and Secretarial Compliances.\n\nHe is actively involved in handling matters relating to incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting, and regulatory filings. He also handles matters pertaining to the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC) and undertakes various corporate restructuring and compliance-related assignments.",
     practices: ["fema", "nclt", "corporate-restructuring"],
     sectors: [],
@@ -311,7 +317,7 @@ export const people = [
     title: "ASSOCIATE",
     degree: "ACS",
     officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
+    image: VedantImg,
     bio: "He is a qualified Company Secretary with over two years of professional experience in the field of Corporate Laws. He has developed expertise in corporate compliance, due diligence and secretarial advisory services.\n\nHis core responsibilities include conducting due diligence for Initial Public Offerings (IPOs), incorporation and registration of companies, including compliances relating to GIFT City and undertaking secretarial audits for listed and unlisted companies. He also assists clients in ensuring regulatory compliance and maintaining high standards of corporate governance.",
     practices: ["ipo", "due-diligence", "secretarial-audit"],
     sectors: [],
@@ -324,7 +330,7 @@ export const people = [
     title: "ASSOCIATE",
     degree: "M.Com (CS Semi-Qualified)",
     officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
+    image: RiyaImg,
     bio: "She is Semi-Qualified Company Secretary and holds a master’s degree in commerce. She has over three years of professional experience in the field of Corporate Laws, FEMA and secretarial compliances.\n\nShe is actively involved in handling incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting and regulatory filings. She also assists clients in matters before the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC), providing efficient and compliant solutions across a wide range of corporate legal and regulatory matters.",
     practices: ["fema", "nclt"],
     sectors: [],
