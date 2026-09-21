@@ -1,6 +1,7 @@
 // Relational Mock Database for Niraj Trivedi CS (Practicing Company Secretaries)
 // Single Source of Truth: https://niraj-seven.vercel.app
 
+import AshishImg from '../images/Ashish.jpeg';
 import IsmailImg from '../images/Ismail.jpeg';
 import RiyaImg from '../images/Riya.jpeg';
 import SamirImg from '../images/Samirbhai.jpeg';
@@ -265,7 +266,7 @@ export const people = [
     title: "PARTNER",
     degree: "ACS",
     officeId: "ahmedabad",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop",
+    image: AshishImg,
     bio: "He is an Associate Company Secretary and senior partner of the firm, with over 15 years of professional experience in the field of Corporate Laws. His expertise spans corporate compliance, regulatory advisory, and representation before various statutory authorities.\n\nHe heads the firm's Ahmedabad office and is responsible for liaising with key regulatory and government authorities, including the Registrar of Companies (ROC), Regional Director (RD), National Company Law Tribunal (NCLT), and the Stamp Office.",
     practices: ["due-diligence", "capital-restructuring", "ipo"],
     sectors: [],
