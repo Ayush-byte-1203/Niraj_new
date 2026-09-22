@@ -3,6 +3,8 @@
 
 import AshishImg from '../images/Ashish.jpeg';
 import IsmailImg from '../images/Ismail.jpeg';
+import MonaImg from '../images/Mona.jpeg';
+import NirajImg from '../images/Niraj.jpeg';
 import RiyaImg from '../images/Riya.jpeg';
 import SamirImg from '../images/Samirbhai.jpeg';
 import VedantImg from '../images/Vedant.jpeg';
@@ -240,7 +242,7 @@ export const people = [
     degree: "FCS, B.Com (Hons.), LL.B., ACIS (U.K.), PGDCL, PGDLP",
     officeId: "vadodara",
     linkedin: "https://www.linkedin.com/in/niraj-trivedi-5458a117",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop",
+    image: NirajImg,
     bio: "Fellow member of ICSI and founder of this firm. With over 30 years of professional experience, he has built an outstanding reputation in the field of Corporate Law, advising clients on the matters relating to the Companies Act, 2013, Foreign Exchange Management Act, 1999 (“FEMA”), Securities and Exchange Board of India Act, 1992 and its Rules and Regulations, Foreign Contribution (Regulation)Act, 2010 (“FCRA”), Insolvency and Bankruptcy Code, 2016 (“IBC\"), etc.\n\nHe has served as the chairman of the Vadodara Chapter of ICSI and currently leads the overall function of the firm. Academically, he holds a B.Com. (Hons.), is an Associate Member of ACIS (U.K.), and possesses an LL.B. (Special), a Post Graduate Diploma in Cyber Law (PGDCL) and a Post Graduate Diploma in Labour Laws and Practice (PGDLP).\n\nAt present, he is represent clients before various authorities such as National Company Law Tribunals (“NCLT”), National Company Law Appellate Tribunal (“NCLAT”) Regional Director (“RD”), Registrar of Companies (“ROC\"), Reserve Bank of India (“RBI\"), Securities and Exchange Board of India (“SEBI”).\n\nIn addition to his advisory practice, he also involves in giving opinion on various matters of corporate laws and deliberating lectures at various platforms and Study Circles meeting organized by ICSI and ICAI.",
     practices: ["ipo", "nclt", "fema", "secretarial-audit", "corporate-restructuring", "change-in-management"],
     sectors: [],
@@ -253,7 +255,7 @@ export const people = [
     title: "LEGAL COUNSEL",
     degree: "LL.M. (Gold Medalist)",
     officeId: "vadodara",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
+    image: MonaImg,
     bio: "She is LLM (Gold Medalist) by qualification and brings over 25 years of professional experience in the field of Corporate Laws, Banking Regulation, Revenue Matters, Debt Recovery, Title Clearance, etc. Since the inception of TNT & Associates, she has played a pivotal role in the firm's legal and advisory practice, contributing significantly to its growth and reputation.\n\nShe is responsible for drafting and reviewing a wide range of legal documents including Applications, Petitions, Appeals, Scheme and other legal documents to be submitted with statutory authorities such as NCLT, NCLAT, SEBI, ROC, RD, RBI etc.",
     practices: ["ipr", "nclt"],
     sectors: [],
